@@ -1,0 +1,272 @@
+[2024-09-30T10:31:42.084+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:31:42.121+0000] {processor.py:186} INFO - Started process (PID=277) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:31:42.124+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:31:42.137+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:31:42.136+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:31:42.237+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:31:42.507+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:31:42.507+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:31:42.732+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:31:42.731+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:31:42.794+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.723 seconds
+[2024-09-30T10:31:53.241+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:31:53.249+0000] {processor.py:186} INFO - Started process (PID=369) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:31:53.250+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:31:53.252+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:31:53.252+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:31:53.265+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:31:53.288+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:31:53.288+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:31:53.320+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:31:53.320+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:31:53.337+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.099 seconds
+[2024-09-30T10:32:03.686+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:32:03.696+0000] {processor.py:186} INFO - Started process (PID=414) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:03.697+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:32:03.699+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:03.698+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:03.713+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:03.733+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:03.733+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:32:03.755+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:03.755+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:32:03.769+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.086 seconds
+[2024-09-30T10:32:14.144+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:32:14.152+0000] {processor.py:186} INFO - Started process (PID=459) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:14.153+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:32:14.156+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:14.155+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:14.168+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:14.189+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:14.188+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:32:14.210+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:14.210+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:32:14.227+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.086 seconds
+[2024-09-30T10:32:24.576+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:32:24.586+0000] {processor.py:186} INFO - Started process (PID=503) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:24.587+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:32:24.590+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:24.590+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:24.607+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:24.646+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:24.645+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:32:24.676+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:24.675+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:32:24.696+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.123 seconds
+[2024-09-30T10:32:35.001+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:32:35.006+0000] {processor.py:186} INFO - Started process (PID=549) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:35.006+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:32:35.008+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:35.007+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:35.018+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:35.038+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:35.038+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:32:35.055+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:35.055+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:32:35.069+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.071 seconds
+[2024-09-30T10:32:45.453+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:32:45.459+0000] {processor.py:186} INFO - Started process (PID=594) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:45.460+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:32:45.461+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:45.461+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:45.472+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:45.492+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:45.492+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:32:45.511+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:45.510+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:32:45.524+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.074 seconds
+[2024-09-30T10:32:55.965+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:32:55.976+0000] {processor.py:186} INFO - Started process (PID=639) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:55.978+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:32:55.980+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:55.980+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:55.995+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:32:56.029+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:56.029+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:32:56.051+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:32:56.051+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:32:56.067+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.106 seconds
+[2024-09-30T10:33:06.392+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:33:06.398+0000] {processor.py:186} INFO - Started process (PID=684) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:06.399+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:33:06.400+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:06.400+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:06.412+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:06.432+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:06.432+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:33:06.448+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:06.448+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:33:06.463+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.073 seconds
+[2024-09-30T10:33:16.825+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:33:16.834+0000] {processor.py:186} INFO - Started process (PID=729) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:16.835+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:33:16.837+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:16.837+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:16.847+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:16.869+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:16.868+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:33:16.890+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:16.890+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:33:16.903+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.081 seconds
+[2024-09-30T10:33:27.289+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:33:27.298+0000] {processor.py:186} INFO - Started process (PID=774) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:27.300+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:33:27.302+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:27.302+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:27.313+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:27.329+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:27.329+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:33:27.345+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:27.344+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:33:27.356+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.069 seconds
+[2024-09-30T10:33:37.454+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:33:37.466+0000] {processor.py:186} INFO - Started process (PID=818) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:37.467+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:33:37.470+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:37.470+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:37.492+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:37.532+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:37.532+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:33:37.567+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:37.566+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:33:37.597+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.147 seconds
+[2024-09-30T10:33:47.901+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:33:47.906+0000] {processor.py:186} INFO - Started process (PID=866) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:47.907+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:33:47.908+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:47.908+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:47.915+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:47.930+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:47.930+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:33:47.946+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:47.945+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:33:47.955+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.057 seconds
+[2024-09-30T10:33:58.327+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:33:58.332+0000] {processor.py:186} INFO - Started process (PID=911) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:58.332+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:33:58.334+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:58.334+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:58.341+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:33:58.356+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:58.355+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:33:58.371+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:33:58.371+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:33:58.382+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.057 seconds
+[2024-09-30T10:34:08.880+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:34:08.886+0000] {processor.py:186} INFO - Started process (PID=956) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:08.886+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:34:08.888+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:08.888+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:08.895+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:08.912+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:08.912+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:34:08.932+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:08.932+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:34:08.946+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.069 seconds
+[2024-09-30T10:34:19.324+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:34:19.329+0000] {processor.py:186} INFO - Started process (PID=1001) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:19.330+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:34:19.332+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:19.332+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:19.339+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:19.355+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:19.355+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:34:19.371+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:19.371+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:34:19.382+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.059 seconds
+[2024-09-30T10:34:29.839+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:34:29.844+0000] {processor.py:186} INFO - Started process (PID=1046) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:29.844+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:34:29.846+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:29.846+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:29.853+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:29.868+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:29.868+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:34:29.884+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:29.884+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:34:29.894+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.058 seconds
+[2024-09-30T10:34:40.560+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:34:40.565+0000] {processor.py:186} INFO - Started process (PID=1091) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:40.566+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:34:40.568+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:40.568+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:40.575+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:40.591+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:40.591+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:34:40.607+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:40.607+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:34:40.617+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.061 seconds
+[2024-09-30T10:34:51.180+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:34:51.186+0000] {processor.py:186} INFO - Started process (PID=1136) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:51.187+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:34:51.189+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:51.189+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:51.197+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:34:51.216+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:51.216+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:34:51.248+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:34:51.247+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:34:51.265+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.087 seconds
+[2024-09-30T10:35:02.049+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:35:02.062+0000] {processor.py:186} INFO - Started process (PID=1181) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:02.064+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:35:02.067+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:02.067+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:02.080+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:02.121+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:02.121+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:35:02.186+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:02.185+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:35:02.217+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.172 seconds
+[2024-09-30T10:35:12.607+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:35:12.612+0000] {processor.py:186} INFO - Started process (PID=1226) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:12.613+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:35:12.615+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:12.615+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:12.622+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:12.638+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:12.638+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:35:12.653+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:12.653+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:35:12.663+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.058 seconds
+[2024-09-30T10:35:23.115+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:35:23.121+0000] {processor.py:186} INFO - Started process (PID=1271) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:23.121+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:35:23.123+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:23.123+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:23.130+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:23.146+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:23.146+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:35:23.163+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:23.163+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:35:23.175+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.062 seconds
+[2024-09-30T10:35:33.806+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:35:33.812+0000] {processor.py:186} INFO - Started process (PID=1316) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:33.812+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:35:33.814+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:33.814+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:33.822+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:33.836+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:33.836+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:35:33.852+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:33.852+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:35:33.862+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.058 seconds
+[2024-09-30T10:35:44.252+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:35:44.257+0000] {processor.py:186} INFO - Started process (PID=1361) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:44.258+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:35:44.259+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:44.259+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:44.266+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:44.281+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:44.281+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:35:44.296+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:44.296+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:35:44.306+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.056 seconds
+[2024-09-30T10:35:54.799+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:35:54.804+0000] {processor.py:186} INFO - Started process (PID=1406) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:54.805+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:35:54.806+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:54.806+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:54.813+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:35:54.829+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:54.828+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:35:54.844+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:35:54.844+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:35:54.854+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.057 seconds
+[2024-09-30T10:36:05.262+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:36:05.267+0000] {processor.py:186} INFO - Started process (PID=1451) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:05.268+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:36:05.270+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:05.270+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:05.277+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:05.292+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:05.292+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:36:05.307+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:05.307+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:36:05.320+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.061 seconds
+[2024-09-30T10:36:15.779+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:36:15.784+0000] {processor.py:186} INFO - Started process (PID=1496) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:15.784+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:36:15.786+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:15.786+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:15.794+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:15.809+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:15.808+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:36:15.824+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:15.824+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:36:15.835+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.058 seconds
+[2024-09-30T10:36:26.223+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:36:26.229+0000] {processor.py:186} INFO - Started process (PID=1541) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:26.229+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:36:26.231+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:26.231+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:26.238+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:26.254+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:26.254+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:36:26.270+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:26.269+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:36:26.280+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.059 seconds
+[2024-09-30T10:36:36.765+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:36:36.769+0000] {processor.py:186} INFO - Started process (PID=1586) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:36.770+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:36:36.771+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:36.771+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:36.778+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:36.793+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:36.793+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:36:36.809+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:36.809+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:36:36.820+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.057 seconds
+[2024-09-30T10:36:47.313+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:36:47.318+0000] {processor.py:186} INFO - Started process (PID=1631) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:47.318+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:36:47.320+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:47.320+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:47.328+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:47.344+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:47.344+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:36:47.361+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:47.361+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:36:47.373+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.062 seconds
+[2024-09-30T10:36:57.829+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:36:57.853+0000] {processor.py:186} INFO - Started process (PID=1679) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:57.854+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:36:57.858+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:57.857+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:57.869+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:36:57.888+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:57.888+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:36:57.906+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:36:57.906+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:36:57.917+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.093 seconds
+[2024-09-30T10:37:08.284+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:37:08.289+0000] {processor.py:186} INFO - Started process (PID=1724) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:37:08.290+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:37:08.291+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:37:08.291+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:37:08.298+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:37:08.313+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:37:08.313+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:37:08.332+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:37:08.331+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:37:08.342+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.060 seconds
+[2024-09-30T10:37:18.962+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:37:18.992+0000] {processor.py:186} INFO - Started process (PID=1769) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:37:18.995+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:37:19.018+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:37:19.018+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:37:19.040+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:37:19.100+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:37:19.100+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:37:19.158+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:37:19.157+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:37:19.188+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.232 seconds
+[2024-09-30T10:37:29.460+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:37:29.466+0000] {processor.py:186} INFO - Started process (PID=1814) to work on /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:37:29.466+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_catchup_and_backflip.py for tasks to queue
+[2024-09-30T10:37:29.468+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:37:29.468+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:37:29.475+0000] {processor.py:925} INFO - DAG(s) 'dag_with_catchup_backflip_v01' retrieved from /opt/airflow/dags/dag_with_catchup_and_backflip.py
+[2024-09-30T10:37:29.490+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:37:29.490+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-30T10:37:29.505+0000] {logging_mixin.py:190} INFO - [2024-09-30T10:37:29.505+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_catchup_backflip_v01 to 2024-09-30 00:00:00+00:00, run_after=2024-10-01 00:00:00+00:00
+[2024-09-30T10:37:29.516+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_catchup_and_backflip.py took 0.058 seconds

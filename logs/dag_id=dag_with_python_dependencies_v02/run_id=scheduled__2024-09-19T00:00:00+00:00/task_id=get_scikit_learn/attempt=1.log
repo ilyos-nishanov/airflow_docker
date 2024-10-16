@@ -1,0 +1,21 @@
+[2024-09-29T08:17:19.336+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-29T08:17:19.379+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_python_dependencies_v02.get_scikit_learn scheduled__2024-09-19T00:00:00+00:00 [queued]>
+[2024-09-29T08:17:19.404+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_python_dependencies_v02.get_scikit_learn scheduled__2024-09-19T00:00:00+00:00 [queued]>
+[2024-09-29T08:17:19.407+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 6
+[2024-09-29T08:17:19.927+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): get_scikit_learn> on 2024-09-19 00:00:00+00:00
+[2024-09-29T08:17:20.145+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=5452) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-29T08:17:20.161+0000] {standard_task_runner.py:72} INFO - Started process 5481 to run task
+[2024-09-29T08:17:20.124+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_with_python_dependencies_v02', 'get_scikit_learn', 'scheduled__2024-09-19T00:00:00+00:00', '--job-id', '690', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_python_dependencies.py', '--cfg-path', '/tmp/tmprl7dvmv_']
+[2024-09-29T08:17:20.239+0000] {standard_task_runner.py:105} INFO - Job 690: Subtask get_scikit_learn
+[2024-09-29T08:17:20.401+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T08:17:20.622+0000] {task_command.py:467} INFO - Running <TaskInstance: dag_with_python_dependencies_v02.get_scikit_learn scheduled__2024-09-19T00:00:00+00:00 [running]> on host 6851fee35b72
+[2024-09-29T08:17:20.624+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T08:17:21.223+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='dag_with_python_dependencies_v02' AIRFLOW_CTX_TASK_ID='get_scikit_learn' AIRFLOW_CTX_EXECUTION_DATE='2024-09-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-19T00:00:00+00:00'
+[2024-09-29T08:17:21.239+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-29T08:17:30.984+0000] {logging_mixin.py:190} INFO - scikit-learn version:1.5.2
+[2024-09-29T08:17:30.998+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-29T08:17:31.083+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-29T08:17:31.084+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_with_python_dependencies_v02, task_id=get_scikit_learn, run_id=scheduled__2024-09-19T00:00:00+00:00, execution_date=20240919T000000, start_date=20240929T081719, end_date=20240929T081731
+[2024-09-29T08:17:31.221+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-29T08:17:31.305+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-29T08:17:31.308+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

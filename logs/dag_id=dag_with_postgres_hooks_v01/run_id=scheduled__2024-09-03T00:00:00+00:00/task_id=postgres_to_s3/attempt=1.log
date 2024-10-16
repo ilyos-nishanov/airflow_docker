@@ -1,0 +1,499 @@
+[2024-09-29T12:29:27.798+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-29T12:29:27.831+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [queued]>
+[2024-09-29T12:29:27.847+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [queued]>
+[2024-09-29T12:29:27.853+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 6
+[2024-09-29T12:29:27.892+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): postgres_to_s3> on 2024-09-03 00:00:00+00:00
+[2024-09-29T12:29:27.902+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=17821) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-29T12:29:27.909+0000] {standard_task_runner.py:72} INFO - Started process 17828 to run task
+[2024-09-29T12:29:27.902+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_with_postgres_hooks_v01', 'postgres_to_s3', 'scheduled__2024-09-03T00:00:00+00:00', '--job-id', '774', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_postgres_hooks.py', '--cfg-path', '/tmp/tmpici81mp5']
+[2024-09-29T12:29:27.911+0000] {standard_task_runner.py:105} INFO - Job 774: Subtask postgres_to_s3
+[2024-09-29T12:29:27.956+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:29:28.024+0000] {task_command.py:467} INFO - Running <TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [running]> on host 6851fee35b72
+[2024-09-29T12:29:28.026+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:29:28.216+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='dag_with_postgres_hooks_v01' AIRFLOW_CTX_TASK_ID='postgres_to_s3' AIRFLOW_CTX_EXECUTION_DATE='2024-09-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-03T00:00:00+00:00'
+[2024-09-29T12:29:28.218+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-29T12:29:28.327+0000] {base.py:84} INFO - Retrieving connection 'postgres_localhost'
+[2024-09-29T12:29:28.373+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 22, in postgres_to_s3
+    cursor.execute("select * from order where date <=20220501")
+psycopg2.errors.SyntaxError: syntax error at or near "order"
+LINE 1: select * from order where date <=20220501
+                      ^
+
+[2024-09-29T12:29:28.428+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_with_postgres_hooks_v01, task_id=postgres_to_s3, run_id=scheduled__2024-09-03T00:00:00+00:00, execution_date=20240903T000000, start_date=20240929T122927, end_date=20240929T122928
+[2024-09-29T12:29:28.565+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-29T12:29:28.569+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 774 for task postgres_to_s3 (syntax error at or near "order"
+LINE 1: select * from order where date <=20220501
+                      ^
+; 17828)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 22, in postgres_to_s3
+    cursor.execute("select * from order where date <=20220501")
+psycopg2.errors.SyntaxError: syntax error at or near "order"
+LINE 1: select * from order where date <=20220501
+                      ^
+
+[2024-09-29T12:29:28.601+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-09-29T12:29:28.658+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-09-29T12:30:34.671+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-29T12:30:34.700+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [queued]>
+[2024-09-29T12:30:34.710+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [queued]>
+[2024-09-29T12:30:34.711+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 6
+[2024-09-29T12:30:34.732+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): postgres_to_s3> on 2024-09-03 00:00:00+00:00
+[2024-09-29T12:30:34.741+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=18149) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-29T12:30:34.747+0000] {standard_task_runner.py:72} INFO - Started process 18156 to run task
+[2024-09-29T12:30:34.746+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_with_postgres_hooks_v01', 'postgres_to_s3', 'scheduled__2024-09-03T00:00:00+00:00', '--job-id', '790', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_postgres_hooks.py', '--cfg-path', '/tmp/tmpj_9t0c5v']
+[2024-09-29T12:30:34.748+0000] {standard_task_runner.py:105} INFO - Job 790: Subtask postgres_to_s3
+[2024-09-29T12:30:34.762+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:30:34.814+0000] {task_command.py:467} INFO - Running <TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [running]> on host 6851fee35b72
+[2024-09-29T12:30:34.821+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:30:35.017+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='dag_with_postgres_hooks_v01' AIRFLOW_CTX_TASK_ID='postgres_to_s3' AIRFLOW_CTX_EXECUTION_DATE='2024-09-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-03T00:00:00+00:00'
+[2024-09-29T12:30:35.017+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-29T12:30:35.058+0000] {base.py:84} INFO - Retrieving connection 'postgres_localhost'
+[2024-09-29T12:30:35.083+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 22, in postgres_to_s3
+    cursor.execute("select * from orders where date <=20220501")
+psycopg2.errors.UndefinedFunction: operator does not exist: date <= integer
+LINE 1: select * from orders where date <=20220501
+                                        ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[2024-09-29T12:30:35.117+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_with_postgres_hooks_v01, task_id=postgres_to_s3, run_id=scheduled__2024-09-03T00:00:00+00:00, execution_date=20240903T000000, start_date=20240929T123034, end_date=20240929T123035
+[2024-09-29T12:30:35.166+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-29T12:30:35.167+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 790 for task postgres_to_s3 (operator does not exist: date <= integer
+LINE 1: select * from orders where date <=20220501
+                                        ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+; 18156)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 22, in postgres_to_s3
+    cursor.execute("select * from orders where date <=20220501")
+psycopg2.errors.UndefinedFunction: operator does not exist: date <= integer
+LINE 1: select * from orders where date <=20220501
+                                        ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[2024-09-29T12:30:35.218+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-09-29T12:30:35.249+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-29T12:30:35.259+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-09-29T12:33:32.466+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-29T12:33:32.493+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [queued]>
+[2024-09-29T12:33:32.502+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [queued]>
+[2024-09-29T12:33:32.503+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 6
+[2024-09-29T12:33:32.547+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): postgres_to_s3> on 2024-09-03 00:00:00+00:00
+[2024-09-29T12:33:32.559+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=18962) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-29T12:33:32.561+0000] {standard_task_runner.py:72} INFO - Started process 18967 to run task
+[2024-09-29T12:33:32.559+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_with_postgres_hooks_v01', 'postgres_to_s3', 'scheduled__2024-09-03T00:00:00+00:00', '--job-id', '806', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_postgres_hooks.py', '--cfg-path', '/tmp/tmpiiwrtsgy']
+[2024-09-29T12:33:32.564+0000] {standard_task_runner.py:105} INFO - Job 806: Subtask postgres_to_s3
+[2024-09-29T12:33:32.588+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:33:32.661+0000] {task_command.py:467} INFO - Running <TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [running]> on host 6851fee35b72
+[2024-09-29T12:33:32.662+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:33:32.833+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='dag_with_postgres_hooks_v01' AIRFLOW_CTX_TASK_ID='postgres_to_s3' AIRFLOW_CTX_EXECUTION_DATE='2024-09-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-03T00:00:00+00:00'
+[2024-09-29T12:33:32.834+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-29T12:33:32.877+0000] {base.py:84} INFO - Retrieving connection 'postgres_localhost'
+[2024-09-29T12:33:32.904+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 22, in postgres_to_s3
+    cursor.execute('select * from orders where date <="20220501"')
+psycopg2.errors.UndefinedColumn: column "20220501" does not exist
+LINE 1: select * from orders where date <="20220501"
+                                          ^
+
+[2024-09-29T12:33:32.935+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_with_postgres_hooks_v01, task_id=postgres_to_s3, run_id=scheduled__2024-09-03T00:00:00+00:00, execution_date=20240903T000000, start_date=20240929T123332, end_date=20240929T123332
+[2024-09-29T12:33:32.960+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-29T12:33:32.965+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 806 for task postgres_to_s3 (column "20220501" does not exist
+LINE 1: select * from orders where date <="20220501"
+                                          ^
+; 18967)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 22, in postgres_to_s3
+    cursor.execute('select * from orders where date <="20220501"')
+psycopg2.errors.UndefinedColumn: column "20220501" does not exist
+LINE 1: select * from orders where date <="20220501"
+                                          ^
+
+[2024-09-29T12:33:32.997+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-09-29T12:33:33.017+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-09-29T12:34:22.588+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-29T12:34:22.615+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [queued]>
+[2024-09-29T12:34:22.628+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [queued]>
+[2024-09-29T12:34:22.629+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 6
+[2024-09-29T12:34:22.653+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): postgres_to_s3> on 2024-09-03 00:00:00+00:00
+[2024-09-29T12:34:22.662+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=19235) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-29T12:34:22.664+0000] {standard_task_runner.py:72} INFO - Started process 19238 to run task
+[2024-09-29T12:34:22.668+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_with_postgres_hooks_v01', 'postgres_to_s3', 'scheduled__2024-09-03T00:00:00+00:00', '--job-id', '823', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_postgres_hooks.py', '--cfg-path', '/tmp/tmpei6593kq']
+[2024-09-29T12:34:22.671+0000] {standard_task_runner.py:105} INFO - Job 823: Subtask postgres_to_s3
+[2024-09-29T12:34:22.690+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:34:22.814+0000] {task_command.py:467} INFO - Running <TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [running]> on host 6851fee35b72
+[2024-09-29T12:34:22.818+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:34:23.005+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='dag_with_postgres_hooks_v01' AIRFLOW_CTX_TASK_ID='postgres_to_s3' AIRFLOW_CTX_EXECUTION_DATE='2024-09-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-03T00:00:00+00:00'
+[2024-09-29T12:34:23.006+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-29T12:34:23.174+0000] {base.py:84} INFO - Retrieving connection 'postgres_localhost'
+[2024-09-29T12:34:23.227+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 22, in postgres_to_s3
+    cursor.execute('select * from orders where date <=20220501')
+psycopg2.errors.UndefinedFunction: operator does not exist: date <= integer
+LINE 1: select * from orders where date <=20220501
+                                        ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[2024-09-29T12:34:23.300+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_with_postgres_hooks_v01, task_id=postgres_to_s3, run_id=scheduled__2024-09-03T00:00:00+00:00, execution_date=20240903T000000, start_date=20240929T123422, end_date=20240929T123423
+[2024-09-29T12:34:23.334+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-29T12:34:23.349+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 823 for task postgres_to_s3 (operator does not exist: date <= integer
+LINE 1: select * from orders where date <=20220501
+                                        ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+; 19238)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 22, in postgres_to_s3
+    cursor.execute('select * from orders where date <=20220501')
+psycopg2.errors.UndefinedFunction: operator does not exist: date <= integer
+LINE 1: select * from orders where date <=20220501
+                                        ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[2024-09-29T12:34:23.379+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-09-29T12:34:23.480+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-29T12:34:23.484+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-09-29T12:36:03.987+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-29T12:36:04.001+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [queued]>
+[2024-09-29T12:36:04.011+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [queued]>
+[2024-09-29T12:36:04.013+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 6
+[2024-09-29T12:36:04.030+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): postgres_to_s3> on 2024-09-03 00:00:00+00:00
+[2024-09-29T12:36:04.040+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_with_postgres_hooks_v01', 'postgres_to_s3', 'scheduled__2024-09-03T00:00:00+00:00', '--job-id', '839', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_postgres_hooks.py', '--cfg-path', '/tmp/tmpblxahtq3']
+[2024-09-29T12:36:04.042+0000] {standard_task_runner.py:105} INFO - Job 839: Subtask postgres_to_s3
+[2024-09-29T12:36:04.046+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=19703) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-29T12:36:04.048+0000] {standard_task_runner.py:72} INFO - Started process 19708 to run task
+[2024-09-29T12:36:04.070+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:36:04.158+0000] {task_command.py:467} INFO - Running <TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [running]> on host 6851fee35b72
+[2024-09-29T12:36:04.159+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:36:04.305+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='dag_with_postgres_hooks_v01' AIRFLOW_CTX_TASK_ID='postgres_to_s3' AIRFLOW_CTX_EXECUTION_DATE='2024-09-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-03T00:00:00+00:00'
+[2024-09-29T12:36:04.312+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-29T12:36:04.361+0000] {base.py:84} INFO - Retrieving connection 'postgres_localhost'
+[2024-09-29T12:36:04.381+0000] {dag_with_postgres_hooks.py:29} INFO - Saved orders dat in text file get_rders.txt
+[2024-09-29T12:36:04.385+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-29T12:36:04.411+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-29T12:36:04.411+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_with_postgres_hooks_v01, task_id=postgres_to_s3, run_id=scheduled__2024-09-03T00:00:00+00:00, execution_date=20240903T000000, start_date=20240929T123604, end_date=20240929T123604
+[2024-09-29T12:36:04.453+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-29T12:36:04.482+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-09-29T12:41:14.266+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-29T12:41:14.294+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [queued]>
+[2024-09-29T12:41:14.302+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [queued]>
+[2024-09-29T12:41:14.302+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 6
+[2024-09-29T12:41:14.336+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): postgres_to_s3> on 2024-09-03 00:00:00+00:00
+[2024-09-29T12:41:14.357+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=21130) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-29T12:41:14.360+0000] {standard_task_runner.py:72} INFO - Started process 21138 to run task
+[2024-09-29T12:41:14.358+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_with_postgres_hooks_v01', 'postgres_to_s3', 'scheduled__2024-09-03T00:00:00+00:00', '--job-id', '868', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_postgres_hooks.py', '--cfg-path', '/tmp/tmp36bu_5w4']
+[2024-09-29T12:41:14.361+0000] {standard_task_runner.py:105} INFO - Job 868: Subtask postgres_to_s3
+[2024-09-29T12:41:14.396+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:41:14.435+0000] {task_command.py:467} INFO - Running <TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-03T00:00:00+00:00 [running]> on host 6851fee35b72
+[2024-09-29T12:41:14.439+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:41:14.560+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='dag_with_postgres_hooks_v01' AIRFLOW_CTX_TASK_ID='postgres_to_s3' AIRFLOW_CTX_EXECUTION_DATE='2024-09-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-03T00:00:00+00:00'
+[2024-09-29T12:41:14.562+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-29T12:41:14.599+0000] {base.py:84} INFO - Retrieving connection 'postgres_localhost'
+[2024-09-29T12:41:14.630+0000] {dag_with_postgres_hooks.py:29} INFO - Saved orders dat in text file get_rders.txt
+[2024-09-29T12:41:14.630+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-29T12:41:14.647+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-29T12:41:14.649+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_with_postgres_hooks_v01, task_id=postgres_to_s3, run_id=scheduled__2024-09-03T00:00:00+00:00, execution_date=20240903T000000, start_date=20240929T124114, end_date=20240929T124114
+[2024-09-29T12:41:14.677+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-29T12:41:14.706+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-29T12:41:14.710+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

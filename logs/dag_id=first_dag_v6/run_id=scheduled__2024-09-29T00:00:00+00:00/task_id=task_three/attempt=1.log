@@ -1,0 +1,24 @@
+[2024-09-30T10:31:44.921+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-30T10:31:44.968+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: first_dag_v6.task_three scheduled__2024-09-29T00:00:00+00:00 [queued]>
+[2024-09-30T10:31:44.990+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: first_dag_v6.task_three scheduled__2024-09-29T00:00:00+00:00 [queued]>
+[2024-09-30T10:31:44.991+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 6
+[2024-09-30T10:31:45.017+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): task_three> on 2024-09-29 00:00:00+00:00
+[2024-09-30T10:31:45.043+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=326) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-30T10:31:45.049+0000] {standard_task_runner.py:72} INFO - Started process 340 to run task
+[2024-09-30T10:31:45.046+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'first_dag_v6', 'task_three', 'scheduled__2024-09-29T00:00:00+00:00', '--job-id', '1230', '--raw', '--subdir', 'DAGS_FOLDER/first_dag.py', '--cfg-path', '/tmp/tmpynfs0e13']
+[2024-09-30T10:31:45.051+0000] {standard_task_runner.py:105} INFO - Job 1230: Subtask task_three
+[2024-09-30T10:31:45.076+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:31:45.136+0000] {task_command.py:467} INFO - Running <TaskInstance: first_dag_v6.task_three scheduled__2024-09-29T00:00:00+00:00 [running]> on host 6851fee35b72
+[2024-09-30T10:31:45.141+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-30T10:31:45.253+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='first_dag_v6' AIRFLOW_CTX_TASK_ID='task_three' AIRFLOW_CTX_EXECUTION_DATE='2024-09-29T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-29T00:00:00+00:00'
+[2024-09-30T10:31:45.256+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-30T10:31:45.338+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-09-30T10:31:45.342+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo hello earth, this will be run after task one.']
+[2024-09-30T10:31:45.389+0000] {subprocess.py:86} INFO - Output:
+[2024-09-30T10:31:45.431+0000] {subprocess.py:93} INFO - hello earth, this will be run after task one.
+[2024-09-30T10:31:45.438+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-09-30T10:31:45.481+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-30T10:31:45.484+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=first_dag_v6, task_id=task_three, run_id=scheduled__2024-09-29T00:00:00+00:00, execution_date=20240929T000000, start_date=20240930T103144, end_date=20240930T103145
+[2024-09-30T10:31:45.526+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-30T10:31:45.568+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-30T10:31:45.574+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

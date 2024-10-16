@@ -1,0 +1,44 @@
+[2024-09-29T12:36:07.349+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-29T12:36:07.404+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-17T00:00:00+00:00 [queued]>
+[2024-09-29T12:36:07.422+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-17T00:00:00+00:00 [queued]>
+[2024-09-29T12:36:07.423+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 6
+[2024-09-29T12:36:07.502+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): postgres_to_s3> on 2024-09-17 00:00:00+00:00
+[2024-09-29T12:36:07.516+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=19772) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-29T12:36:07.518+0000] {standard_task_runner.py:72} INFO - Started process 19783 to run task
+[2024-09-29T12:36:07.518+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_with_postgres_hooks_v01', 'postgres_to_s3', 'scheduled__2024-09-17T00:00:00+00:00', '--job-id', '853', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_postgres_hooks.py', '--cfg-path', '/tmp/tmpsdwbnid5']
+[2024-09-29T12:36:07.534+0000] {standard_task_runner.py:105} INFO - Job 853: Subtask postgres_to_s3
+[2024-09-29T12:36:07.567+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:36:07.635+0000] {task_command.py:467} INFO - Running <TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-17T00:00:00+00:00 [running]> on host 6851fee35b72
+[2024-09-29T12:36:07.637+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:36:07.739+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='dag_with_postgres_hooks_v01' AIRFLOW_CTX_TASK_ID='postgres_to_s3' AIRFLOW_CTX_EXECUTION_DATE='2024-09-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-17T00:00:00+00:00'
+[2024-09-29T12:36:07.741+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-29T12:36:07.766+0000] {base.py:84} INFO - Retrieving connection 'postgres_localhost'
+[2024-09-29T12:36:07.778+0000] {dag_with_postgres_hooks.py:29} INFO - Saved orders dat in text file get_rders.txt
+[2024-09-29T12:36:07.779+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-29T12:36:07.795+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-29T12:36:07.796+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_with_postgres_hooks_v01, task_id=postgres_to_s3, run_id=scheduled__2024-09-17T00:00:00+00:00, execution_date=20240917T000000, start_date=20240929T123607, end_date=20240929T123607
+[2024-09-29T12:36:07.876+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-29T12:36:07.908+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-29T12:36:07.912+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-09-29T12:41:16.681+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-29T12:41:16.714+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-17T00:00:00+00:00 [queued]>
+[2024-09-29T12:41:16.738+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-17T00:00:00+00:00 [queued]>
+[2024-09-29T12:41:16.742+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 6
+[2024-09-29T12:41:16.809+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): postgres_to_s3> on 2024-09-17 00:00:00+00:00
+[2024-09-29T12:41:16.825+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_with_postgres_hooks_v01', 'postgres_to_s3', 'scheduled__2024-09-17T00:00:00+00:00', '--job-id', '882', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_postgres_hooks.py', '--cfg-path', '/tmp/tmp5igmgqkq']
+[2024-09-29T12:41:16.828+0000] {standard_task_runner.py:105} INFO - Job 882: Subtask postgres_to_s3
+[2024-09-29T12:41:16.828+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=21172) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-29T12:41:16.830+0000] {standard_task_runner.py:72} INFO - Started process 21181 to run task
+[2024-09-29T12:41:16.888+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:41:16.997+0000] {task_command.py:467} INFO - Running <TaskInstance: dag_with_postgres_hooks_v01.postgres_to_s3 scheduled__2024-09-17T00:00:00+00:00 [running]> on host 6851fee35b72
+[2024-09-29T12:41:17.002+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:41:17.179+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='dag_with_postgres_hooks_v01' AIRFLOW_CTX_TASK_ID='postgres_to_s3' AIRFLOW_CTX_EXECUTION_DATE='2024-09-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-17T00:00:00+00:00'
+[2024-09-29T12:41:17.180+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-29T12:41:17.204+0000] {base.py:84} INFO - Retrieving connection 'postgres_localhost'
+[2024-09-29T12:41:17.221+0000] {dag_with_postgres_hooks.py:29} INFO - Saved orders dat in text file get_rders.txt
+[2024-09-29T12:41:17.226+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-29T12:41:17.234+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-29T12:41:17.235+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_with_postgres_hooks_v01, task_id=postgres_to_s3, run_id=scheduled__2024-09-17T00:00:00+00:00, execution_date=20240917T000000, start_date=20240929T124116, end_date=20240929T124117
+[2024-09-29T12:41:17.253+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-29T12:41:17.271+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-29T12:41:17.273+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

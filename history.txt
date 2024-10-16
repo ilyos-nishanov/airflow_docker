@@ -1,0 +1,26 @@
+docker build . --tag extending_airflow:latest
+docker-compose up -d --no-deps --build airflow-webserver airflow-scheduler
+docker ps
+docker-compose up -d --no-deps --build airflow-webserver airflow-scheduler
+docker build . --tag extending_airflow:latest
+docker-compose up -d --no-deps --build airflow-webserver airflow-scheduler
+docker build . --tag extending_airflow:latest
+docker-compose up -d --no-deps --build airflow-webserver airflow-scheduler
+history | grep docker
+history | grep docker | sort | uniq
+history | grep docker | uniq
+history | sed 's/.[ ]*.[0-9]*.[ ]*//' | uniq | grep -i "docker"
+psql -h localhost -p 5433 -U ilyosnishanov
+psql -h localhost -p 5432 -U postgres
+psql -h localhost -p 5432 -U ilyosnishanov
+docker exec -it <container id> bash
+
+#to start minio webserver
+docker run \
+   -p 9000:9000 \
+   -p 9001:9001 \
+   --name minio \
+   -v ~/minio/data:/data \
+   -e "MINIO_ROOT_USER=ROOTNAME" \
+   -e "MINIO_ROOT_PASSWORD=CHANGEME123" \
+   quay.io/minio/minio server /data --console-address ":9001"

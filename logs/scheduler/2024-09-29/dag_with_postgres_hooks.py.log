@@ -1,0 +1,909 @@
+[2024-09-29T12:28:21.440+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:28:21.443+0000] {processor.py:186} INFO - Started process (PID=17514) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:28:21.445+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:28:21.446+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:28:21.446+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:28:21.457+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:28:21.455+0000] {dagbag.py:386} ERROR - Failed to import: /opt/airflow/dags/dag_with_postgres_hooks.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 33, in <module>
+    with DAG(
+         ^^^^
+TypeError: DAG.__init__() got an unexpected keyword argument 'task_id'
+[2024-09-29T12:28:21.457+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:28:21.469+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.030 seconds
+[2024-09-29T12:28:31.787+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:28:31.793+0000] {processor.py:186} INFO - Started process (PID=17559) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:28:31.795+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:28:31.799+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:28:31.799+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:28:31.805+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:28:31.803+0000] {dagbag.py:386} ERROR - Failed to import: /opt/airflow/dags/dag_with_postgres_hooks.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 33, in <module>
+    with DAG(
+         ^^^^
+TypeError: DAG.__init__() got an unexpected keyword argument 'task_id'
+[2024-09-29T12:28:31.807+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:28:31.823+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.039 seconds
+[2024-09-29T12:28:42.223+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:28:42.229+0000] {processor.py:186} INFO - Started process (PID=17604) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:28:42.232+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:28:42.234+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:28:42.234+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:28:42.241+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:28:42.239+0000] {dagbag.py:386} ERROR - Failed to import: /opt/airflow/dags/dag_with_postgres_hooks.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 33, in <module>
+    with DAG(
+         ^^^^
+TypeError: DAG.__init__() got an unexpected keyword argument 'task_id'
+[2024-09-29T12:28:42.241+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:28:42.255+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.034 seconds
+[2024-09-29T12:28:52.758+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:28:52.767+0000] {processor.py:186} INFO - Started process (PID=17649) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:28:52.769+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:28:52.772+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:28:52.772+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:28:52.780+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:28:52.778+0000] {dagbag.py:386} ERROR - Failed to import: /opt/airflow/dags/dag_with_postgres_hooks.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 33, in <module>
+    with DAG(
+         ^^^^
+TypeError: DAG.__init__() got an unexpected keyword argument 'task_id'
+[2024-09-29T12:28:52.783+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:28:52.800+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.045 seconds
+[2024-09-29T12:29:03.205+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:29:03.211+0000] {processor.py:186} INFO - Started process (PID=17694) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:03.214+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:29:03.217+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:03.217+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:03.224+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:03.221+0000] {dagbag.py:386} ERROR - Failed to import: /opt/airflow/dags/dag_with_postgres_hooks.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 33, in <module>
+    with DAG(
+         ^^^^
+TypeError: DAG.__init__() got an unexpected keyword argument 'task_id'
+[2024-09-29T12:29:03.225+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:03.250+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.046 seconds
+[2024-09-29T12:29:13.749+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:29:13.753+0000] {processor.py:186} INFO - Started process (PID=17739) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:13.755+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:29:13.758+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:13.758+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:13.765+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:13.763+0000] {dagbag.py:386} ERROR - Failed to import: /opt/airflow/dags/dag_with_postgres_hooks.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_with_postgres_hooks.py", line 33, in <module>
+    with DAG(
+         ^^^^
+TypeError: DAG.__init__() got an unexpected keyword argument 'task_id'
+[2024-09-29T12:29:13.766+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:13.783+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.037 seconds
+[2024-09-29T12:29:17.121+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:29:17.130+0000] {processor.py:186} INFO - Started process (PID=17774) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:17.131+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:29:17.133+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:17.133+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:17.148+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:17.264+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:17.263+0000] {override.py:1900} INFO - Created Permission View: can read on DAG:dag_with_postgres_hooks_v01
+[2024-09-29T12:29:17.267+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:17.267+0000] {override.py:1900} INFO - Created Permission View: can edit on DAG:dag_with_postgres_hooks_v01
+[2024-09-29T12:29:17.269+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:17.269+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG:dag_with_postgres_hooks_v01
+[2024-09-29T12:29:17.271+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:17.271+0000] {override.py:1900} INFO - Created Permission View: can read on DAG Run:dag_with_postgres_hooks_v01
+[2024-09-29T12:29:17.273+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:17.273+0000] {override.py:1900} INFO - Created Permission View: can create on DAG Run:dag_with_postgres_hooks_v01
+[2024-09-29T12:29:17.275+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:17.275+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG Run:dag_with_postgres_hooks_v01
+[2024-09-29T12:29:17.277+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:17.277+0000] {override.py:1900} INFO - Created Permission View: menu access on DAG Run:dag_with_postgres_hooks_v01
+[2024-09-29T12:29:17.277+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:17.277+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:29:17.284+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:17.284+0000] {dag.py:3252} INFO - Creating ORM DAG for dag_with_postgres_hooks_v01
+[2024-09-29T12:29:17.289+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:17.289+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:29:17.297+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.181 seconds
+[2024-09-29T12:29:27.752+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:29:27.768+0000] {processor.py:186} INFO - Started process (PID=17824) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:27.769+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:29:27.773+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:27.773+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:27.816+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:27.842+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:27.841+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:29:27.890+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:27.890+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-08 00:00:00+00:00, run_after=2024-09-09 00:00:00+00:00
+[2024-09-29T12:29:27.956+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.209 seconds
+[2024-09-29T12:29:38.231+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:29:38.240+0000] {processor.py:186} INFO - Started process (PID=17912) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:38.241+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:29:38.244+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:38.243+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:38.256+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:38.269+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:38.268+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:29:38.294+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.067 seconds
+[2024-09-29T12:29:48.752+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:29:48.766+0000] {processor.py:186} INFO - Started process (PID=17957) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:48.767+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:29:48.773+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:48.773+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:48.799+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:48.832+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:48.832+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:29:48.881+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.142 seconds
+[2024-09-29T12:29:50.879+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:29:50.892+0000] {processor.py:186} INFO - Started process (PID=17962) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:50.894+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:29:50.899+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:50.898+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:50.920+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:29:50.969+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:29:50.969+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:29:51.016+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.143 seconds
+[2024-09-29T12:30:01.368+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:30:01.374+0000] {processor.py:186} INFO - Started process (PID=18007) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:01.375+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:30:01.377+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:01.376+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:01.390+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:01.415+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:01.414+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:30:01.439+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.074 seconds
+[2024-09-29T12:30:11.820+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:30:11.831+0000] {processor.py:186} INFO - Started process (PID=18052) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:11.831+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:30:11.835+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:11.835+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:11.850+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:11.872+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:11.871+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:30:11.893+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.078 seconds
+[2024-09-29T12:30:22.280+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:30:22.289+0000] {processor.py:186} INFO - Started process (PID=18097) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:22.290+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:30:22.293+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:22.292+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:22.307+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:22.441+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:22.441+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:30:22.449+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:22.449+0000] {dag.py:3252} INFO - Creating ORM DAG for dag_with_postgres_hooks_v01
+[2024-09-29T12:30:22.457+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:22.457+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:30:22.467+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.192 seconds
+[2024-09-29T12:30:32.714+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:30:32.726+0000] {processor.py:186} INFO - Started process (PID=18142) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:32.727+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:30:32.738+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:32.738+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:32.757+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:32.771+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:32.771+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:30:32.791+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:32.791+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:30:32.813+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.104 seconds
+[2024-09-29T12:30:43.304+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:30:43.313+0000] {processor.py:186} INFO - Started process (PID=18235) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:43.314+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:30:43.317+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:43.317+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:43.335+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:43.358+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:43.358+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:30:43.387+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.090 seconds
+[2024-09-29T12:30:53.929+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:30:53.940+0000] {processor.py:186} INFO - Started process (PID=18280) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:53.941+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:30:53.945+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:53.944+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:53.960+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:30:53.989+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:30:53.988+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:30:54.029+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.107 seconds
+[2024-09-29T12:31:04.503+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:31:04.526+0000] {processor.py:186} INFO - Started process (PID=18325) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:04.527+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:31:04.535+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:04.534+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:04.554+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:04.580+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:04.580+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:31:04.621+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.125 seconds
+[2024-09-29T12:31:15.030+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:31:15.040+0000] {processor.py:186} INFO - Started process (PID=18370) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:15.040+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:31:15.043+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:15.043+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:15.058+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:15.083+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:15.083+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:31:15.129+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.104 seconds
+[2024-09-29T12:31:17.169+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:31:17.176+0000] {processor.py:186} INFO - Started process (PID=18375) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:17.176+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:31:17.178+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:17.178+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:17.187+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:17.205+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:17.205+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:31:17.228+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.062 seconds
+[2024-09-29T12:31:27.657+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:31:27.678+0000] {processor.py:186} INFO - Started process (PID=18420) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:27.679+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:31:27.688+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:27.688+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:27.704+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:27.731+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:27.731+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:31:27.773+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.122 seconds
+[2024-09-29T12:31:38.138+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:31:38.148+0000] {processor.py:186} INFO - Started process (PID=18465) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:38.149+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:31:38.152+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:38.152+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:38.170+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:38.205+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:38.205+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:31:38.242+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.108 seconds
+[2024-09-29T12:31:48.674+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:31:48.689+0000] {processor.py:186} INFO - Started process (PID=18510) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:48.690+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:31:48.694+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:48.693+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:48.711+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:48.736+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:48.736+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:31:48.781+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.115 seconds
+[2024-09-29T12:31:59.275+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:31:59.304+0000] {processor.py:186} INFO - Started process (PID=18555) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:59.305+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:31:59.309+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:59.309+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:59.323+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:31:59.419+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:59.419+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:31:59.427+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:59.427+0000] {dag.py:3252} INFO - Creating ORM DAG for dag_with_postgres_hooks_v01
+[2024-09-29T12:31:59.433+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:31:59.433+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:31:59.442+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.178 seconds
+[2024-09-29T12:32:09.696+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:32:09.705+0000] {processor.py:186} INFO - Started process (PID=18600) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:09.705+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:32:09.708+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:09.707+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:09.719+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:09.729+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:09.729+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:32:09.745+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:09.745+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:32:09.753+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.060 seconds
+[2024-09-29T12:32:20.111+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:32:20.118+0000] {processor.py:186} INFO - Started process (PID=18645) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:20.119+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:32:20.121+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:20.121+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:20.131+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:20.139+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:20.139+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:32:20.155+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:20.155+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:32:20.164+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.057 seconds
+[2024-09-29T12:32:30.516+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:32:30.528+0000] {processor.py:186} INFO - Started process (PID=18690) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:30.528+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:32:30.531+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:30.531+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:30.544+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:30.573+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:30.573+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:32:30.590+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:30.590+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:32:30.599+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.089 seconds
+[2024-09-29T12:32:40.953+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:32:40.960+0000] {processor.py:186} INFO - Started process (PID=18735) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:40.960+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:32:40.962+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:40.962+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:40.973+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:40.988+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:40.988+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:32:41.000+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:41.000+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:32:41.008+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.059 seconds
+[2024-09-29T12:32:51.385+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:32:51.392+0000] {processor.py:186} INFO - Started process (PID=18780) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:51.393+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:32:51.395+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:51.395+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:51.404+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:32:51.420+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:51.420+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:32:51.433+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:32:51.433+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:32:51.441+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.059 seconds
+[2024-09-29T12:33:01.823+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:33:01.832+0000] {processor.py:186} INFO - Started process (PID=18825) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:01.833+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:33:01.835+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:01.835+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:01.845+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:01.861+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:01.861+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:33:01.874+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:01.874+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:33:01.882+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.064 seconds
+[2024-09-29T12:33:12.221+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:33:12.231+0000] {processor.py:186} INFO - Started process (PID=18870) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:12.231+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:33:12.235+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:12.234+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:12.249+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:12.271+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:12.271+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:33:12.285+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:12.285+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:33:12.294+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.079 seconds
+[2024-09-29T12:33:22.692+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:33:22.701+0000] {processor.py:186} INFO - Started process (PID=18915) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:22.702+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:33:22.705+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:22.705+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:22.719+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:22.740+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:22.740+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:33:22.755+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:22.755+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:33:22.765+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.078 seconds
+[2024-09-29T12:33:33.203+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:33:33.219+0000] {processor.py:186} INFO - Started process (PID=18986) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:33.222+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:33:33.227+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:33.227+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:33.253+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:33.282+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:33.282+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:33:33.308+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:33.308+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-13 00:00:00+00:00, run_after=2024-09-14 00:00:00+00:00
+[2024-09-29T12:33:33.326+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.138 seconds
+[2024-09-29T12:33:43.796+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:33:43.820+0000] {processor.py:186} INFO - Started process (PID=19053) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:43.821+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:33:43.825+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:43.824+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:43.841+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:43.881+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:43.881+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:33:43.911+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.122 seconds
+[2024-09-29T12:33:54.299+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:33:54.310+0000] {processor.py:186} INFO - Started process (PID=19098) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:54.310+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:33:54.313+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:54.313+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:54.328+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:33:54.353+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:33:54.353+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:33:54.377+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.084 seconds
+[2024-09-29T12:34:03.877+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:34:03.885+0000] {processor.py:186} INFO - Started process (PID=19143) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:03.886+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:34:03.890+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:03.889+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:03.914+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:03.942+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:03.942+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:34:03.987+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.114 seconds
+[2024-09-29T12:34:14.501+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:34:14.507+0000] {processor.py:186} INFO - Started process (PID=19188) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:14.508+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:34:14.511+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:14.511+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:14.522+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:14.625+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:14.625+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:34:14.633+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:14.633+0000] {dag.py:3252} INFO - Creating ORM DAG for dag_with_postgres_hooks_v01
+[2024-09-29T12:34:14.639+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:14.639+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:34:14.647+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.148 seconds
+[2024-09-29T12:34:25.219+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:34:25.237+0000] {processor.py:186} INFO - Started process (PID=19281) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:25.239+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:34:25.256+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:25.256+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:25.271+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:25.285+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:25.285+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:34:25.320+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.109 seconds
+[2024-09-29T12:34:35.831+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:34:35.843+0000] {processor.py:186} INFO - Started process (PID=19326) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:35.843+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:34:35.851+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:35.851+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:35.868+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:35.882+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:35.882+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:34:35.912+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.087 seconds
+[2024-09-29T12:34:46.288+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:34:46.297+0000] {processor.py:186} INFO - Started process (PID=19371) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:46.298+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:34:46.303+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:46.303+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:46.325+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:46.349+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:46.349+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:34:46.376+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.091 seconds
+[2024-09-29T12:34:56.718+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:34:56.724+0000] {processor.py:186} INFO - Started process (PID=19416) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:56.725+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:34:56.727+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:56.727+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:56.736+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:34:56.753+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:34:56.753+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:34:56.778+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.063 seconds
+[2024-09-29T12:35:07.209+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:35:07.222+0000] {processor.py:186} INFO - Started process (PID=19461) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:07.223+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:35:07.227+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:07.227+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:07.245+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:07.270+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:07.270+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:35:07.299+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.095 seconds
+[2024-09-29T12:35:17.766+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:35:17.776+0000] {processor.py:186} INFO - Started process (PID=19506) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:17.776+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:35:17.780+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:17.780+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:17.794+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:17.817+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:17.816+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:35:17.844+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.084 seconds
+[2024-09-29T12:35:28.189+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:35:28.201+0000] {processor.py:186} INFO - Started process (PID=19551) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:28.203+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:35:28.212+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:28.212+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:28.223+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:28.242+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:28.242+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:35:28.276+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.090 seconds
+[2024-09-29T12:35:38.673+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:35:38.684+0000] {processor.py:186} INFO - Started process (PID=19596) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:38.684+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:35:38.688+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:38.688+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:38.709+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:38.742+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:38.742+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:35:38.776+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.109 seconds
+[2024-09-29T12:35:49.601+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:35:49.610+0000] {processor.py:186} INFO - Started process (PID=19641) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:49.611+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:35:49.614+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:49.614+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:49.643+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:49.815+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:49.814+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:35:49.834+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:49.834+0000] {dag.py:3252} INFO - Creating ORM DAG for dag_with_postgres_hooks_v01
+[2024-09-29T12:35:49.841+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:49.841+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:35:49.853+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.257 seconds
+[2024-09-29T12:35:57.092+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:35:57.105+0000] {processor.py:186} INFO - Started process (PID=19686) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:57.106+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:35:57.110+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:57.110+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:57.127+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:35:57.139+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:57.139+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:35:57.162+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:35:57.162+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:35:57.173+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.087 seconds
+[2024-09-29T12:36:07.916+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:36:07.925+0000] {processor.py:186} INFO - Started process (PID=19791) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:07.926+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:36:07.931+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:07.931+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:08.035+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:08.058+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:08.057+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:36:08.136+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:08.135+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-21 00:00:00+00:00, run_after=2024-09-22 00:00:00+00:00
+[2024-09-29T12:36:08.190+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.279 seconds
+[2024-09-29T12:36:18.294+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:36:18.306+0000] {processor.py:186} INFO - Started process (PID=19860) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:18.307+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:36:18.312+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:18.312+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:18.340+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:18.361+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:18.361+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:36:18.381+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:18.381+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:36:18.392+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.104 seconds
+[2024-09-29T12:36:28.811+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:36:28.821+0000] {processor.py:186} INFO - Started process (PID=19905) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:28.822+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:36:28.826+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:28.826+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:28.840+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:28.859+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:28.859+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:36:28.872+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:28.872+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:36:28.882+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.077 seconds
+[2024-09-29T12:36:39.284+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:36:39.295+0000] {processor.py:186} INFO - Started process (PID=19950) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:39.295+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:36:39.300+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:39.299+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:39.314+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:39.334+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:39.334+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:36:39.348+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:39.348+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:36:39.357+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.078 seconds
+[2024-09-29T12:36:49.783+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:36:49.789+0000] {processor.py:186} INFO - Started process (PID=19995) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:49.790+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:36:49.793+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:49.793+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:49.803+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:36:49.821+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:49.821+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:36:49.835+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:36:49.834+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:36:49.844+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.064 seconds
+[2024-09-29T12:37:00.162+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:37:00.170+0000] {processor.py:186} INFO - Started process (PID=20040) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:00.171+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:37:00.173+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:00.173+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:00.183+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:00.201+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:00.201+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:37:00.215+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:00.215+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:37:00.223+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.064 seconds
+[2024-09-29T12:37:10.683+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:37:10.695+0000] {processor.py:186} INFO - Started process (PID=20088) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:10.695+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:37:10.699+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:10.699+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:10.730+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:10.753+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:10.753+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:37:10.771+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:10.770+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:37:10.780+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.104 seconds
+[2024-09-29T12:37:21.200+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:37:21.210+0000] {processor.py:186} INFO - Started process (PID=20133) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:21.211+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:37:21.214+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:21.214+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:21.229+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:21.251+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:21.251+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:37:21.266+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:21.266+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:37:21.275+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.081 seconds
+[2024-09-29T12:37:31.676+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:37:31.682+0000] {processor.py:186} INFO - Started process (PID=20178) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:31.682+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:37:31.684+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:31.684+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:31.693+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:31.710+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:31.709+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:37:31.722+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:31.722+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:37:31.730+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.057 seconds
+[2024-09-29T12:37:42.134+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:37:42.142+0000] {processor.py:186} INFO - Started process (PID=20223) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:42.143+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:37:42.145+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:42.145+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:42.156+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:42.174+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:42.173+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:37:42.187+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:42.187+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:37:42.195+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.064 seconds
+[2024-09-29T12:37:52.631+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:37:52.645+0000] {processor.py:186} INFO - Started process (PID=20268) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:52.646+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:37:52.654+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:52.653+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:52.675+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:37:52.702+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:52.701+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:37:52.718+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:37:52.718+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:37:52.729+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.103 seconds
+[2024-09-29T12:38:03.128+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:38:03.136+0000] {processor.py:186} INFO - Started process (PID=20313) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:03.137+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:38:03.139+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:03.139+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:03.150+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:03.169+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:03.169+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:38:03.182+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:03.182+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:38:03.192+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.068 seconds
+[2024-09-29T12:38:13.551+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:38:13.556+0000] {processor.py:186} INFO - Started process (PID=20358) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:13.557+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:38:13.559+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:13.559+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:13.567+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:13.585+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:13.585+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:38:13.602+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:13.602+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:38:13.612+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.063 seconds
+[2024-09-29T12:38:24.023+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:38:24.034+0000] {processor.py:186} INFO - Started process (PID=20403) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:24.034+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:38:24.038+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:24.038+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:24.052+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:24.072+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:24.072+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:38:24.088+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:24.088+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:38:24.097+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.079 seconds
+[2024-09-29T12:38:34.419+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:38:34.429+0000] {processor.py:186} INFO - Started process (PID=20448) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:34.430+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:38:34.434+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:34.433+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:34.447+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:34.467+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:34.467+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:38:34.482+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:34.482+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:38:34.491+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.076 seconds
+[2024-09-29T12:38:44.882+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:38:44.890+0000] {processor.py:186} INFO - Started process (PID=20493) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:44.892+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:38:44.894+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:44.894+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:44.907+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:44.925+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:44.925+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:38:44.939+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:44.939+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:38:44.948+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.071 seconds
+[2024-09-29T12:38:55.352+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:38:55.359+0000] {processor.py:186} INFO - Started process (PID=20538) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:55.360+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:38:55.362+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:55.362+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:55.371+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:38:55.387+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:55.387+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:38:55.400+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:38:55.400+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:38:55.408+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.060 seconds
+[2024-09-29T12:39:05.713+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:39:05.721+0000] {processor.py:186} INFO - Started process (PID=20583) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:05.722+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:39:05.724+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:05.724+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:05.734+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:05.751+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:05.751+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:39:05.765+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:05.765+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:39:05.773+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.064 seconds
+[2024-09-29T12:39:16.119+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:39:16.125+0000] {processor.py:186} INFO - Started process (PID=20628) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:16.126+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:39:16.128+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:16.128+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:16.137+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:16.154+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:16.154+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:39:16.166+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:16.166+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:39:16.174+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.058 seconds
+[2024-09-29T12:39:26.768+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:39:26.775+0000] {processor.py:186} INFO - Started process (PID=20673) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:26.776+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:39:26.778+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:26.778+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:26.788+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:26.805+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:26.805+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:39:26.818+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:26.818+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:39:26.826+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.062 seconds
+[2024-09-29T12:39:37.201+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:39:37.210+0000] {processor.py:186} INFO - Started process (PID=20718) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:37.211+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:39:37.213+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:37.212+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:37.223+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:37.242+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:37.241+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:39:37.256+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:37.256+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:39:37.264+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.067 seconds
+[2024-09-29T12:39:47.686+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:39:47.694+0000] {processor.py:186} INFO - Started process (PID=20763) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:47.697+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:39:47.700+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:47.699+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:47.711+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:47.731+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:47.730+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:39:47.743+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:47.743+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:39:47.751+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.069 seconds
+[2024-09-29T12:39:58.241+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:39:58.247+0000] {processor.py:186} INFO - Started process (PID=20808) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:58.247+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:39:58.249+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:58.249+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:58.257+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:39:58.281+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:58.280+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:39:58.296+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:39:58.296+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:39:58.306+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.067 seconds
+[2024-09-29T12:40:08.717+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:40:08.725+0000] {processor.py:186} INFO - Started process (PID=20853) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:08.725+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:40:08.727+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:08.727+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:08.738+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:08.758+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:08.758+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:40:08.772+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:08.772+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:40:08.781+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.067 seconds
+[2024-09-29T12:40:19.150+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:40:19.159+0000] {processor.py:186} INFO - Started process (PID=20898) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:19.160+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:40:19.162+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:19.162+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:19.173+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:19.194+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:19.194+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:40:19.207+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:19.207+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:40:19.215+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.068 seconds
+[2024-09-29T12:40:29.564+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:40:29.573+0000] {processor.py:186} INFO - Started process (PID=20943) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:29.573+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:40:29.576+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:29.576+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:29.587+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:29.608+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:29.607+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:40:29.623+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:29.623+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:40:29.631+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.071 seconds
+[2024-09-29T12:40:40.063+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:40:40.071+0000] {processor.py:186} INFO - Started process (PID=20988) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:40.072+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:40:40.075+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:40.074+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:40.088+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:40.108+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:40.108+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:40:40.121+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:40.121+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:40:40.139+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.079 seconds
+[2024-09-29T12:40:50.552+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:40:50.559+0000] {processor.py:186} INFO - Started process (PID=21033) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:50.560+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:40:50.562+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:50.561+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:50.572+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:40:50.639+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:50.639+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:40:50.645+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:50.645+0000] {dag.py:3252} INFO - Creating ORM DAG for dag_with_postgres_hooks_v01
+[2024-09-29T12:40:50.649+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:40:50.649+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:40:50.660+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.111 seconds
+[2024-09-29T12:41:00.986+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:41:00.995+0000] {processor.py:186} INFO - Started process (PID=21078) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:00.995+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:41:00.999+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:00.999+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:01.012+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:01.023+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:01.022+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:41:01.037+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:01.037+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:41:01.045+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.063 seconds
+[2024-09-29T12:41:11.491+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:41:11.502+0000] {processor.py:186} INFO - Started process (PID=21123) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:11.503+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:41:11.507+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:11.507+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:11.523+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:11.559+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:11.559+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:41:11.582+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:11.582+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-02 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-29T12:41:11.593+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.112 seconds
+[2024-09-29T12:41:22.149+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:41:22.157+0000] {processor.py:186} INFO - Started process (PID=21252) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:22.157+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:41:22.160+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:22.160+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:22.186+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:22.207+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:22.207+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:41:22.223+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:22.223+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:41:22.233+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.088 seconds
+[2024-09-29T12:41:32.670+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:41:32.678+0000] {processor.py:186} INFO - Started process (PID=21297) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:32.679+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:41:32.682+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:32.682+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:32.697+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:32.715+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:32.715+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:41:32.728+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:32.728+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:41:32.737+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.071 seconds
+[2024-09-29T12:41:43.245+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:41:43.256+0000] {processor.py:186} INFO - Started process (PID=21342) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:43.256+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:41:43.259+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:43.259+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:43.270+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:43.291+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:43.291+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:41:43.313+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:43.313+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:41:43.322+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.082 seconds
+[2024-09-29T12:41:53.737+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:41:53.747+0000] {processor.py:186} INFO - Started process (PID=21387) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:53.747+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:41:53.750+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:53.750+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:53.762+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:41:53.783+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:53.783+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:41:53.799+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:41:53.799+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:41:53.808+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.075 seconds
+[2024-09-29T12:42:04.180+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:42:04.188+0000] {processor.py:186} INFO - Started process (PID=21432) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:04.189+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:42:04.191+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:04.191+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:04.201+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:04.220+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:04.219+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:42:04.233+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:04.233+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:42:04.242+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.065 seconds
+[2024-09-29T12:42:14.641+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:42:14.650+0000] {processor.py:186} INFO - Started process (PID=21477) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:14.650+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:42:14.653+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:14.653+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:14.663+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v01' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:14.682+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:14.682+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:42:14.696+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:14.696+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v01 to 2024-09-29 00:00:00+00:00, run_after=2024-09-30 00:00:00+00:00
+[2024-09-29T12:42:14.705+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.068 seconds
+[2024-09-29T12:42:25.046+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:42:25.054+0000] {processor.py:186} INFO - Started process (PID=21522) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:25.054+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:42:25.056+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:25.056+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:25.069+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:25.137+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:25.137+0000] {override.py:1900} INFO - Created Permission View: can read on DAG:dag_with_postgres_hooks_v04
+[2024-09-29T12:42:25.141+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:25.141+0000] {override.py:1900} INFO - Created Permission View: can edit on DAG:dag_with_postgres_hooks_v04
+[2024-09-29T12:42:25.144+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:25.144+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG:dag_with_postgres_hooks_v04
+[2024-09-29T12:42:25.146+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:25.145+0000] {override.py:1900} INFO - Created Permission View: can read on DAG Run:dag_with_postgres_hooks_v04
+[2024-09-29T12:42:25.147+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:25.147+0000] {override.py:1900} INFO - Created Permission View: can create on DAG Run:dag_with_postgres_hooks_v04
+[2024-09-29T12:42:25.149+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:25.149+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG Run:dag_with_postgres_hooks_v04
+[2024-09-29T12:42:25.151+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:25.151+0000] {override.py:1900} INFO - Created Permission View: menu access on DAG Run:dag_with_postgres_hooks_v04
+[2024-09-29T12:42:25.151+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:25.151+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:42:25.156+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:25.156+0000] {dag.py:3252} INFO - Creating ORM DAG for dag_with_postgres_hooks_v04
+[2024-09-29T12:42:25.161+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:25.161+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-04-30 00:00:00+00:00, run_after=2022-05-01 00:00:00+00:00
+[2024-09-29T12:42:25.168+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.126 seconds
+[2024-09-29T12:42:35.593+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:42:35.599+0000] {processor.py:186} INFO - Started process (PID=21567) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:35.600+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:42:35.602+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:35.601+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:35.611+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:35.622+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:35.621+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:42:35.636+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:35.636+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-04-30 00:00:00+00:00, run_after=2022-05-01 00:00:00+00:00
+[2024-09-29T12:42:35.645+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.056 seconds
+[2024-09-29T12:42:46.502+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:42:46.581+0000] {processor.py:186} INFO - Started process (PID=21636) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:46.588+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:42:46.603+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:46.603+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:46.756+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:42:46.846+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:42:46.845+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:42:47.208+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.715 seconds
+[2024-09-29T12:43:03.193+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:43:03.272+0000] {processor.py:186} INFO - Started process (PID=21683) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:43:03.277+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:43:03.311+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:43:03.310+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:43:03.506+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:43:03.830+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:43:03.817+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:43:04.314+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 1.216 seconds
+[2024-09-29T12:43:17.736+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:43:18.100+0000] {processor.py:186} INFO - Started process (PID=21773) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:43:18.112+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:43:18.216+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:43:18.216+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:43:18.687+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:43:19.290+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:43:19.289+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:43:20.125+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 2.485 seconds
+[2024-09-29T12:43:38.168+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:43:38.239+0000] {processor.py:186} INFO - Started process (PID=21855) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:43:38.257+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:43:38.319+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:43:38.317+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:43:38.404+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:43:38.715+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:43:38.714+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:43:39.101+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:43:39.095+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-05-31 00:00:00+00:00, run_after=2022-06-01 00:00:00+00:00
+[2024-09-29T12:43:39.537+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 1.400 seconds
+[2024-09-29T12:43:50.161+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:43:50.304+0000] {processor.py:186} INFO - Started process (PID=21931) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:43:50.311+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:43:50.320+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:43:50.319+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:43:50.522+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:43:50.887+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:43:50.886+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:43:51.302+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 1.181 seconds
+[2024-09-29T12:44:05.617+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:44:06.030+0000] {processor.py:186} INFO - Started process (PID=22010) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:06.065+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:44:06.200+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:44:06.194+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:06.757+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:07.746+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:44:07.731+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:44:08.388+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 3.107 seconds
+[2024-09-29T12:44:18.892+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:44:19.065+0000] {processor.py:186} INFO - Started process (PID=22110) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:19.090+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:44:19.141+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:44:19.106+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:19.268+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:19.496+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:44:19.495+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:44:19.822+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.944 seconds
+[2024-09-29T12:44:30.818+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:44:30.831+0000] {processor.py:186} INFO - Started process (PID=22212) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:30.836+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:44:30.839+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:44:30.839+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:30.873+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:30.900+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:44:30.899+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:44:30.920+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:44:30.920+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-07-02 00:00:00+00:00, run_after=2022-07-03 00:00:00+00:00
+[2024-09-29T12:44:30.942+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.130 seconds
+[2024-09-29T12:44:41.134+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:44:41.271+0000] {processor.py:186} INFO - Started process (PID=22305) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:41.298+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:44:41.315+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:44:41.315+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:41.504+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:41.619+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:44:41.618+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:44:41.718+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.586 seconds
+[2024-09-29T12:44:52.020+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:44:52.057+0000] {processor.py:186} INFO - Started process (PID=22403) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:52.060+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:44:52.063+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:44:52.062+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:52.154+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:44:52.286+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:44:52.286+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:44:52.790+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:44:52.789+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-08-02 00:00:00+00:00, run_after=2022-08-03 00:00:00+00:00
+[2024-09-29T12:44:52.976+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.993 seconds
+[2024-09-29T12:45:02.524+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:45:02.536+0000] {processor.py:186} INFO - Started process (PID=22497) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:02.538+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:45:02.543+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:02.543+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:02.571+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:02.602+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:02.601+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:45:02.625+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:02.625+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-08-03 00:00:00+00:00, run_after=2022-08-04 00:00:00+00:00
+[2024-09-29T12:45:02.642+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.122 seconds
+[2024-09-29T12:45:13.415+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:45:13.434+0000] {processor.py:186} INFO - Started process (PID=22622) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:13.436+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:45:13.437+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:13.437+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:13.458+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:13.493+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:13.493+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:45:13.524+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:13.524+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-08-19 00:00:00+00:00, run_after=2022-08-20 00:00:00+00:00
+[2024-09-29T12:45:13.538+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.141 seconds
+[2024-09-29T12:45:24.082+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:45:24.164+0000] {processor.py:186} INFO - Started process (PID=22761) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:24.166+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:45:24.169+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:24.169+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:24.327+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:24.522+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:24.521+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:45:24.593+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:24.592+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-09-16 00:00:00+00:00, run_after=2022-09-17 00:00:00+00:00
+[2024-09-29T12:45:24.647+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.614 seconds
+[2024-09-29T12:45:35.702+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:45:35.778+0000] {processor.py:186} INFO - Started process (PID=22886) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:35.786+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:45:35.809+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:35.800+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:35.910+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:36.047+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:36.046+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:45:36.193+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:36.193+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-10-02 00:00:00+00:00, run_after=2022-10-03 00:00:00+00:00
+[2024-09-29T12:45:36.286+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.629 seconds
+[2024-09-29T12:45:47.719+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:45:47.780+0000] {processor.py:186} INFO - Started process (PID=23033) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:47.790+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:45:47.791+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:47.791+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:47.933+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:48.170+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:48.169+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:45:48.364+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:48.363+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-10-20 00:00:00+00:00, run_after=2022-10-21 00:00:00+00:00
+[2024-09-29T12:45:48.726+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 1.034 seconds
+[2024-09-29T12:45:59.059+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:45:59.096+0000] {processor.py:186} INFO - Started process (PID=23178) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:59.100+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:45:59.107+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:59.103+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:59.171+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:45:59.325+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:59.325+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:45:59.434+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:45:59.434+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-11-06 00:00:00+00:00, run_after=2022-11-07 00:00:00+00:00
+[2024-09-29T12:45:59.473+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.422 seconds
+[2024-09-29T12:46:09.658+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:46:09.674+0000] {processor.py:186} INFO - Started process (PID=23320) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:46:09.677+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:46:09.678+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:46:09.678+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:46:09.696+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:46:09.731+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:46:09.731+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:46:09.766+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:46:09.766+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-11-22 00:00:00+00:00, run_after=2022-11-23 00:00:00+00:00
+[2024-09-29T12:46:09.779+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.135 seconds
+[2024-09-29T12:46:20.420+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:46:20.428+0000] {processor.py:186} INFO - Started process (PID=23452) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:46:20.429+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:46:20.430+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:46:20.430+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:46:20.442+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:46:20.464+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:46:20.464+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:46:20.484+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:46:20.484+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-12-09 00:00:00+00:00, run_after=2022-12-10 00:00:00+00:00
+[2024-09-29T12:46:20.497+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.082 seconds
+[2024-09-29T12:49:11.897+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:49:11.961+0000] {processor.py:186} INFO - Started process (PID=181) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:11.967+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:49:12.008+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:12.000+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:12.055+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:12.659+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:12.659+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:49:12.791+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:12.791+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-12-24 00:00:00+00:00, run_after=2022-12-25 00:00:00+00:00
+[2024-09-29T12:49:12.880+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.987 seconds
+[2024-09-29T12:49:23.246+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:49:23.256+0000] {processor.py:186} INFO - Started process (PID=294) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:23.257+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:49:23.261+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:23.261+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:23.274+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:23.298+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:23.298+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:49:23.318+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:23.318+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2022-12-28 00:00:00+00:00, run_after=2022-12-29 00:00:00+00:00
+[2024-09-29T12:49:23.336+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.095 seconds
+[2024-09-29T12:49:33.588+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:49:33.615+0000] {processor.py:186} INFO - Started process (PID=427) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:33.618+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:49:33.629+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:33.629+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:33.699+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:33.773+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:33.773+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:49:33.861+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:33.861+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2023-01-24 00:00:00+00:00, run_after=2023-01-25 00:00:00+00:00
+[2024-09-29T12:49:33.907+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.336 seconds
+[2024-09-29T12:49:44.044+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:49:44.068+0000] {processor.py:186} INFO - Started process (PID=566) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:44.070+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:49:44.080+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:44.079+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:44.142+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:44.274+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:44.274+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:49:44.392+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:44.392+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2023-02-12 00:00:00+00:00, run_after=2023-02-13 00:00:00+00:00
+[2024-09-29T12:49:44.463+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.434 seconds
+[2024-09-29T12:49:55.089+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:49:55.113+0000] {processor.py:186} INFO - Started process (PID=669) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:55.114+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:49:55.119+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:55.119+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:55.132+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:49:55.170+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:49:55.169+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:49:55.217+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.134 seconds
+[2024-09-29T12:50:06.029+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:470 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-09-29T12:50:06.039+0000] {processor.py:186} INFO - Started process (PID=744) to work on /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:50:06.039+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_with_postgres_hooks.py for tasks to queue
+[2024-09-29T12:50:06.043+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:50:06.043+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:50:06.060+0000] {processor.py:925} INFO - DAG(s) 'dag_with_postgres_hooks_v04' retrieved from /opt/airflow/dags/dag_with_postgres_hooks.py
+[2024-09-29T12:50:06.090+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:50:06.090+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-29T12:50:06.107+0000] {logging_mixin.py:190} INFO - [2024-09-29T12:50:06.107+0000] {dag.py:4156} INFO - Setting next_dagrun for dag_with_postgres_hooks_v04 to 2023-02-20 00:00:00+00:00, run_after=2023-02-21 00:00:00+00:00
+[2024-09-29T12:50:06.122+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_with_postgres_hooks.py took 0.098 seconds
