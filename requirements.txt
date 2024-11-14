@@ -1,6 +1,10 @@
-numpy
-scikit-learn
-matplotlib
-pymongo
-psycopg2-binary
+pymongo             #for mongodb
+psycopg2-binary    #for postgresql
+cx_Oracle       #for oracledb (requires oracle instant client)
+pyodbc               #for sql server, requires odbc driver installation
+oracledb
+
 apache-airflow-providers-mongo
+apache-airflow-providers-postgres
+apache-airflow-providers-oracle
+apache-airflow-providers-microsoft-mssql
