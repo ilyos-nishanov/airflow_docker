@@ -1,56 +1,39 @@
-#%%
-import pyodbc
-import pandas as pd
-from pymongo import MongoClient
-#%% Define MongoDB, OracleDB, and SQL Server connections
-MONGO_URI = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.3"
-SQL_SERVER_URI="mssql+pyodbc://SA:Valuetech@123@localhost:1433/forAirflow?driver=ODBC+Driver+18+for+SQL+Server"
-#%%
-def extract_from_mongodb():
-    client = MongoClient(MONGO_URI)
-    db = client.admin #db name
-    data = db.restaurants.find()  # Fetch data
-    # return data
-    df = pd.DataFrame(list(data))  # Convert cursor to list, then to DataFrame
-    return df
-#%%
-def transform_data(data):
-    # Transformation logic here
-    polished_data = data  # Placeholder for transformed data
-    return polished_data
-#%%
-def load_to_sql_server(data):
-    conn = pyodbc.connect(SQL_SERVER_URI)
-    cursor = conn.cursor()
-    # Load data to SQL Server
-    cursor.execute("""
-        IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='my_dw_table' AND xtype='U')
-        CREATE TABLE my_dw_table (
-            _id INT PRIMARY KEY,
-            name NVARCHAR(255),
-            borough NVARCHAR(255)
-        )
-    """)
-    
-    # Insert or Update data
-    for row in data:
-        cursor.execute("""
-            MERGE INTO my_dw_table AS target
-            USING (SELECT ? AS _id, ? AS name, ? AS borough) AS source
-            ON target._id = source._id
-            WHEN MATCHED THEN 
-                UPDATE SET target.name = source.name, target.borough = source.borough
-            WHEN NOT MATCHED THEN
-                INSERT (_id, name, borough) VALUES (source._id, source.name, source.borough);
-        """, row['_id'], row['name'], row['borough'])
+from datetime import datetime, timedelta
 
-    # Commit the transaction
-    conn.commit()
-    conn.close()
-#%%
-df=extract_from_mongodb()
-print(df)
-#%%
-load_to_sql_server(df)
+def get_date_range_by_offset(offset):
+    today = datetime.today().replace(day=1)  # Start from the 1st of the current month
+    start_date = (today - timedelta(days=30 * offset)).replace(day=1)
+    next_month = (start_date + timedelta(days=31)).replace(day=1)
+    end_date = (next_month - timedelta(days=1))
+    return start_date.strftime('%d-%m-%Y'), end_date.strftime('%d-%m-%Y')
 
-# %%
+# Example usage for offsets 2, 3, and 4
+for offset in range(2, 5):  # 1 = 2 months ago, 2 = 3 months ago, 3 = 4 months ago
+    start_date, end_date = get_date_range_by_offset(offset)
+    print(f"Offset {offset}: Start Date = {start_date}, End Date = {end_date}")
+
+
+
+get_date_range_for_month
+
+
+
+
+  SELECT 
+    t.GLOB_ID,t.DATE_VYD_D,S1.DATE_DELQ,o.ACCOUNT,o.KOD_ACC,t.K_VID_CRED,
+    MAX(S1.DATN) OVER (PARTITION BY T.GLOB_ID ORDER BY T.GLOB_ID) AS DATN,
+    s1.PAYM_CUMULAT,S1.DELQ_CUMULAT
+    FROM asbt.sp_dog_loans t 
+    INNER JOIN asbt.sp_dog_loans_acc o
+    on t.glob_id=o.glob_id
+    and o.kod_acc IN(2,12) 
+    LEFT JOIN  ( SELECT ACCOUNT,dati AS DATE_DELQ,(SUM(OBOR_C)over (partition by account order by dati))/100 as PAYM_CUMULAT,                     
+                        dense_rank() over (partition by account,ID_MFO order by obor_d_y) as RANK,DATN,ID_MFO,
+                        OBOR_D_Y/100 AS DELQ_CUMULAT
+                FROM ASBT.SALDO WHERE OBOR_D_Y<>0)s1
+        on o.account=s1.ACCOUNT  
+        WHERE 1=1  
+        AND t.DATE_VYD_D between '{start_date}' and '{end_date}'
+        AND t.REC_ACTIV=0
+        AND t.K_VID_CRED in ({product})      
+        AND t.ID_MFO=S1.ID_MFO 
