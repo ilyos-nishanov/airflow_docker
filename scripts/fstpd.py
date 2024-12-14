@@ -10,8 +10,8 @@ def write_to_sql(product):
     driver = 'ODBC Driver 17 for SQL Server'
     server = '172.17.17.22,54312'
     database = 'RISKDB'
-    username = 'SMaksudov'
-    password = 'CfhljhVfrc#'
+    username = 'risk_technology_dev'
+    password = 'tTcnjl6T'
 
     connection_mssql = pyodbc.connect(
         f"Driver={{{driver}}};"
@@ -24,8 +24,8 @@ def write_to_sql(product):
 
     # Oracle Connection Parameters
     connection_params = {
-        "user": "sardor",
-        "password": "Maksudov01Test",
+        "user": "SQuryozov",
+        "password": "Cfhljhntcn62",
         "dsn": oracledb.makedsn("192.168.81.99", "1521", service_name="orcl1")
     }
 
@@ -193,17 +193,17 @@ def write_to_sql(product):
 
     # Convert Oracle result to pandas DataFrame
     df = pd.DataFrame(result, columns=[desc[0] for desc in cursor_oracle.description])
-    df['DATE_MODIFIED'] = datetime.now().strftime('%Y-%m-%d %H:%M')  # Add DATE_MODIFIED column
+    df['DATE_MODIFIED'] = datetime.now().strftime('%Y-%m-%d %H:%M')
 
     # Upsert logic for SQL Server
     create_table_query = f"""
-        IF OBJECT_ID('RETAIL.FSTPD2', 'U') IS NULL
-        CREATE TABLE RETAIL.FSTPD2 ( {', '.join([f'[{col}] NVARCHAR(500)' for col in df.columns])} )
+        IF OBJECT_ID('RETAIL.FSTPD22', 'U') IS NULL
+        CREATE TABLE RETAIL.FSTPD22 ( {', '.join([f'[{col}] NVARCHAR(500)' for col in df.columns])} )
     """
     cursor_mssql.execute(create_table_query)
     for _, row in df.iterrows():
         merge_query = f"""
-        MERGE INTO RETAIL.FSTPD2 AS target
+        MERGE INTO RETAIL.FSTPD22 AS target
         USING (SELECT ? AS DATE_VYD_D, ? AS GLOB_ID, ? AS K_VID_CRED, 
                      ? AS FPD, ? AS SPD, ? AS TPD, ? AS DATE_MODIFIED) AS source
         ON target.GLOB_ID = source.GLOB_ID
@@ -235,7 +235,7 @@ def write_to_sql(product):
 
 
 if __name__ == "__main__":
-    products = [24, 34, 32]
+    products = [32]
     start_time = datetime.now()
     print(f"Start Time: {start_time}")
 

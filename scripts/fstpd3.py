@@ -113,7 +113,8 @@ def process_partition(product, month_offset):
         AND t.DATE_VYD_D between '{start_date}' and '{end_date}'
         AND t.REC_ACTIV=0
         AND t.K_VID_CRED in ({product})      
-        AND t.ID_MFO=S1.ID_MFO 
+        AND t.ID_MFO=S1.ID_MFO
+        
     """
     cursor.execute("alter session set nls_date_format = 'DD-MM-YYYY'")
     cursor.execute(query)

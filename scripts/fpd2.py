@@ -7,22 +7,24 @@ import pandas as pd
 import multiprocessing
 from datetime import datetime, timedelta
 
+import time
+import functools
+
 def retry_on_failure(max_retries=3, delay=5, exceptions=(Exception,)):
     """Retry decorator for handling failures with exponential backoff."""
     def decorator(func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
             retries = 0
-            current_delay = delay
             while retries < max_retries:
                 try:
                     return func(*args, **kwargs)
                 except exceptions as e:
                     retries += 1
                     if retries < max_retries:
-                        print(f"Error: {e}. Retrying {retries}/{max_retries} in {current_delay} seconds...")
-                        time.sleep(current_delay)
-                        current_delay *= 2  # Exponential backoff
+                        print(f"Error: {e}. Retrying {retries}/{max_retries} in {delay} seconds...")
+                        time.sleep(delay)
+                        delay *= 2  # Exponential backoff
                     else:
                         print(f"Failed after {max_retries} attempts: {e}")
                         raise
@@ -37,48 +39,14 @@ def get_date_range_by_offset(offset):
     end_date = (next_month - timedelta(days=1))
     return start_date.strftime('%d-%m-%Y'), end_date.strftime('%d-%m-%Y')
 
-# Function to save DataFrame to CSV
-def save_to_csv(df, product, month):
-    file_name = f"data/fpd/output_product_{product}_month_{month}.csv"
-    df.to_csv(file_name, index=False, mode='w', header=True)
-    print(f"Data saved to {file_name}")
-
-
-def initialize_sql_table(driver, server, database, username, password, table_name, columns):
-    """Initializes the SQL table by dropping it if it exists and creating a new one."""
-    connection_mssql = pyodbc.connect(
-        "Driver={" + driver + "};"
-        "Server=" + server + ";"
-        "Database=" + database + ";"
-        "UID=" + username + ";"
-        "PWD=" + password + ";"
-    )
-
-    cursor_mssql = connection_mssql.cursor()
-    drop_table_query = f"""
-        IF OBJECT_ID('{table_name}', 'U') IS NOT NULL
-        DROP TABLE {table_name};
-    """
-    cursor_mssql.execute(drop_table_query)
-    
-    create_table_query = f"""
-        CREATE TABLE {table_name} ({', '.join([f'[{col}] NVARCHAR(500)' for col in columns])})
-    """
-    cursor_mssql.execute(create_table_query)
-    
-    connection_mssql.commit()
-    cursor_mssql.close()
-    connection_mssql.close()
-
-
 # Function to write to SQL Server with retry
-@retry_on_failure(max_retries=5, delay=3, exceptions=(pyodbc.ProgrammingError, pyodbc.InterfaceError))
+# @retry_on_failure(max_retries=5, delay=3, exceptions=(pyodbc.ProgrammingError, pyodbc.InterfaceError))
 def write_to_sql(df, product):
     driver = 'ODBC Driver 17 for SQL Server'
     server = '172.17.17.22,54312'
     database = 'RISKDB'
-    username = 'SMaksudov'  
-    password = 'CfhljhVfrc#' 
+    username = 'risk_technology_dev' 
+    password = 'tTcnjl6T' 
 
     connection_mssql = pyodbc.connect(
         "Driver={" + driver + "};"
@@ -89,9 +57,18 @@ def write_to_sql(df, product):
     )
 
     cursor_mssql = connection_mssql.cursor()
-        
+    table_name = 'RETAIL.FPD1000'
+    
+    check_table_query = f"""
+    IF NOT EXISTS (SELECT 1 FROM sys.objects WHERE object_id = OBJECT_ID(N'{table_name}') AND type = 'U')
+    BEGIN
+        CREATE TABLE [{table_name}] ( {', '.join([f'[{col}] NVARCHAR(500)' for col in df.columns])} )
+    END
+    """
+    # cursor_mssql.execute(check_table_query)
+    
     for _, row in df.iterrows():
-        insert_query = f"INSERT INTO RETAIL.FPD VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
+        insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
         values = [str(val) for val in row]
         cursor_mssql.execute(insert_query, tuple(values))
 
@@ -100,15 +77,16 @@ def write_to_sql(df, product):
     connection_mssql.close()
 
 # Main processing function with retry
-@retry_on_failure(max_retries=5, delay=3, exceptions=(oracledb.DatabaseError, oracledb.OperationalError))
+# @retry_on_failure(max_retries=5, delay=3, exceptions=(oracledb.DatabaseError, oracledb.OperationalError))
 def process_partition(product, month_offset):
     # Get date range for the product and month
     start_date, end_date = get_date_range_by_offset(month_offset)
+    # start_date, end_date = '01-01-2022', '31-01-2022'
 
     # Oracle DB connection parameters
     connection_params = {
-        "user": "sardor",
-        "password": "Maksudov01Test",
+        "user": "SQuryozov",
+        "password": "Cfhljhntcn62",
         "dsn": oracledb.makedsn("192.168.81.99", "1521", service_name="orcl1")
     }
 
@@ -267,7 +245,7 @@ def process_partition(product, month_offset):
     WHERE (MIN_DATE_A-SECOND_PAYM_DATE)<21)
     
     SELECT DISTINCT 
-    DATE_VYD_D, GLOB_ID, K_VID_CRED,
+    DATE_VYD_D, GLOB_ID,
     MAX( CASE WHEN FPD=10000 THEN 0 ELSE FPD END) OVER (PARTITION BY GLOB_ID ORDER BY GLOB_ID) AS FPD,
     MAX(CASE WHEN SPD_1=0 THEN SPD_2 ELSE SPD_1 END) OVER (PARTITION BY GLOB_ID ORDER BY GLOB_ID) AS SPD ,     
     MAX(CASE WHEN TPD_1=0 THEN TPD_2 ELSE TPD_1 END) OVER (PARTITION BY GLOB_ID ORDER BY GLOB_ID) AS TPD 
@@ -281,9 +259,8 @@ def process_partition(product, month_offset):
 
     # Convert the result to a pandas DataFrame
     df = pd.DataFrame(result, columns=[desc[0] for desc in cursor.description])
+    df['DATE_MODIFIED'] = datetime.now().strftime('%Y-%m-%d')
 
-    # # Save to CSV
-    # save_to_csv(df, product, month_offset)
 
     # Write to SQL Server
     write_to_sql(df, product)
@@ -292,30 +269,17 @@ def process_partition(product, month_offset):
     cursor.close()
     connection.close()
 
+# List of products and months to partition by (3 products x 3 months = 9 partitions)
+products = [24, 34, 32]
 
 # Create a pool of processes
 if __name__ == "__main__":
     start_time=datetime.now()
     print(f'start time: {start_time}')
 
-    # SQL connection details
-    driver = 'ODBC Driver 17 for SQL Server'
-    server = '172.17.17.22,54312'
-    database = 'RISKDB'
-    username = 'SMaksudov'
-    password = 'CfhljhVfrc#'
-    table_name = 'RETAIL.FPD'
-
-    # Initialize SQL table once before multiprocessing
-    sample_columns = ['DATE_VYD_D', 'GLOB_ID', 'K_VID_CRED', 'FPD', 'SPD', 'TPD']
-    initialize_sql_table(driver, server, database, username, password, table_name, sample_columns)
-
-    # List of products and months to partition by (3 products x 3 months = 9 partitions)
-    products = [24, 34, 32]
-
-    with multiprocessing.Pool(processes=100) as pool:
+    with multiprocessing.Pool(processes=20) as pool:
         # Assign each process a combination of product and month
-        pool.starmap(process_partition, [(product, month) for product in products for month in range(2, 5)])
+        pool.starmap(process_partition, [(product, month) for product in products for month in range(2, 3)])
     
     end_time=datetime.now()
     print(f'end time: {end_time}')
