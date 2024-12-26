@@ -5,8 +5,12 @@ from connections import get_mongo_client
 from my_utils import insert_into_mssql, load_my_columns, \
                                         get_numbers_2, map_dff_to_my_columns
 
-
 start = time()
+
+write_to_table = 'bronze.katm_077_scoring'
+columns_file = 'katm_077_scoring_fields.txt'
+columns = load_my_columns(columns_file)
+
 query = f"""
         
                 select l.number
@@ -15,11 +19,7 @@ query = f"""
                 on l.number=r.number
                 where r.number is null
 
-    """ 
-
-write_to_table = 'bronze.katm_077_contingent_scoring_test'
-columns_file = 'katm_077_scoring_fields.txt'
-columns = load_my_columns(columns_file)
+    """
 numbers = get_numbers_2(query)
 numbers = [int(i) for i in numbers]
 print(len(numbers))
