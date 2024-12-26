@@ -13,7 +13,7 @@ with DAG(
     'katm_333_loans',
     default_args=default_args,
     description='A DAG that schedules an existing script',
-    schedule_interval='7 5 * * *',
+    # schedule_interval='7 5 * * *',
     start_date=datetime(2023, 1, 1),
     catchup=False,
 ) as dag:

@@ -1,0 +1,13 @@
+_id
+number
+subject_type
+org
+branch
+org_name
+contract_status
+contract_id
+contract_date
+contract_end_date
+contract_closing_date
+credit_type
+currency

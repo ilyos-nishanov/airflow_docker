@@ -8,7 +8,7 @@ from pymongo import MongoClient
 # Function to insert DataFrame into MSSQL in chunks
 def insert_into_mssql(df, table_name):
 
-    driver = 'ODBC Driver 17 for SQL Server'
+    driver = 'SQL Server'
     server = '172.17.17.22,54312'
     database = 'RISKDB'
     username = 'SMaksudov'
@@ -49,7 +49,7 @@ def insert_into_mssql(df, table_name):
     conn.close()
 
 def max_number_find():
-    driver = 'ODBC Driver 17 for SQL Server'
+    driver = 'SQL Server'
     server = '172.17.17.22,54312'
     database = 'RISKDB'
     username = 'SMaksudov'

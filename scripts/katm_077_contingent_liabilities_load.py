@@ -1,24 +1,9 @@
+from connections import get_mongo_client, get_sql_server_connection
 import pandas as pd
-from pymongo import MongoClient
-import pyodbc
-
 
 
 def max_number_find():
-    driver = 'ODBC Driver 17 for SQL Server'
-    server = '172.17.17.22,54312'
-    database = 'RISKDB'
-    username = 'SMaksudov'
-    password = 'CfhljhVfrc#'
-
-    conn = pyodbc.connect(
-        f"Driver={{{driver}}};"
-        f"Server={server};"
-        f"Database={database};"
-        f"UID={username};"
-        f"PWD={password};"
-    )
-
+    conn = get_sql_server_connection()
     cursor = conn.cursor()
 
     # Check if table exists, if not create it
@@ -33,29 +18,12 @@ def max_number_find():
     max_number = int(result[0] if result else None)
     return max_number
 
-max_num = max_number_find()
+
+# max_num = max_number_find()
 
 # Function to insert DataFrame into MSSQL in chunks
 def insert_into_mssql(df, table_name):
-    # driver = 'SQL Server'
-    # server = 'your_server_name'  # Replace with your server name
-    # database = 'your_database_name'  # Replace with your database name
-    # username = 'your_username'  # Replace with your username
-    # password = 'your_password'  # Replace with your password
-    driver = 'ODBC Driver 17 for SQL Server'
-    server = '172.17.17.22,54312'
-    database = 'RISKDB'
-    username = 'SMaksudov'
-    password = 'CfhljhVfrc#'
-    
-    conn = pyodbc.connect(
-        f"Driver={{{driver}}};"
-        f"Server={server};"
-        f"Database={database};"
-        f"UID={username};"
-        f"PWD={password};"
-    )
-
+    conn = get_sql_server_connection()
     cursor = conn.cursor()
 
     # Check if table exists, if not create it
@@ -81,22 +49,18 @@ def insert_into_mssql(df, table_name):
     conn.commit()
     cursor.close()
     conn.close()
-client = MongoClient(
-    'mongodb://172.17.39.13:27017',
-    username='Sardor.Maksudov',
-    password='jDS3pqTV',
-    authSource='admin'
-)
+
+
+client = get_mongo_client()
 
 # Select the database and collection
 db = client['task']
 task_collection = db['task']
-# max_date= 'select max(number) from table_name'
 
 # Define the query
 query = {
-    'data.katm_077.return.data.contingent_liabilities.contingent_liability': {'$exists': True},
-    'number': {'$gt': max_num} # max_date= 'select max(number) from table_name'
+    'data.katm_077.return.data.contingent_liabilities.contingent_liability': {'$exists': True}
+    ,'number': {'$gt': 1243100, '$lt': 1243200}
 }
 
 # Define the projection
@@ -110,7 +74,7 @@ doc = task_collection.find(query, projection)
 for document in doc:
     # Prepare data for Pandas if the document exists
     rows = []
-    if document:       
+    if document:
         _id = str(document.get('_id'))  # Convert `_id` to string
         number = document.get('number')  # Extract the `number` field
         contracts = document.get('data', {}).get('katm_077', {}).get('return', {}).get('data', {}).get('contingent_liabilities', {}).get('contingent_liability', [])
@@ -120,12 +84,10 @@ for document in doc:
             contracts = []
         for contract in contracts:
             # Flatten the contract details and include the `number` field
-            # row = {'number': number, **contract}
             row = {'_id': _id, 'number': number, **contract}
             rows.append(row)
-        
-        df = pd.DataFrame(rows)
 
+        df = pd.DataFrame(rows)
 
     # Function to clean nested columns and prepare final DataFrame
     def clean_nested_columns(df):
@@ -135,9 +97,7 @@ for document in doc:
                 df = df.drop(columns=[col])
         return df
 
-
     # Function to write the last loaded index to the checkpoint file
-
 
     # Function to create an empty DataFrame with specified columns
     def create_empty_df_with_columns(columns):
@@ -148,6 +108,7 @@ for document in doc:
         with open(file_path, 'r') as file:
             columns = file.read().splitlines()  # Read each line as a column name
         return columns
+
     # Function to map `dff` values to a DataFrame with specified columns
     def map_dff_to_contract_columns(dff, contract_columns):
         # Ensure '_id' and 'number' are in the contract_columns list
@@ -155,17 +116,17 @@ for document in doc:
         for col in essential_columns:
             if col not in contract_columns:
                 contract_columns.append(col)
-                
+
         # Create an empty DataFrame with the contract columns
         final_df = create_empty_df_with_columns(contract_columns)
-        
+
         # Fill in the columns of `final_df` with values from `dff`
         for col in final_df.columns:
             if col in dff.columns:
                 final_df[col] = dff[col]  # Copy the values from `dff`
             else:
                 final_df[col] = None  # Set the column to None if not in `dff`
-        
+
         return final_df
 
     guarantees_columns_file = 'katm_077_contingent_liabilities_columns.txt'
@@ -176,12 +137,4 @@ for document in doc:
 
     # Attempt insertion and handle SQL errors to skip problematic documents
 
-    # insert_into_mssql(final_df, 'contracts_task123_katm077')
-
-    # Attempt insertion and handle SQL errors to skip problematic documents
-
-    insert_into_mssql(final_df, 'contingent_liabilities_task1_katm077')
-
-
-
-
+    insert_into_mssql(final_df, 'bronze.katm_077_contingent_liabilities')

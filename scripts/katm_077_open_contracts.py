@@ -39,7 +39,7 @@ def max_number_find():
     max_number = int(result[0] if result else None)
     return max_number
 
-max_num = max_number_find()
+# max_num = max_number_find()
 # Function to insert DataFrame into MSSQL in chunks
 def insert_into_mssql(df, table_name):
     # driver = 'SQL Server'
@@ -104,7 +104,7 @@ task_collection = db['task']
 # Define the query
 query = {
     'data.katm_077.return.data.open_contracts.open_contract': {'$exists': True},
-    'number': {'$gt': max_num} # max_date= 'select max(number) from table_name'
+    # 'number': {'$gt': max_num} # max_date= 'select max(number) from table_name'
 }
 
 # Define the projection
@@ -178,12 +178,12 @@ for document in docs :
         
         return final_df
 
-    guarantees_columns_file = 'katm077_open_contracts_columns.txt'
+    guarantees_columns_file = 'katm_077_open_contracts_columns.txt'
 
     contract_columns = load_contract_columns(guarantees_columns_file)
 
     final_df = map_dff_to_contract_columns(df, contract_columns)
 
-    insert_into_mssql(final_df, 'open_contracts_task1_katm077_test')
+    insert_into_mssql(final_df, 'bronze.katm_077_open_contracts')
     
     

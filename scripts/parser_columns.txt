@@ -1,0 +1,14 @@
+_id
+number
+claims_qty
+contracts_qty
+contingent_liabilities_qty
+credit_requests_qty
+subscriptions_qty
+average_monthly_payment
+overdue_principal_qty
+max_overdue_principal_days
+max_overdue_principal_sum
+max_uninter_overdue_percent_days
+total_overdue_percent_sum
+actual_average_monthly_payment

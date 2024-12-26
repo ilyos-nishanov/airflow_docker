@@ -1,113 +1,19 @@
-from pymongo import MongoClient
-from datetime import datetime
 import pandas as pd
-from pandas import json_normalize
-import pyodbc
-from bson import ObjectId
-
-# Function to insert DataFrame into MSSQL in chunks
-def insert_into_mssql(df, table_name):
-    # driver = 'SQL Server'
-    # server = 'your_server_name'  # Replace with your server name
-    # database = 'your_database_name'  # Replace with your database name
-    # username = 'your_username'  # Replace with your username
-    # password = 'your_password'  # Replace with your password
-    driver = 'ODBC Driver 17 for SQL Server'
-    server = '172.17.17.22,54312'
-    database = 'RISKDB'
-    username = 'SMaksudov'
-    password = 'CfhljhVfrc#'
-    
-    conn = pyodbc.connect(
-        f"Driver={{{driver}}};"
-        f"Server={server};"
-        f"Database={database};"
-        f"UID={username};"
-        f"PWD={password};"
-    )
-
-    cursor = conn.cursor()
-
-    # Check if table exists, if not create it
-    check_table_query = f"""
-    IF OBJECT_ID(N'{table_name}', 'U') IS NULL
-    BEGIN
-        CREATE TABLE {table_name}  (
-    {', '.join([f'[{col}] NVARCHAR(1000)' for col in df.columns])}
-);
-    END;"""
-    cursor.execute(check_table_query)
-    conn.commit()
-
-    # Insert the data from DataFrame into the table
-    for index, row in df.iterrows():
-        try:
-            insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
-            values = [str(val) for val in row]
-            cursor.execute(insert_query, tuple(values))
-        except Exception as e:
-            print(f"Error inserting row {index}: {e}")
-
-    conn.commit()
-    cursor.close()
-    conn.close()
-# from pymongo import MongoClient
-# import pandas as pd
-def max_number_find():
-    driver = 'ODBC Driver 17 for SQL Server'
-    server = '172.17.17.22,54312'
-    database = 'RISKDB'
-    username = 'SMaksudov'
-    password = 'CfhljhVfrc#'
-
-    conn = pyodbc.connect(
-        f"Driver={{{driver}}};"
-        f"Server={server};"
-        f"Database={database};"
-        f"UID={username};"
-        f"PWD={password};"
-    )
-
-    cursor = conn.cursor()
-
-    # Check if table exists, if not create it
-    check_table_query = f"""SELECT max(number) FROM RISKDB.dbo.contracts_task123_katm077;
-    """
-    cursor.execute(check_table_query)
-
-    # Fetch the result (the single number)
-    result = cursor.fetchone()
-
-    # result will be a tuple with one element, so you can extract the number like this:
-    max_number = int(result[0] if result else None)
-    return max_number
+from connections import get_mongo_client
+from mssql import max_number_find, insert_into_mssql
 
 max_num = max_number_find()
-# Connect to MongoDB
-client = MongoClient(
-    'mongodb://172.17.39.13:27017',
-    username='Sardor.Maksudov',
-    password='jDS3pqTV',
-    authSource='admin'
-)
+client = get_mongo_client()
 
 # Select the database and collection
 db = client['task']
 task_collection = db['task']
-# max_date= 'select max(number) from table_name'
 
-# # Define the query
-# query = {
-#     'data.katm_077.return.data.contingent_liabilities.contingent_liability': {'$exists': True},
-#     'number': {'$gt': 6668114} # max_date= 'select max(number) from table_name'
-# }
-
-# Define the query to fetch the first document where `overdue_procent` exists within any contract's `overdue_procents`
+# Define the query
 query = {
     'data.katm_077.return.data.contracts.contract': {'$exists': True},
-    'number': {'$gt': max_num} # max_date= 'select max(number) from table_name'
-        }
-
+    # 'number': {'$gt': max_num}  # max_date= 'select max(number) from table_name'
+}
 
 # Adjusted projection to include the entire contracts list
 projection = {
@@ -115,30 +21,25 @@ projection = {
     'data.katm_077.return.data.contracts.contract': 1
 }
 
-# Fetch the first document that matches the query
+# Fetch the documents that match the query
 docs = task_collection.find(query, projection)
 
-for document in docs :
+for document in docs:
     rows = []
     if document:
         _id = str(document.get('_id'))  # Convert `_id` to string
         number = document.get('number')  # Extract the `number` field
         contracts = document.get('data', {}).get('katm_077', {}).get('return', {}).get('data', {}).get('contracts', {}).get('contract', [])
-        
+
         if isinstance(contracts, dict):
             contracts = [contracts]
-        
+
         for contract in contracts:
-            # Flatten the contract details and include the `number` field
-            # row = {'number': number, **contract}
+            # Flatten the contract details and include the `_id` and `number` fields
             row = {'_id': _id, 'number': number, **contract}
             rows.append(row)
-            
-            # Flatten the contract details and include `_id` and `number` fields
-        
 
-
-    # Create DataFrame
+    # Create a DataFrame from the rows
     df = pd.DataFrame(rows)
 
     # Function to create an empty DataFrame with specified columns
@@ -150,29 +51,33 @@ for document in docs :
         with open(file_path, 'r') as file:
             columns = file.read().splitlines()  # Read each line as a column name
         return columns
-    # Function to map `dff` values to a DataFrame with specified columns
-    def map_dff_to_contract_columns(dff, contract_columns):
+
+    # Function to map `df` values to a DataFrame with specified columns
+    def map_df_to_contract_columns(df, contract_columns):
         # Ensure '_id' and 'number' are in the contract_columns list
         essential_columns = ['_id', 'number']
         for col in essential_columns:
             if col not in contract_columns:
                 contract_columns.append(col)
-                
+
         # Create an empty DataFrame with the contract columns
         final_df = create_empty_df_with_columns(contract_columns)
-        
-        # Fill in the columns of `final_df` with values from `dff`
+
+        # Fill in the columns of `final_df` with values from `df`
         for col in final_df.columns:
-            if col in dff.columns:
-                final_df[col] = dff[col]  # Copy the values from `dff`
+            if col in df.columns:
+                final_df[col] = df[col]  # Copy the values from `df`
             else:
-                final_df[col] = None  # Set the column to None if not in `dff`
-        
+                final_df[col] = None  # Set the column to None if not in `df`
+
         return final_df
 
-    guarantees_columns_file = 'katm077_contracts_columns.txt'
+    # Load the contract columns from the file
+    contract_columns_file = 'katm077_contracts_columns.txt'
+    contract_columns = load_contract_columns(contract_columns_file)
 
-    contract_columns = load_contract_columns(guarantees_columns_file)
+    # Map the DataFrame to match the contract columns
+    final_df = map_df_to_contract_columns(df, contract_columns)
 
-    final_df = map_dff_to_contract_columns(df, contract_columns)
-    insert_into_mssql(final_df, 'RISKDB.dbo.contracts_task123_katm077')
+    # Insert the final DataFrame into MSSQL
+    insert_into_mssql(final_df, 'bronze.katm_077_contracts')

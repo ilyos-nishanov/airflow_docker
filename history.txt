@@ -998,3 +998,1003 @@
  1009  sudo docker restart c0b568032cd6
  1010  sudo docker restart 1355065dce16
  1011  history >> history.txt
+    7  sudo visudo
+    8  sudo docker-compose --version
+    9  docker-compose --version
+   10  sudo /usr/local/bin/docker-compose up --build -d
+   11  pwd
+   12  cd ..
+   13  ls -la
+   14  pwd
+   15  ls -la home
+   16  ls -la
+   17  ls -la airflow_project/
+   18  rm airflow_project/*
+   19  rm -rf airflow_project/*
+   20  sudo -i
+   21  ls -la
+   22  cd airflow_project/
+   23  pwd
+   24  ls -la
+   25  cd ..
+   26  pwd
+   27  ls -la
+   28  cd ..
+   29  ls -la
+   30  pwd
+   31  ls -la home
+   32  ls -la home/nishanovii/
+   33  pwd
+   34  cd home/nishanovii/
+   35  pwd
+   36  ls -la
+   37  cd airflow_docker/
+   38  la -la
+   39  ls -la
+   40  vim Dockerfile 
+   41  python test_oracledb2sqlserver.py 
+   42  source venv/Scripts/python
+   43  source venv/Scripts/activate
+   44  python --version
+   45  sudo yum install python
+   46  python --version
+   47  python3 --version
+   48  sudo yum install python3
+   49  python3 --version
+   50  sudo find / -name "python3" 2>/dev/null
+   51  where python
+   52  which python
+   53  which python3
+   54  sudo find / -name "python3" 2>/dev/null
+   55  deactivate  
+   56  rm -rf venv
+   57  python3 -m venv venv
+   58  sudo yum install python3
+   59  sudo find / -name "python3" 2>/dev/null
+   60  export PATH=/data/python/binary/python3:$PATH
+   61  python3 --version
+   62  sudo yum groupinstall "Development Tools"
+   63  sudo yum install python3
+   64  python --version
+   65  docker-compose up --build -d
+   66  exit
+   67  pwd
+   68  docker-compose --builder -d
+   69  docker-compose up --builder -d
+   70  sudo docker-compose up --build -d
+   71  clear
+   72  ls -la
+   73  python --version
+   74  python3.10 --version
+   75  sudo -i
+   76  python --vers
+   77  python --version
+   78  sudo -i
+   79  python --version
+   80  python3 --version
+   81  pwd
+   82  sudo docker-compose up --build -d
+   83  echo $PATH
+   84  sudo apt update
+   85  Parazit_234
+   86  sudo apt update
+   87  cd ..
+   88  ls -la
+   89  cd ..
+   90  ls -la
+   91  cd data
+   92  ls -la
+   93  sudo yum install -y bzip2-devel openssl-devel libffi-devel zlib-devel
+   94  tar -xzf Python-3.10.6.tgz
+   95  ls -la
+   96  sudo tar -xzf Python-3.10.6.tgz
+   97  ls -la
+   98  cd Python-3.10.6/
+   99  ./configure --enable-optimizations --with-ensurepip=install
+  100  sudo ./configure --enable-optimizations --with-ensurepip=install
+  101  make -j $(nproc)
+  102  sudo -i
+  103  sudo make -j $(nproc)
+  104  sudo make altinstall
+  105  python --version
+  106  python3 --version
+  107  python3.10 --version
+  108  pip3 --version
+  109  pip --version
+  110  pip3.10 --version
+  111  cd ..
+  112  ls -la
+  113  python3.10 --version
+  114  cd /home/airflow_project/
+  115  ls -la
+  116  cd ../nishanovii/airflow_docker/
+  117  ls -la
+  118  python3.10 test_oracledb2sqlserver.py 
+  119  pip install pyodbc
+  120  pip3.10 install pyodbc
+  121  python3.10 test_oracledb2sqlserver.py 
+  122  alias pip=pip3.10
+  123  pip install pandas
+  124  alias python=python3.10
+  125  python test_oracledb2sqlserver.py 
+  126  pip install oracledb
+  127  python test_oracledb2sqlserver.py 
+  128  sudo yum install oracle-instantclient19.8-basic-19.25.0.0.0.x86_64.rpm
+  129  pwd
+  130  wget https://download.oracle.com/otn_software/linux/instantclient/1919000/instantclient-basic-linux.x64-19.19.0.0.0dbru.el9.zip
+  131  pwd
+  132  ls -la
+  133  mkdir -p /opt/oracle
+  134  sudo mkdir -p /opt/oracle
+  135  unzip instantclient-basic-linux.x64-19.19.0.0.0dbru.el9.zip -d /opt/oracle/
+  136  sudo unzip instantclient-basic-linux.x64-19.19.0.0.0dbru.el9.zip -d /opt/oracle/
+  137  export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_8:$LD_LIBRARY_PATH
+  138  echo "export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_8:\$LD_LIBRARY_PATH" >> ~/.bashrc
+  139  source ~/.bashrc
+  140  ls -la
+  141  cd /home/nishanovii/airflow_docker/
+  142  ls -la
+  143  python test_oracledb2sqlserver.py 
+  144  pwd
+  145  ls -la
+  146  cd ..
+  147  ls -la
+  148  mv docker_sandbox nishanovii/
+  149  sudo -i
+  150  python3 --version
+  151  export PATH=/data/python/bin:$PATH
+  152  source ~/.bashrc
+  153  python3 --version
+  154  ls -la
+  155  python3 --versin
+  156  python3 --version
+  157  vim ~/.bashrc
+  158  pwd
+  159  cd nishanovii/airflow_docker/
+  160  clear
+  161  ls -la
+  162  python3 test_oracledb2sqlserver.py 
+  163  python -m venv venv
+  164  python3 -m venv venv
+  165  ls -la venv/
+  166  source venv/bin/activate
+  167  pip -version
+  168  pip --version
+  169  pip install _ctypes
+  170  sudo yum install libffi-devel
+  171  ./configure --enable-shared --with-system-ffi
+  172  sudo -i
+  173  ls -la
+  174  yum install python
+  175  sudo yum install python
+  176  sudo yum reinstall python
+  177  python3 --version
+  178  python3 test_oracledb2sqlserver.py 
+  179  pip install pyodbc
+  180  python3 test_oracledb2sqlserver.py 
+  181  sudo install pandas
+  182  pip install pandas
+  183  python3 test_oracledb2sqlserver.py 
+  184  sudo yum reinstall python3
+  185  python3 test_oracledb2sqlserver.py 
+  186  docker ps
+  187  sudo docker ps
+  188  ls -la
+  189  docker-compose up --build -d
+  190  pip install -U docker-compose docker
+  191  ls -la /home
+  192  ls -la /
+  193  cd /home/nishanovii/
+  194  ls -la
+  195  mkdir ~/src && cd ~/src
+  196  pwd
+  197  wget https://www.python.org/ftp/python/3.13.0/Python-3.13.0.tgz
+  198  ls -la
+  199  tar -xzf Python-3.13.0.tgz 
+  200  cd Python-3.13.0/
+  201  ./configure --prefix=/home/yourusername/python --enable-optimizations
+  202  make -j4
+  203  make install
+  204  sudo make install
+  205  echo 'export PATH=/home/yourusername/python/bin:$PATH' >> ~/.bashrc
+  206  source ~/.bashrc
+  207  python3 --version
+  208  pip3 --version
+  209  pip --version
+  210  cd ~
+  211  pwd
+  212  cd airflow_docker/
+  213  ls -la
+  214  python3 test_oracledb2sqlserver.py 
+  215  deactivate
+  216  rm venv
+  217  rm -rf venv
+  218  python --version
+  219  python3 --version
+  220  pwd ~
+  221  cd ~
+  222  pwd
+  223  python --version
+  224  pytho3 --version
+  225  sudo -i
+  226  pwd
+  227  cd airflow_docker/
+  228  ls -la
+  229  python --version
+  230  python test_oracledb2sqlserver.py 
+  231  pip install pyodbc
+  232  python test_oracledb2sqlserver.py 
+  233  pip install pyodbc
+  234  ls -la
+  235  cd ..
+  236  ls -la
+  237  cd src/
+  238  pwd
+  239  ls -la
+  240  cd Python-3.13.0/
+  241  ls -la
+  242  ls -la python
+  243  cd ~
+  244  pwd
+  245  python3 --version
+  246  cd airflow_docker/
+  247  ls -la
+  248  python3 --version
+  249  python test_oracledb2sqlserver.py 
+  250  pip install pyodbc
+  251  python --version
+  252  python3 --version
+  253  python3 test_oracledb2sqlserver.py 
+  254  cd ~/src/Python-3.13.0/
+  255  which python
+  256  which python3
+  257  which python3.10
+  258  which python3.11
+  259  which python3.12
+  260  which python3.13
+  261  which python3.9
+  262  which python3.8
+  263  whereis python
+  264  pyenv versions
+  265  pip install pyenv
+  266  sudo yum list installed | grep python
+  267  which python
+  268  python --version
+  269  python3 --version
+  270  pwd
+  271  cd ~
+  272  pwd
+  273  vim /.bashrc
+  274  ls -la
+  275  vim .bashrc 
+  276  pwd
+  277  ls -la
+  278  tar -xvf src/Python-3.13.0.tgz 
+  279  ls -la
+  280  cd Python-3.13.0/
+  281  ls -la
+  282  ./configure --prefix=/home/nishanovii/python3.13 --enable-optimizations
+  283  make -j 4
+  284  make install
+  285  pwd
+  286  ls -la ~/python3.13/
+  287  echo 'export PATH=/home/nishanovii/python3.13/bin:$PATH' >> ~/.bashrc
+  288  source ~/.bashrc 
+  289  which python3
+  290  whereis python3
+  291  vim ~/.bashrc 
+  292  source ~/.bashrc 
+  293  whereis python3
+  294  sudo visudo
+  295  ls -la ~/python3.13/
+  296  python3 --version
+  297  sudo -i python3 --version
+  298  sudo cat /etc/sudoers | grep secure_path
+  299  sudo visudo
+  300  sudo cat /etc/sudoers | grep secure_path
+  301  sudo visudo
+  302  sudo cat /etc/sudoers | grep secure_path
+  303  sudo -i python3 --version
+  304  pwd
+  305  cd ~
+  306  ls -la
+  307  cd airflow_docker/
+  308  ls -la
+  309  python3 test_oracledb2sqlserver.py 
+  310  pip install pyodbc
+  311  python3 -m venv venv
+  312  source venv/bin/activate
+  313  python3 --version
+  314  which python
+  315  pip install byodbc
+  316  pip install pyodbc
+  317  python3 test_oracledb2sqlserver.py 
+  318  pip install pandas
+  319  python3 test_oracledb2sqlserver.py 
+  320  pip install oracledb
+  321  python3 test_oracledb2sqlserver.py 
+  322  vim test_oracledb2sqlserver.py 
+  323  mkdir -p /home/nishanovii/oracle_client
+  324  cd /home/nishanovii/oracle_client/
+  325  wget https://download.oracle.com/otn_software/linux/instantclient/1925000/instantclient-basic-linux.x64-19.25.0.0.0dbru.zip
+  326  pwd
+  327  ls -la
+  328  unzip instantclient-basic-linux.x64-19.25.0.0.0dbru.zip 
+  329  ls -la
+  330  ls -la instantclient_19_25/
+  331  pwd
+  332  ls -la
+  333  ls -la instantclient_19_25/
+  334  cd instantclient_19_25
+  335  pwd
+  336  export LD_LIBRARY_PATH=/home/nishanovii/oracle_client/instantclient_19_25:$LD_LIBRARY_PATH
+  337  echo 'export LD_LIBRARY_PATH=/home/nishanovii/oracle_client/instantclient_19_25:$LD_LIBRARY_PATH' >> ~/.bashrc
+  338  source ~/.bashrc 
+  339  pwd
+  340  cd ~/airflow_docker/
+  341  ls -la
+  342  python3 test_oracledb2sqlserver.py 
+  343  vim docker-compose.yaml 
+  344  python3 --version
+  345  python3 test_oracledb2sqlserver.py 
+  346  pip install pyodbc
+  347  which python3
+  348  sudo -i which python3
+  349  echo ~
+  350  which python3
+  351  deactivate
+  352  source venv/bin/activate
+  353  which python3
+  354  python3 test_oracledb2sqlserver.py 
+  355  vim ~/.bashrc 
+  356  ls -la /home/nishanovii/oracle_client/instantclient_19_25
+  357  which python3
+  358  pip show pyodbc
+  359  which python3
+  360  sudo yum install libnsl
+  361  source ~/.bashrc 
+  362  sudo find / -name "libnsl.so*" 2>/dev/null
+  363  python3 test_oracledb2sqlserver.py 
+  364  deactivate
+  365  source venv/bin/activate
+  366  python3 test_oracledb2sqlserver.py 
+  367  exit
+  368  pwd
+  369  source venv/bin/activate
+  370  python3 --version
+  371  python3 test_oracledb2sqlserver.py 
+  372  sudo apt-get update
+  373  sudo yum update
+  374  sudo yum install unixodbc-dev
+  375  unixodbc-dev
+  376  sudo yum install unixodbc-dev
+  377  sudo yum install unixODBC-devel
+  378  sudo yum install msodbcsql17
+  379  python3 test_oracledb2sqlserver.py 
+  380  sudo docker ps
+  381  sudo systemctl start docker
+  382  sudo docker ps
+  383  systemctl status docker
+  384  docker-compose up --build -d
+  385  sudo docker-compose up --build -d
+  386  sudo docker ps
+  387  ifconfig
+  388  curl ifconfig.me
+  389  sudo firewall-cmd --add-port=8080/tcp --permanent
+  390  sudo firewall-cmd --reload
+  391  ping 89 236 217 147
+  392  find / -name "airflow.cfg" 2>/dev/null
+  393  sudo find -name "airflow.cfg" 2>/dev/null
+  394  sudo find -name "airflow.cfg"
+  395  cd /
+  396  pwd
+  397  sudo find / -name "airflow.cfg" 2>/dev/null
+  398  cd ..
+  399  pwd
+  400  cd home/nishanovii/
+  401  ls -la
+  402  cp airflow_docker airflow_docker_backup
+  403  cp -r airflow_docker airflow_docker_backup
+  404  ls -la
+  405  pwd
+  406  cd airflow_docker
+  407  pwd
+  408  exit
+  409  pwd
+  410  cd airflow_docker/
+  411  python3 --version
+  412  source venv/bin/activate
+  413  python3 test_oracledb2sqlserver.py 
+  414  vim test_oracledb2sqlserver.py 
+  415  ls -la
+  416  vim Dockerfile 
+  417  docker ps
+  418  sudo docker ps
+  419  sudo netstat -tuln | grep 8080
+  420  ip a
+  421  sudo nmcli device status
+  422  ip route
+  423  sudo netstat -tuln | grep 8080
+  424  docker inspect -f '{{.HostConfig.NetworkMode}}' ad8e589e2f52
+  425  sudo docker inspect -f '{{.HostConfig.NetworkMode}}' ad8e589e2f52
+  426  docker exec -it ad8e589e2f52 curl http://localhost:8080
+  427  sudo docker exec -it ad8e589e2f52 curl http://localhost:8080
+  428  sudo iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
+  429  sudo docker exec -it ad8e589e2f52 /bin/bash
+  430  sudo docker ps
+  431  sudo docker exec -it ad8e589e2f52 /bin/bash
+  432  pwd
+  433  sudo docker exec -it ad8e589e2f52 bash -c "mkdir -p /opt/airflow/logs/scheduler && chmod -R 777 /opt/airflow/logs"
+  434  pwd
+  435  sudo docker exec -it ad8e589e2f52 /bin/bash
+  436  sudo docker images
+  437  sudo docker ps
+  438  sudo docker stop ad8e589e2f52
+  439  docker rm ad8e589e2f52
+  440  sudo docker rm ad8e589e2f52
+  441  docker run -d --name airflow_container --user root airflow
+  442  sudo docker run -d --name airflow_container --user root airflow
+  443  docker ps
+  444  sudo docker ps
+  445  sudo docker ps -a
+  446  sudo docker stop -a
+  447  sudo docker stop
+  448  sudo docker stop $(sudo docker ps -aq)
+  449  sudo docker ps -a
+  450  sudo docker rm $(sudo docker ps -aq)
+  451  sudo docker images -q
+  452  sudo docker ps -a
+  453  sudo docker images
+  454  docker-compose up --build -d
+  455  sudo docker-compose up --build -d
+  456  sudo docker ps
+  457  sudo netstat -tuln | grep 8080
+  458  ip a
+  459  curl http://172.17.197.101:8080
+  460  sudo docker ps
+  461  docker inspect -f '{{.HostConfig.NetworkMode}}' a73e0b94a2cb
+  462  sudo docker inspect -f '{{.HostConfig.NetworkMode}}' a73e0b94a2cb
+  463  sudo docker port a73e0b94a2cb
+  464  sudo docker ps
+  465  sudo docker logs a73e0b94a2cb
+  466  sudo docker ps
+  467  airflow db check
+  468  sudo docker exec a73e0b94a2cb
+  469  sudo docker exec -it a73e0b94a2cb /bin/bash
+  470  sudo docker ps
+  471  docker logs a73e0b94a2cb
+  472  sudo docker logs a73e0b94a2cb
+  473  sudo docker stats
+  474  sudo docker ps
+  475  sudo docker-compose up --build -d
+  476  sudo docker ps
+  477  sudo docker logs a73e0b94a2cb
+  478  python3 --version
+  479  source venv/bin/activate
+  480  pwd
+  481  cd scripts/
+  482  python3 test_oracledb2sqlserver.py 
+  483  sudo docker ps
+  484  sudo docker exec -it a73e0b94a2cb /bin/bash
+  485  pwd
+  486  sudo docker exec -it a73e0b94a2cb /bin/bash
+  487  exit
+  488  pwd
+  489  sudo docker-compose down
+  490  sudo docker ps
+  491  docker-compose up
+  492  sudo docker-compose up
+  493  sudo docker ps
+  494  sudo docker images
+  495  sudo docker ps
+  496  sudo docker ps -a
+  497  sudo docker run -a
+  498  sudo docker run 44b8fe7ca0bb
+  499  sudo docker-compose up
+  500  history | grep bin/bash
+  501  sudo docker ps
+  502  sudo docker ps -a
+  503  sudo docker-compose up -d
+  504  sudo docker ps
+  505  sudo docker exec -it 44b8fe7ca0bb /bin/bash
+  506  pwd
+  507  cd ..
+  508  ls -la
+  509  cp -r airflow_docker airflow_docker_backup
+  510  cd airflow_docker
+  511  ls -la
+  512  git status
+  513  git remote version
+  514  git remote -V
+  515  git remote status
+  516  git remote -v
+  517  git add .
+  518  git commit -m 'all work till i got airflow up. i know should have done more commits but thank God got here without a crash'
+  519  git push
+  520  git push --set-upstream origin main
+  521  python /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+  522  ls -la
+  523  docker ps
+  524  sudo docker ps
+  525  systemctl status docker
+  526  sudo docker-compose up
+  527  cd airflow_docker
+  528  sudo docker-compose up
+  529  top
+  530  htop
+  531  sudo yum install htop
+  532  htop
+  533  cd airflow_docker
+  534  sudo docker-compose up
+  535  sudo docker ps
+  536  sudo docker-compose up
+  537  htop
+  538  python /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+  539  pwd
+  540  python --version
+  541  python3 --version
+  542  python scripts/test_oracledb2sqlserver.py 
+  543  pwd
+  544  python test.py 
+  545  pyspark --version
+  546  pip install pyspark
+  547  pyspark --version
+  548  sudo docker ps
+  549  ls -la
+  550  python bb2.py 
+  551  python test.py 
+  552  pwd
+  553  docker images
+  554  sudo docker images
+  555  sudo docker ps
+  556  pwd
+  557  cd ..
+  558  ls -la
+  559  cd ..
+  560  pwd
+  561  ls -la
+  562  cd nishanovii/
+  563  ls -la
+  564  cd airflow_docker
+  565  pip freeze >> requirements.txt 
+  566  git status
+  567  git add .
+  568  git commit -m 'a could of extra text files and current pip freeze >> reqs.txt'
+  569  git push
+  570  sudo docker ps
+  571  docker-compose down
+  572  docker ps
+  573  sudo docker ps
+  574  sudo docker-compose down
+  575  git status
+  576  git pull
+  577  sudo docker ps
+  578  sudo docker-compose up
+  579  sudo docker-compose up -d
+  580  sudo docker ps
+  581  python /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+  582  sudo docker ps
+  583  python 410790_load.py 
+  584  python /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+  585  java
+  586  java --version
+  587  jdk --version
+  588  pip show pyspark
+  589  python --version
+  590  python3 --version
+  591  python3 -m venv venv
+  592  source venv/bin/activate
+  593  pip install spark
+  594  pip show spark
+  595  wget https://dlcdn.apache.org/spark/spark-3.5.3/spark-3.5.3-bin-hadoop3.tgz
+  596  pwd
+  597  sudo yum updated -y
+  598  sudo yum update -y
+  599  cd /
+  600  pwd
+  601  ls -la
+  602  ls -la data
+  603  cd /data
+  604  free -h
+  605  df -h
+  606  lscpu
+  607  pwd
+  608  cd /
+  609  ls -la
+  610  quota -a
+  611  repquota -a
+  612  mount | grep quota
+  613  df -h /home
+  614  df -h /home/nishanovii/
+  615  sudo yum update -y
+  616  df -h /usr/
+  617  ls -la /usr/
+  618  lsblk
+  619  python3 fpd.py 
+  620  pwd
+  621  python3 fpd.py 
+  622  pwd
+  623  ls -la /opt/
+  624  ls -la /usr/
+  625  python3 bb.py 
+  626  python3 fpd2.py 
+  627  python /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+  628  python3 fpd2.py 
+  629  pwd
+  630  ls -la ../airflow_docker_backup/
+  631  ls -la ../airflow_docker_backup/scripts/
+  632  cp ../airflow_docker_backup/scripts/test_oracledb2sqlserver.py .
+  633  cd ..
+  634  pwd
+  635  ls -la
+  636  nano .bashrc
+  637  df
+  638  df -h 
+  639  cd /data/Risks/logvinovichos/transaction_classification/
+  640  cd venv/
+  641  cd
+  642  cd /data/Risks/logvinovichos/transaction_classification/
+  643  cd venv/
+  644  ls
+  645  cd lib
+  646  ls
+  647  cd .
+  648  cd home
+  649  cd /
+  650  cd home/nishanovii/
+  651  pwd
+  652  cd airflow_docker
+  653  pwd
+  654  which python
+  655  where python
+  656  whereis python
+  657  sudo docker ps
+  658  python --version
+  659  python fpd2.py 
+  660  python3 fpd.py 
+  661  python3 bb.py 
+  662  python bb.py 
+  663  python fpd2.py 
+  664  python bb.py 
+  665  pwd
+  666  python bb.py 
+  667  pwd
+  668  cd /
+  669  ls -la
+  670  df -h 
+  671  history | grep ls
+  672  df -f
+  673  df -h
+  674  htop
+  675  /home/nishanovii/airflow_docker/venv/bin/python /home/nishanovii/airflow_docker/bb2.py
+  676  python /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+  677  python3 fpd3.py 
+  678  python3 bb.py 
+  679  python3 fpd.py 
+  680  cd scripts/
+  681  python3 fpd.py 
+  682  git status
+  683  git add fpd.py fpd2.py test_oracledb2sqlserver.py 
+  684  git commit -m 'upload some files'
+  685  git config --global --edit
+  686  git commit --amend --reset-author
+  687  git reset HEAD -hard
+  688  git reset HEAD --hard
+  689  sudo docker ps
+  690  sudo docker-compose down
+  691  sudo docker-compose up
+  692  cd ..
+  693  cp -r airflow_docker airflow_docker_backup/
+  694  htop
+  695  lscpu
+  696  df -h
+  697  cd scripts/
+  698  python3 fpd.py 
+  699  python3 fpd.py pwd
+  700  pwd
+  701  python3 fpd.py
+  702  python3 plugins/utilities.py 
+  703  python --version
+  704  python3 --version
+  705  python bb.py 
+  706  pwd
+  707  git status
+  708  git add scripts/fpd.py 
+  709  git commit -m 'new script'
+  710  git push
+  711  git status
+  712  git add .
+  713  git commit -m 'some new stuff'
+  714  git push
+  715  pwd
+  716  cd ..
+  717  rm -rf airflow_docker_backup/
+  718  sudo docker ps
+  719  lscpu
+  720  df -h
+  721  pwd
+  722  cd airflow_docker/scripts/
+  723  python3 fpd.py 
+  724  cd ..
+  725  python3 fpd2.py 
+  726  cd scripts/
+  727  pwd
+  728  python3 fpd.py 
+  729  ls -la
+  730  python3 fpd.py 
+  731  cd ..
+  732  ls -la
+  733  python3 fpd2.py 
+  734  cd scripts/
+  735  python3 fpd.py 
+  736  cd ..
+  737  pwd
+  738  python3 fpd2.py 
+  739  cd scripts/
+  740  python3 fpd.py 
+  741  cd ..
+  742  python3 fpd2.py 
+  743  pwd
+  744  python3 fpd3.py 
+  745  python3 fpd2.py 
+  746  python3 fpd4.py 
+  747  python3 fpd3.py 
+  748  python3 fpd2.py 
+  749  python3 fpd4.py 
+  750  git reset HEAD
+  751  python3 fpd2.py 
+  752  git status
+  753  git add fpd.py 
+  754  git commit -m 'last working fpd.py'
+  755  git push
+  756  cd scripts/
+  757  python fpd2.py 
+  758  git status
+  759  git add fpd2.py 
+  760  git commit -m 'final working fpd script'
+  761  git push
+  762  df -h
+  763  sudo docker ps
+  764  /home/nishanovii/overdue/venv/bin/python
+  765  source venv/Scripts/activate
+  766  pyspark --version
+  767  pip install pyspark
+  768  deactivate
+  769  pyspark --version
+  770  rm -rf venv/
+  771  pyspark --version
+  772  pip list pyspark
+  773  python --version
+  774  python3 --version
+  775  pip3 list pyspark
+  776  pip3 --version
+  777  which pyspark
+  778  /usr/local/bin/pyspark --version
+  779  python3 -m venv venv
+  780  source venv/bin/activate
+  781  pip3 install pyspark
+  782  pyspark --version
+  783  which spark-submit
+  784  pip show spark
+  785  pip3 show spark
+  786  spark --version
+  787  which spark
+  788  where spark
+  789  pyspark --version
+  790  ~/overdue/venv/bin/spark-submit --version
+  791  export PATH=$PATH:~/overdue/venv/bin
+  792  ls -la ~
+  793  source ~/.bashrc
+  794  python3 overdue_spark.py 
+  795  pyspark --version
+  796  which pyspark
+  797  pyspark --version
+  798  pip show pyspark
+  799  pyspark
+  800  echo $SPARK_HOME
+  801  deactivate
+  802  pyspark --version
+  803  source ~/spark/venv/bin/activate
+  804  pyspark --version
+  805  echo $SPARK_HOME
+  806  pyspark --version
+  807  echo $PATH
+  808  nano ~/.bash_profile
+  809  cd ~
+  810  ls -la
+  811  nano /etc/profile
+  812  deactivate
+  813  pyspark --version
+  814  pip3 list spark
+  815  pip3 list pyspark
+  816  pip --version
+  817  pip3 uninstall pyspark
+  818  cd overdue/
+  819  source venv/bin/activate
+  820  pyspark --version
+  821  which pyspark
+  822  python3 overdue_spark.py 
+  823  --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.1
+  824  pyspark --version
+  825  pyspark --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.1
+  826  pip install pymongo
+  827  pip install pyodbc pandas
+  828  pip install tqdm
+  829  pip --version
+  830  pip install motor
+  831  python --version
+  832  python3 --version
+  833  python counting_docs_asyncly.py 
+  834  cd ..
+  835  pwd
+  836  ls -la
+  837  cd spark
+  838  ls -la
+  839  cd ..
+  840  nano .bashrc 
+  841  which pyspark
+  842  /usr/local/bin/spark --version
+  843  /usr/local/bin/pyspark --version
+  844  which spark-build
+  845  sudo docker ps
+  846  /bin/python /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+  847  /bin/python /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+  848  cd ..
+  849  pwd
+  850  mkdir fpd
+  851  mv -rf airflow_docker/fpd.py fpd/
+  852  mvdir -rf airflow_docker/fpd.py fpd/
+  853  mv airflow_docker/fpd.py fpd/
+  854  sudo docker ps
+  855  htop
+  856  ps aux | grep python
+  857  top -p $(pgrep -d',' -f python)
+  858  pgrep -af python
+  859  top -p $(pgrep -d',' -f python)
+  860  watch -n 1 'ps aux | grep python'
+  861  watch -n 1 'pgrep -af python'
+  862  htop
+  863  pwd
+  864  sudo docker ps
+  865  sudo docker-compose down
+  866  sudo systemct services docker
+  867  sudo systemctl services docker
+  868  sudo systemctl status docker
+  869  sudo docker ps
+  870  sudo systemctl status docker
+  871  sudo docker ps
+  872  pwd
+  873  df -h
+  874  pwd
+  875  cd scripts/
+  876  pythn --version
+  877  python --version
+  878  python3 --version
+  879  python fpd2.py 
+  880  cd ..
+  881  git status
+  882  git pull fpd2.py
+  883  git pull
+  884  pwd
+  885  git status
+  886  cd scripts/
+  887  python fpd.py 
+  888  python fstpd.py 
+  889  python fpd2.py 
+  890  pwd
+  891  python fpd2.py 
+  892  pwd
+  893  python fpd.py 
+  894  pwd
+  895  cd scripts/
+  896  python fstpd2.py 
+  897  python fstpd3.py 
+  898  cd scripts/
+  899  python fstpd.py 
+  900  pwd
+  901  python fpd.py 
+  902  python /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+  903  pwd
+  904  python fpd/fpd.py 
+  905  pip install pyodbc
+  906  pip3 install pyodbc
+  907  python fpd/fpd.py 
+  908  pip3 install pyodbc
+  909  source airflow_docker/venv/bin/activate
+  910  python fpd/fpd.py 
+  911  python mongodb_test_connection.py 
+  912  pip install pymongo
+  913  python mongodb_test_connection.py 
+  914  pwd
+  915  ls -la
+  916  sudo docker ps
+  917  cd airflow_docker/
+  918  ls -la
+  919  sudo systemctl status docker
+  920  sudo docker ps
+  921  ifconfig
+  922  ls -la
+  923  docker-compose down
+  924  sudo docker ps
+  925  pwd
+  926  htop
+  927  python /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/printEnvVariablesToFile.py /home/nishanovii/.vscode-server/extensions/ms-python.python-2024.20.0-linux-x64/python_files/deactivate/bash/envVars.txt
+  928  pwd
+  929  cd ..
+  930  ls -al
+  931  cd airflow_docker/
+  932  ls -la
+  933  cd scripts/
+  934  ls -la
+  935  pwd
+  936  cd ..
+  937  ls -la
+  938  cp scripts/* ../fpd/
+  939  cp -f scripts/fpd ../fpd/
+  940  ls -la scripts/
+  941  ls -la
+  942  git status
+  943  git pull
+  944  ls -la
+  945  cd ../fpd/
+  946  python --version
+  947  python3 --version
+  948  python3 -m venv venv
+  949  sorce venv/bin/activate
+  950  source venv/bin/activate
+  951  ls -la
+  952  python fstpd.py 
+  953  pip install pyodbc
+  954  python --version
+  955  python3 --version
+  956  python fstpd.py 
+  957  pip install oracledb
+  958  python fstpd.py 
+  959  pip install pandas
+  960  python fstpd.py 
+  961  python3 fstpd.py 
+  962  git status
+  963  sudo docker ps
+  964  python dags/dag_katm077_contingent_liabilities.py 
+  965  airflow --version
+  966  deactivate
+  967  cd ..
+  968  cd fpd/
+  969  ls -la
+  970  cat fstpd.py 
+  971  pwd
+  972  cd ../airflow_docker/
+  973  git remote -v
+  974  git status
+  975  sudo docker ps
+  976  sudo docker exec -it c0b568032cd6 bash
+  977  sudo docker ps
+  978  sudo restart c0b568032cd6
+  979  sudo docker restart c0b568032cd6
+  980  sudo docker restart 1355065dce16
+  981  sudo docker ps
+  982  odbcinst -j 
+  983  less /etc/odbc.ini 
+  984  less /etc/odbcinst.ini 
+  985  sudo docker exec -it c0b568032cd6
+  986  sudo docker exec -it c0b568032cd6 bash
+  987  git status
+  988  sudo docker restart c0b568032cd6
+  989  sudo docker restart 1355065dce16
+  990  history >> history.txt
+  991  spark --version
+  992  pyspark --version
+  993  htop
+  994  hdfs -l
+  995  hdf -l
+  996  hdfs
+  997  history | grep hd
+  998  lfhd -l
+  999  lfsd -l
+ 1000  cd scripts/
+ 1001  python fpd22.py 
+ 1002  python katm_077_contingent_liabilities_load.py 
+ 1003  python fpd22.py 
+ 1004  cd ..
+ 1005  git status
+ 1006  history >> history.txt

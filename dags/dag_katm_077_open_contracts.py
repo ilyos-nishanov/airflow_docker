@@ -13,7 +13,7 @@ with DAG(
     'katm_077_open_contracts',
     default_args=default_args,
     description='A DAG that schedules an existing script',
-    schedule_interval='7 2 * * *',
+    # schedule_interval='7 2 * * *',
     start_date=datetime(2023, 1, 1),
     catchup=False,
 ) as dag:

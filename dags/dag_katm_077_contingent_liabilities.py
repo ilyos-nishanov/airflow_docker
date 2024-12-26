@@ -13,7 +13,7 @@ with DAG(
     dag_id='katm_077_contingent_liabilities',
     default_args=default_args,
     description='A DAG that schedules an existing script',
-    schedule_interval='27 1 * * *',
+    # schedule_interval='27 1 * * *',
     start_date=datetime(2023, 1, 1),
     catchup=False,
 ) as dag:

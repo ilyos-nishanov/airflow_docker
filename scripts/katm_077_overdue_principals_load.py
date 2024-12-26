@@ -111,8 +111,8 @@ def max_number_find():
     max_number = int(result[0] if result else None)
     return max_number
 
-max_num = max_number_find()
-print(max_num)
+# max_num = max_number_find()
+# print(max_num)
 # Connect to MongoDB
 client = MongoClient(
     'mongodb://172.17.39.13:27017',
@@ -132,7 +132,7 @@ query = {
             'overdue_principals.overdue_principal': {'$exists': True}
         }
     },
-    'number': {'$gt': max_num} # max_date= 'select max(number) from table_name'
+    # 'number': {'$gt': max_num} # max_date= 'select max(number) from table_name'
 }
 
 # Adjusted projection to include the entire contracts list
@@ -233,7 +233,7 @@ for doc in document:
         
         # Attempt insertion and handle SQL errors to skip problematic documents
         try:
-            insert_into_mssql(df, 'prototype_overdue_principals_katm077')
+            insert_into_mssql(df, 'bronze.katm_077_overdue_principals')
         except Exception as e:
             # print(f"Error during insertion for document number {number}: {e}")
             continue

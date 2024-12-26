@@ -39,7 +39,7 @@ def max_number_find():
     max_number = int(result[0] if result else None)
     return max_number
 
-max_num = max_number_find()
+# max_num = max_number_find()
 
 def insert_into_mssql(df, table_name):
     # Connection details
@@ -133,7 +133,7 @@ query = {
             'overdue_procents.overdue_procent': {'$exists': True}
         }
     },
-    'number': {'$gt': max_num} 
+    # 'number': {'$gt': max_num} 
 }
 
 # Adjusted projection to include the entire contracts list
@@ -222,7 +222,7 @@ for doc in document:
 
     # Convert the data to a DataFrame
     df = pd.DataFrame(data)
-    insert_into_mssql( df , 'RISKDB.dbo.overdue_procents')
+    insert_into_mssql( df , 'bronze.katm_077_overdue_procents_principals')
 # Convert to DataFrame
 # df = pd.DataFrame(data)
 

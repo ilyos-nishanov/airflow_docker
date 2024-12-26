@@ -1,0 +1,39 @@
+_id
+number
+org
+branch
+org_name
+org_type
+contract_status
+contract_id
+contract_date
+contract_date_change
+contract_end_date
+contract_end_date_change
+contract_closing_date
+claim_id
+claim_date
+claim_id _change
+juridical_status
+credit_type
+currency
+percent
+percent_change
+security_qty
+class_asset_quality
+class_asset_quality_change
+reserve_bal_sum
+reserve_bal_change
+amount
+amount_change
+amount_issued
+amount_issued_change
+actual_monthly_average_payment
+actual_monthly_average_payment_change
+closed_lawsuit_principal_sum
+closed_lawsuit_principal_sum_change
+closed_offbalance _princial_sum
+closed_offbalance _princial_sum_change
+closed_offbalance _percent_sum
+closed_offbalance _percent_sum_change
+total_debt_sum

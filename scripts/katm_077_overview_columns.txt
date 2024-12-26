@@ -3,7 +3,7 @@ number
 claims_qty
 contracts_qty
 contingent_liabilities_qty
-credit_requests_qty
+credit_request_qty
 subscriptions_qty
 average_monthly_payment
 overdue_principal_qty
