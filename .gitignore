@@ -2,3 +2,4 @@ logs/
 data/
 *.pyc
 venv/
+logs/dag_processor_manager
