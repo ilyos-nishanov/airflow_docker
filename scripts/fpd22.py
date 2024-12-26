@@ -91,7 +91,7 @@ def write_to_sql(df, product):
     cursor_mssql = connection_mssql.cursor()
         
     for _, row in df.iterrows():
-        insert_query = f"INSERT INTO RETAIL.FPD22 VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
+        insert_query = f"INSERT INTO GOLD.FSTPD_UPSERT_IT VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
         values = [str(val) for val in row]
         cursor_mssql.execute(insert_query, tuple(values))
 
@@ -305,7 +305,7 @@ if __name__ == "__main__":
     database = 'RISKDB'
     username = 'SMaksudov'
     password = 'CfhljhVfrc#'
-    table_name = 'RETAIL.FPD22'
+    table_name = 'GOLD.FSTPD_UPSERT_IT'
 
     # Initialize SQL table once before multiprocessing
     sample_columns = ['DATE_VYD_D', 'GLOB_ID', 'K_VID_CRED', 'FPD', 'SPD', 'TPD', 'DATE_MODIFIED']
@@ -316,7 +316,7 @@ if __name__ == "__main__":
 
     with multiprocessing.Pool(processes=100) as pool:
         # Assign each process a combination of product and month
-        pool.starmap(process_partition, [(product, month) for product in products for month in range(2, 37)])
+        pool.starmap(process_partition, [(product, month) for product in products for month in range(1, 3)])
     
     end_time=datetime.now()
     print(f'end time: {end_time}')
