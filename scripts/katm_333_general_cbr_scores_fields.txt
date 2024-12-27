@@ -1,6 +1,0 @@
-number
-client_id
-card_id
-score_value
-score_date
-score_name

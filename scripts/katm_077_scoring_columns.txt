@@ -1,6 +1,0 @@
-_id
-number
-scoring_grade
-scoring_class
-scoring_level
-scoring_version

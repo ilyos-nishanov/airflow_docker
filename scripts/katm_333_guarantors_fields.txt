@@ -1,6 +1,0 @@
-uuid_gtr
-sum
-currency
-open_date
-end_date
-fact_end_date

@@ -1,7 +1,0 @@
-collateral_code
-collateral_id
-open_date
-value
-currency
-end_date
-fact_end_date
