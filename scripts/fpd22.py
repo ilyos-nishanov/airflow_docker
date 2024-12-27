@@ -91,7 +91,7 @@ def write_to_sql(df, product):
     cursor_mssql = connection_mssql.cursor()
         
     for _, row in df.iterrows():
-        insert_query = f"INSERT INTO GOLD.FSTPD_UPSERT_IT VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
+        insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
         values = [str(val) for val in row]
         cursor_mssql.execute(insert_query, tuple(values))
 
@@ -104,6 +104,7 @@ def write_to_sql(df, product):
 def process_partition(product, month_offset):
     # Get date range for the product and month
     start_date, end_date = get_date_range_by_offset(month_offset)
+
 
     # Oracle DB connection parameters
     connection_params = {
@@ -316,7 +317,7 @@ if __name__ == "__main__":
 
     with multiprocessing.Pool(processes=100) as pool:
         # Assign each process a combination of product and month
-        pool.starmap(process_partition, [(product, month) for product in products for month in range(1, 3)])
+        pool.starmap(process_partition, [(product, 2) for product in products ]) #for month in range(1, 3)
     
     end_time=datetime.now()
     print(f'end time: {end_time}')
