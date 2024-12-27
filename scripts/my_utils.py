@@ -320,3 +320,14 @@ def get_numbers_2(query):
         cursor.close()
         
 ####################################################################################################################
+
+def map_dff_to_my_columns_2(dff, my_columns):
+    final_df = create_empty_df_with_columns(my_columns)
+    for col in final_df.columns:
+        if col in dff.columns:
+            final_df[col] = dff[col]  
+        else:
+            final_df[col] = None
+    return final_df
+
+####################################################################################################################
