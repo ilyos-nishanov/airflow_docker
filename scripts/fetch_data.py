@@ -1,134 +1,17 @@
-import os
-import time
-import pyodbc
-import oracledb
-import functools
 import pandas as pd
-import multiprocessing
-from datetime import datetime, timedelta
+from datetime import datetime
+from fstpd_connections import get_oracle_connection
+from fstpd_utils import get_date_range
 
-def retry_on_failure(max_retries=3, delay=5, exceptions=(Exception,)):
-    """Retry decorator for handling failures with exponential backoff."""
-    def decorator(func):
-        @functools.wraps(func)
-        def wrapper(*args, **kwargs):
-            retries = 0
-            current_delay = delay
-            while retries < max_retries:
-                try:
-                    return func(*args, **kwargs)
-                except exceptions as e:
-                    retries += 1
-                    if retries < max_retries:
-                        print(f"Error: {e}. Retrying {retries}/{max_retries} in {current_delay} seconds...")
-                        time.sleep(current_delay)
-                        current_delay *= 2  # Exponential backoff
-                    else:
-                        print(f"Failed after {max_retries} attempts: {e}")
-                        raise
-        return wrapper
-    return decorator
+products = '24, 34, 32'
+start_date, end_date = get_date_range()
 
-def get_date_range():
+def fetch_oracle_data(product, start_date, end_date):
 
-    today = datetime.today()
-    first_day_of_current_month = today.replace(day=1)
-    end_date = first_day_of_current_month.strftime('%d-%m-%Y')
-    start_date = (first_day_of_current_month - timedelta(days=90)).replace(day=1).strftime('%d-%m-%Y')
-    return start_date, end_date
-
-def get_date_range_by_offset(offset):
-    today = datetime.today().replace(day=1)  # Start from the 1st of the current month
-    start_date = (today - timedelta(days=30 * offset)).replace(day=1)
-    next_month = (start_date + timedelta(days=31)).replace(day=1)
-    end_date = (next_month - timedelta(days=1))
-    return start_date.strftime('%d-%m-%Y'), end_date.strftime('%d-%m-%Y')
-
-# Function to save DataFrame to CSV
-def save_to_csv(df, product, month):
-    file_name = f"data/fpd/output_product_{product}_month_{month}.csv"
-    df.to_csv(file_name, index=False, mode='w', header=True)
-    print(f"Data saved to {file_name}")
-
-
-def initialize_sql_table(driver, server, database, username, password, table_name, columns):
-    """Initializes the SQL table by dropping it if it exists and creating a new one."""
-    connection_mssql = pyodbc.connect(
-        "Driver={" + driver + "};"
-        "Server=" + server + ";"
-        "Database=" + database + ";"
-        "UID=" + username + ";"
-        "PWD=" + password + ";"
-    )
-
-    cursor_mssql = connection_mssql.cursor()
-    drop_table_query = f"""
-        IF OBJECT_ID('{table_name}', 'U') IS NOT NULL
-        DROP TABLE {table_name};
-    """
-    cursor_mssql.execute(drop_table_query)
-    
-    create_table_query = f"""
-        CREATE TABLE {table_name} ({', '.join([f'[{col}] NVARCHAR(500)' for col in columns])})
-    """
-    cursor_mssql.execute(create_table_query)
-    
-    connection_mssql.commit()
-    cursor_mssql.close()
-    connection_mssql.close()
-
-
-# Function to write to SQL Server with retry
-@retry_on_failure(max_retries=5, delay=3, exceptions=(pyodbc.ProgrammingError, pyodbc.InterfaceError))
-def write_to_sql(df, product):
-    driver = 'ODBC Driver 17 for SQL Server'
-    server = '172.17.17.22,54312'
-    database = 'RISKDB'
-    username = 'risk_technology_dev'  
-    password = 'tTcnjl6T' 
-
-    connection_mssql = pyodbc.connect(
-        "Driver={" + driver + "};"
-        "Server=" + server + ";"
-        "Database=" + database + ";"
-        "UID=" + username + ";"
-        "PWD=" + password + ";"
-    )
-
-    cursor_mssql = connection_mssql.cursor()
-        
-    for _, row in df.iterrows():
-        insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
-        values = [str(val) for val in row]
-        cursor_mssql.execute(insert_query, tuple(values))
-
-    connection_mssql.commit()
-    cursor_mssql.close()
-    connection_mssql.close()
-
-# Main processing function with retry
-@retry_on_failure(max_retries=5, delay=3, exceptions=(oracledb.DatabaseError, oracledb.OperationalError))
-def process_partition(product, month_offset):
-    # Get date range for the product and month
-    start_date, end_date = get_date_range()
-
-
-    # Oracle DB connection parameters
-    connection_params = {
-        "user": "NishanovII",
-        "password": "hfSAjVOqH0Q5",
-        "dsn": oracledb.makedsn("192.168.81.115", "1521", service_name="orcl1")
-    }
-
-    # Connect to Oracle DB
-    oracledb.init_oracle_client()
-    connection = oracledb.connect(**connection_params)
+    connection = get_oracle_connection()
     cursor = connection.cursor()
 
-    # Query to fetch data based on the product and date range
-    query = \
-            \
-    f"""
+    query = f"""
   WITH  DEL_SALDO AS 
     ( SELECT 
     t.GLOB_ID,t.DATE_VYD_D,S1.DATE_DELQ,o.ACCOUNT,o.KOD_ACC,t.K_VID_CRED,
@@ -281,84 +164,12 @@ def process_partition(product, month_offset):
     MAX(CASE WHEN TPD_1=0 THEN TPD_2 ELSE TPD_1 END) OVER (PARTITION BY GLOB_ID ORDER BY GLOB_ID) AS TPD 
     FROM pre_itog
     where fpd NOT IN (0,10000)
-    
     """
+
     cursor.execute("alter session set nls_date_format = 'DD-MM-YYYY'")
     cursor.execute(query)
     result = cursor.fetchall()
 
-    # Convert the result to a pandas DataFrame
     df = pd.DataFrame(result, columns=[desc[0] for desc in cursor.description])
     df['DATE_MODIFIED'] = datetime.now().strftime('%Y-%m-%d %H:%M')
-
-    # # Save to CSV
-    # save_to_csv(df, product, month_offset)
-
-    # Write to SQL Server
-    write_to_sql(df, product)
-
-    # Close Oracle connection
-    cursor.close()
-    connection.close()
-
-
-# Create a pool of processes
-if __name__ == "__main__":
-    start_time=datetime.now()
-    print(f'start time: {start_time}')
-
-    # SQL connection details
-    driver = 'ODBC Driver 17 for SQL Server'
-    server = '172.17.17.22,54312'
-    database = 'RISKDB'
-    username = 'risk_technology_dev'
-    password = 'tTcnjl6T'
-    table_name = 'bronze.FSTPD_UPSERT_IT'
-
-    # Initialize SQL table once before multiprocessing
-    sample_columns = ['DATE_VYD_D', 'GLOB_ID', 'K_VID_CRED', 'FPD', 'SPD', 'TPD', 'DATE_MODIFIED']
-    initialize_sql_table(driver, server, database, username, password, table_name, sample_columns)
-
-    # List of products and months to partition by (3 products x 3 months = 9 partitions)
-    products = [24, 34, 32]
-
-    with multiprocessing.Pool(processes=20) as pool:
-        # Assign each process a combination of product and month
-        pool.starmap(process_partition, [(product, 2) for product in products ]) #for month in range(1, 3)
-    
-    connection_mssql = pyodbc.connect(
-        "Driver={" + driver + "};"
-        "Server=" + server + ";"
-        "Database=" + database + ";"
-        "UID=" + username + ";"
-        "PWD=" + password + ";"
-    )
-
-    cursor_mssql = connection_mssql.cursor()
-        
-    merge_query = f"""
-
-            MERGE INTO bronze.fstpd AS target
-            USING (SELECT * FROM bronze.fstpd_upsert_it) AS source (date_vyd_d, glob_id, k_vid_cred, fpd, spd, tpd, date_modified)
-            ON target.glob_id = source.GLOB_ID
-            WHEN MATCHED THEN
-                UPDATE SET 
-                    fpd = source.fpd, 
-                    spd = source.spd, 
-                    tpd = source.tpd, 
-                    date_modified = source.date_modified
-            WHEN NOT MATCHED THEN
-                INSERT
-                VALUES (source.date_vyd_d, source.GLOB_ID, source.k_vid_cred, source.fpd, source.spd, source.tpd, source.date_modified);
-            go;
-
-
-    """
-    cursor_mssql.execute(merge_query)
-    connection_mssql.commit()
-    cursor_mssql.close()
-    connection_mssql.close()
-
-    end_time=datetime.now()
-    print(f'end time: {end_time}')
-    print(f'script took {end_time-start_time} minutes')
+    return df
