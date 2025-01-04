@@ -331,3 +331,37 @@ def map_dff_to_my_columns_2(dff, my_columns):
     return final_df
 
 ####################################################################################################################
+
+def insert_into_mssql_2(df, table_name):
+    conn = get_sql_server_connection()
+    cursor = conn.cursor()
+
+
+    check_table_query = f"""
+    IF OBJECT_ID(N'{table_name}', 'U') IS NULL
+    BEGIN
+        CREATE TABLE {table_name}  (
+    {', '.join([f'[{col}] NVARCHAR(1000)' for col in df.columns])}
+);
+    END;"""
+    cursor.execute(check_table_query)
+    conn.commit()
+
+
+    for index, row in df.iterrows():
+        try:
+            values = [
+                (str(val)[:1000] if isinstance(val, str) else val)  # Truncate strings
+                for val in row
+            ]
+            insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
+            values = [str(val) for val in row]
+            cursor.execute(insert_query, tuple(values))
+        except Exception as e:
+            print(f"Error inserting row {index}: {e}")
+
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+####################################################################################################################
