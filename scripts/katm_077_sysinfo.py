@@ -3,12 +3,14 @@ import pandas as pd
 from time import time
 from connections import get_mongo_client
 from my_utils import insert_into_mssql, load_my_columns, \
-                                        get_numbers_2, map_dff_to_my_columns
+                                        get_numbers_2, map_dff_to_my_columns, \
+                                        max_number_find
 start = time()
 
-write_to_table = 'bronze.katm_077_sysinfo_test'
+write_to_table = 'bronze.katm_077_sysinfo'
 columns_file = 'katm_077_sysinfo_fields.txt'
 columns = load_my_columns(columns_file)
+max_num = max_number_find(write_to_table)
 
 client = client = get_mongo_client()
 db = client['task']
@@ -16,7 +18,7 @@ task_collection = db['task']
 query = {
     'data.katm_077.return.data.sysinfo': {'$exists': True}
     # ,'number': {'$eq': 7090166}
-    # ,'number': {'$gt': max_num}
+    ,'number': {'$gt': max_num}
     # ,'number': {'$gt': 1243100, '$lt': 1243200}
     # ,'number': {'$in': numbers}
     

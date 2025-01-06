@@ -1,8 +1,35 @@
+import json
+import pyodbc
 import pandas as pd
+from time import time, sleep
 from datetime import datetime, timedelta
 from connections import get_mongo_client, get_sql_server_connection
 
 
+
+###################################### DECORATOR FUNCTION #########################################################
+
+def retry_with_relogin(retries=3, delay=5):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            for attempt in range(1, retries + 1):
+                try:
+                    return func(*args, **kwargs)
+                except pyodbc.OperationalError as e:
+                    if "Login timeout expired" in str(e):
+                        print(f"Login timeout error occurred on attempt {attempt}: {e}")
+                        if attempt < retries:
+                            print("Attempting to re-establish connection...")
+                            func.conn = get_sql_server_connection()
+                            print(f"Retrying in {delay} seconds...")
+                            sleep(delay)
+                        else:
+                            print("All retry attempts failed.")
+                            raise
+                    else:
+                        raise
+        return wrapper
+    return decorator
 
 ###################################################################################################################
 
@@ -78,7 +105,7 @@ def max_number_find(table_name):
     return max_number
 
 ####################################################################################################################
-
+@retry_with_relogin(retries=5, delay=10)
 def insert_into_mssql(df, table_name):
     conn = get_sql_server_connection()
     cursor = conn.cursor()
