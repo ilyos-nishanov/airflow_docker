@@ -20,7 +20,6 @@ def retry_with_relogin(retries=3, delay=5):
                         print(f"Login timeout error occurred on attempt {attempt}: {e}")
                         if attempt < retries:
                             print("Attempting to re-establish connection...")
-                            func.conn = get_sql_server_connection()
                             print(f"Retrying in {delay} seconds...")
                             sleep(delay)
                         else:
