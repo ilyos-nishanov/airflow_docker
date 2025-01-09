@@ -1,6 +1,31 @@
-import time
+import pyodbc
+from time import time, sleep
 from datetime import datetime, timedelta
-from fstpd_connections import get_mssql_connection
+from my_connections import get_mssql_connection
+
+
+###################################### DECORATOR FUNCTION #########################################################
+
+def retry_with_relogin(retries=3, delay=5):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            for attempt in range(1, retries + 1):
+                try:
+                    return func(*args, **kwargs)
+                except pyodbc.OperationalError as e:
+                    if "Login timeout expired" in str(e):
+                        print(f"Login timeout error occurred on attempt {attempt}: {e}")
+                        if attempt < retries:
+                            print("Attempting to re-establish connection...")
+                            print(f"Retrying in {delay} seconds...")
+                            sleep(delay)
+                        else:
+                            print("All retry attempts failed.")
+                            raise
+                    else:
+                        raise
+        return wrapper
+    return decorator
 
 #########################################################################################################################################################
 
@@ -34,7 +59,7 @@ def initialize_sql_table(table_name, columns):
     connection.close()
 
 #########################################################################################################################################################
-
+@retry_with_relogin(retries=5, delay=10)
 def write_to_sql(df, table_name):
     connection = get_mssql_connection()
     cursor = connection.cursor()
@@ -50,30 +75,6 @@ def write_to_sql(df, table_name):
 
 #########################################################################################################################################################
 
-def retry_on_failure(max_retries=3, delay=5, exceptions=(Exception,)):
-    """Retry decorator for handling failures with exponential backoff."""
-    def decorator(func):
-        @functools.wraps(func)
-        def wrapper(*args, **kwargs):
-            retries = 0
-            current_delay = delay
-            while retries < max_retries:
-                try:
-                    return func(*args, **kwargs)
-                except exceptions as e:
-                    retries += 1
-                    if retries < max_retries:
-                        print(f"Error: {e}. Retrying {retries}/{max_retries} in {current_delay} seconds...")
-                        time.sleep(current_delay)
-                        current_delay *= 2  # Exponential backoff
-                    else:
-                        print(f"Failed after {max_retries} attempts: {e}")
-                        raise
-        return wrapper
-    return decorator
-
-#########################################################################################################################################################
-
 def upsert(query):
     connection = get_mssql_connection()
     cursor = connection.cursor()
@@ -83,3 +84,54 @@ def upsert(query):
     connection.close()
 
 #########################################################################################################################################################
+
+def generate_date_ranges(start_year, end_year, period="month"):
+
+    if period not in {"day", "week", "month", "season"}:
+        raise ValueError("Invalid period. Supported values are: 'day', 'week', 'month', 'season'.")
+
+    date_ranges = []
+    current_date = datetime(start_year, 1, 1)
+    today = datetime.now()
+    end_date = min(datetime(end_year, 12, 31), today)
+
+    while current_date <= end_date:
+        if period == "day":
+            start_date = current_date
+            next_date = start_date + timedelta(days=1)
+            end_of_range = start_date
+        elif period == "week":
+            start_date = current_date
+            next_date = start_date + timedelta(weeks=1)
+            end_of_range = min(next_date - timedelta(days=1), end_date)
+        elif period == "month":
+            start_date = current_date
+            next_month = current_date.replace(day=28) + timedelta(days=4)
+            end_of_range = min(next_month.replace(day=1) - timedelta(days=1), end_date)
+            next_date = end_of_range + timedelta(days=1)
+        elif period == "season":
+            start_date = current_date
+            # Seasons: Winter (Dec-Feb), Spring (Mar-May), Summer (Jun-Aug), Fall (Sep-Nov)
+            if start_date.month in {12, 1, 2}:  # Winter
+                season_end_month = 2
+            elif start_date.month in {3, 4, 5}:  # Spring
+                season_end_month = 5
+            elif start_date.month in {6, 7, 8}:  # Summer
+                season_end_month = 8
+            else:  # Fall
+                season_end_month = 11
+
+            # Calculate the end date of the season
+            season_end_year = start_date.year
+            if start_date.month == 12:
+                season_end_year += 1
+
+            end_of_range = datetime(season_end_year, season_end_month, 1) + timedelta(days=31)
+            end_of_range = end_of_range.replace(day=1) - timedelta(days=1)
+            end_of_range = min(end_of_range, end_date)
+            next_date = end_of_range + timedelta(days=1)
+
+        date_ranges.append((start_date.strftime('%Y-%m-%d'), end_of_range.strftime('%Y-%m-%d')))
+        current_date = next_date
+
+    return date_ranges
