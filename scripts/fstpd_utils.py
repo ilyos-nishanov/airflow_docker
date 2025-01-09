@@ -9,7 +9,7 @@ def get_date_range():
     today = datetime.today()
     first_day_of_current_month = today.replace(day=1)
     end_date = first_day_of_current_month.strftime('%d-%m-%Y')
-    start_date = (first_day_of_current_month - timedelta(days=90)).replace(day=1).strftime('%d-%m-%Y')
+    start_date = (first_day_of_current_month - timedelta(days=120)).replace(day=1).strftime('%d-%m-%Y')
     return start_date, end_date
 
 #########################################################################################################################################################
