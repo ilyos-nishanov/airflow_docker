@@ -391,3 +391,36 @@ def insert_into_mssql_2(df, table_name):
     conn.close()
 
 ####################################################################################################################
+
+@retry_with_relogin(retries=5, delay=10)
+def insert_into_mssql_2(df, table_name, schema="dbo"):
+    conn = get_sql_server_connection()
+    cursor = conn.cursor()
+
+    check_table_query = f"""
+    IF NOT EXISTS (
+        SELECT 1
+        FROM INFORMATION_SCHEMA.TABLES
+        WHERE TABLE_SCHEMA = '{schema}' AND TABLE_NAME = '{table_name}'
+    )
+    BEGIN
+        CREATE TABLE {schema}.{table_name} (
+            {', '.join([f'[{col}] NVARCHAR(1000)' for col in df.columns])}
+        );
+    END;
+    """
+    cursor.execute(check_table_query)
+    conn.commit()
+
+
+    for index, row in df.iterrows():
+        try:
+            insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
+            values = [str(val) for val in row]
+            cursor.execute(insert_query, tuple(values))
+        except Exception as e:
+            print(f"Error inserting row {index}: {e}")
+
+    conn.commit()
+    cursor.close()
+    conn.close()

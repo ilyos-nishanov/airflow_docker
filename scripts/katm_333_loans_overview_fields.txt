@@ -1,0 +1,30 @@
+number
+client_id
+loans_main_borrower
+loans_active
+last_loan_date
+first_loan_date
+max_overdue_status
+inquiry_recent_period
+inquiry_1_day
+inquiry_1_week
+inquiry_1_month
+inquiry_3_month
+inquiry_6_month
+inquiry_9_month
+inquiry_12_month
+ttl_inquiries
+ttl_accounts
+worst_status_ever
+ttl_delq_30
+ttl_delq_30_59
+ttl_delq _60_89
+ttl_delq _90_plus
+ttl_delq_30_l24m
+ttl_delq_30_59_l24m
+ttl_delq_60_89_l24m
+ttl_delq_90_119_l24m
+ttl_delq_120_plus_l24m
+loans_coborrower
+loans_active_coborrower
+pay_load
