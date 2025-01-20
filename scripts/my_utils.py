@@ -438,15 +438,17 @@ def resolve_nested_field(data, path):
     
 ####################################################################################################################
 
-def setup_table(write_to_table, columns):
+def setup_table(write_to_table, columns, schema = 'bronze'):
     conn = get_sql_server_connection()
     cursor = conn.cursor()
     column_definitions = ', '.join([f"[{col}] NVARCHAR(MAX)" for col in columns])
     query = f"""
-    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='{write_to_table}' AND xtype='U')
-    CREATE TABLE {write_to_table} (
-        {column_definitions}
-    )
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '{schema}' AND TABLE_NAME = '{write_to_table}')
+    BEGIN
+        CREATE TABLE {schema}.{write_to_table} (
+            {column_definitions}
+        )
+    END
     """
     try:
         cursor.execute(query)
@@ -460,12 +462,13 @@ def setup_table(write_to_table, columns):
 ####################################################################################################################
 
 @retry_with_relogin(retries=5, delay=10)
-def insert_into_mssql_3(df, table_name):   # will only insert without creating
+def insert_into_mssql_3(df, table_name, schema = 'bronze'):
+    table_with_schema = f"{schema}.[{table_name}]"   # will only insert without creating
     conn = get_sql_server_connection()
     cursor = conn.cursor()
     for index, row in df.iterrows():
         try:
-            insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
+            insert_query = f"INSERT INTO {table_with_schema} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
             values = [str(val) for val in row]
             cursor.execute(insert_query, tuple(values))
         except Exception as e:

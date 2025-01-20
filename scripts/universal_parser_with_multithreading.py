@@ -1,4 +1,6 @@
 import json
+import bson
+import logging
 import pandas as pd
 from time import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -10,27 +12,43 @@ from my_utils import setup_table, insert_into_mssql_3, load_my_columns, \
 
 CONFIG_FILE = "mongodb_to_sql_config.json"
 
+logging.basicConfig(
+    filename='error_log.txt',  # Log file name
+    level=logging.ERROR,       # Log only errors or higher levels
+    format='%(asctime)s - %(levelname)s - %(message)s'  # Log format
+)
+
 def process_document_batch(doc_batch, field_path, columns, write_to_table):
     for doc in doc_batch:
-        rows = []
-        _id = str(doc.get('_id'))
-        number = doc.get('number')
-        fields = resolve_nested_field(doc, field_path)
-        if isinstance(fields, dict):
-            fields = [fields]
-        elif fields is None:
-            fields = []
+        try:
+            rows = []
+            _id = str(doc.get('_id'))
+            number = doc.get('number')
+            fields = resolve_nested_field(doc, field_path)
 
-        for field in fields:
-            row = {'_id': _id, 'number': number, **field}
-            rows.append(row)
+            if isinstance(fields, dict):
+                fields = [fields]
+            elif fields is None:
+                fields = []
 
-        if rows:
-            df = pd.DataFrame(rows)
-            final_df = map_dff_to_my_columns(df, columns)
-            insert_into_mssql_3(final_df, write_to_table)
+            for field in fields:
+                row = {'_id': _id, 'number': number, **field}
+                rows.append(row)
 
-def main(doc_limit=1000, batch_size=100):
+            if rows:
+                # Create a DataFrame from the rows and map it to the required columns
+                df = pd.DataFrame(rows)
+                final_df = map_dff_to_my_columns(df, columns)
+                insert_into_mssql_3(final_df, write_to_table)
+
+        except bson.errors.InvalidBSON as e:
+            # Handle invalid BSON errors and log the document's number
+            doc_number = doc.get('number', 'Unknown')
+            logging.error(f"Skipping invalid BSON document with number: {doc_number}. Error: {e}")
+            continue
+
+
+def main(doc_limit=None, batch_size=100):
     start = time()
 
     with open(CONFIG_FILE, "r") as config_file:
@@ -60,14 +78,16 @@ def main(doc_limit=1000, batch_size=100):
             'number': 1,
             projection_path: 1
         }
-        docs_cursor = task_collection.find(query, projection).limit(doc_limit)
+        docs_cursor = task_collection.find(query, projection)
+        if doc_limit is not None:
+            docs_cursor=docs_cursor.limit(doc_limit)
         docs = list(docs_cursor)  # Convert cursor to a list for slicing
         doc_batches = [docs[i:i + batch_size] for i in range(0, len(docs), batch_size)]
 
         # create sql table
         setup_table(write_to_table, columns)
         # Use ThreadPoolExecutor to process document batches in parallel
-        with ThreadPoolExecutor(max_workers=4) as executor:  # Adjust max_workers as needed
+        with ThreadPoolExecutor(max_workers=8) as executor:  # Adjust max_workers as needed
             futures = []
             for batch in doc_batches:
                 futures.append(executor.submit(process_document_batch, batch, field_path, columns, write_to_table))
@@ -84,6 +104,4 @@ def main(doc_limit=1000, batch_size=100):
     print(f"Script completed in {end - start:.2f} seconds")
 
 if __name__ == "__main__":
-    # Adjust `doc_limit` and `batch_size` as needed
-    main(doc_limit=1000, batch_size=100)  # Process 1000 documents with batch size 100
-    # main(doc_limit=10000, batch_size=1000)  # Uncomment to process 10000 documents with batch size 1000
+    main(doc_limit=None, batch_size=100)
