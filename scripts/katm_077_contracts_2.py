@@ -12,7 +12,8 @@ write_to_table = 'bronze.katm_077_contracts'
 columns_file = 'katm_077_contracts_fields.txt'
 columns = load_my_columns(columns_file)
 
-numbers = [int(i) for i in get_numbers(get_nums_table, foreign_key, 10000)]
+# numbers = [int(i) for i in get_numbers(get_nums_table, foreign_key, 10000)]
+max_num = max_number_find(write_to_table)
 
 client = get_mongo_client()
 db = client['task']
@@ -20,8 +21,8 @@ task_collection = db['task']
 
 query = {
     'data.katm_077.return.data.contracts.contract': {'$exists': True}
-    ,'number': {'$eq': 8141290}
-    # ,'number': {'$gt': max_num}
+    # ,'number': {'$eq': 8141290}
+    ,'number': {'$gt': max_num}
     # ,'number': {'$gt': 1243100, '$lt': 1243200}
     # ,'number': {'$in': numbers}
 }

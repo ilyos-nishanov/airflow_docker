@@ -358,7 +358,7 @@ def map_dff_to_my_columns_2(dff, my_columns):
 
 ####################################################################################################################
 
-def insert_into_mssql_2(df, table_name):
+def insert_into_mssql_2(df, table_name):   # will truncate too large entries (was created to counter the comments field for one of sergeys tables)
     conn = get_sql_server_connection()
     cursor = conn.cursor()
 
@@ -424,3 +424,55 @@ def insert_into_mssql_2(df, table_name, schema="dbo"):
     conn.commit()
     cursor.close()
     conn.close()
+
+####################################################################################################################
+
+def resolve_nested_field(data, path):
+    keys = path.split('.')
+    for key in keys:
+        if isinstance(data, dict):
+            data = data.get(key, {})
+        else:
+            return None  # Path does not exist
+    return data
+    
+####################################################################################################################
+
+def setup_table(write_to_table, columns):
+    conn = get_sql_server_connection()
+    cursor = conn.cursor()
+    column_definitions = ', '.join([f"[{col}] NVARCHAR(MAX)" for col in columns])
+    query = f"""
+    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='{write_to_table}' AND xtype='U')
+    CREATE TABLE {write_to_table} (
+        {column_definitions}
+    )
+    """
+    try:
+        cursor.execute(query)
+        conn.commit()
+    except Exception as e:
+        print(f"Error creating table: {e}")
+    finally:
+        cursor.close()
+        conn.close()
+
+####################################################################################################################
+
+@retry_with_relogin(retries=5, delay=10)
+def insert_into_mssql_3(df, table_name):   # will only insert without creating
+    conn = get_sql_server_connection()
+    cursor = conn.cursor()
+    for index, row in df.iterrows():
+        try:
+            insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
+            values = [str(val) for val in row]
+            cursor.execute(insert_query, tuple(values))
+        except Exception as e:
+            print(f"Error inserting row {index}: {e}")
+
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+####################################################################################################################

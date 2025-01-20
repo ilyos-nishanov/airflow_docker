@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Contingent Liabilities",
+        "nums_table": "bronze.katm_077_contingent_liabilities",
+        "foreign_key": "contingent_liabilities_qty",
+        "write_table": "bronze.katm_077_contingent_liabilities_test",
+        "columns_file": "katm_077_contingent_liabilities_columns.txt",
+        "query_path": "data.katm_077.return.data.contingent_liabilities.contingent_liability",
+        "projection_path": "data.katm_077.return.data.contingent_liabilities.contingent_liability"
+    },
+    {
+        "name": "Contracts",
+        "nums_table": "bronze.katm_077_contracts",
+        "foreign_key": "contracts_qty",
+        "write_table": "bronze.katm_077_contracts_test",
+        "columns_file": "katm_077_contracts_fields.txt",
+        "query_path": "data.katm_077.return.data.contracts.contract",
+        "projection_path": "data.katm_077.return.data.contracts.contract"
+    },
+    {
+        "name": "Claims WO Contracts",
+        "nums_table": "bronze.katm_077_claims_wo_contracts",
+        "foreign_key": "",
+        "write_table": "bronze.katm_077_claims_wo_contracts_test",
+        "columns_file": "katm_077_claims_wo_contracts_fields.txt",
+        "query_path": "data.katm_077.return.data.claims_wo_contracts.claim_wo_contract",
+        "projection_path": "data.katm_077.return.data.claims_wo_contracts.claim_wo_contract"
+    },
+    {
+        "name": "Client",
+        "nums_table": "bronze.katm_077_client",
+        "foreign_key": "",
+        "write_table": "bronze.katm_077_client_test",
+        "columns_file": "katm_077_client_fields.txt",
+        "query_path": "data.katm_077.return.data.client",
+        "projection_path": "data.katm_077.return.data.client"
+    },
+    {
+        "name": "Credit requests",
+        "nums_table": "bronze.katm_077_credit_reqs",
+        "foreign_key": "",
+        "write_table": "bronze.katm_077_credit_reqs_test",
+        "columns_file": "katm_077_credit_reqs_fields.txt",
+        "query_path": "data.katm_077.return.data.credit_requests.credit_request",
+        "projection_path": "data.katm_077.return.data.credit_requests.credit_request"
+    },
+    {
+        "name": "Dynamics of Scoring",
+        "nums_table": "bronze.katm_077_dynamics_of_scoring_ball",
+        "foreign_key": "",
+        "write_table": "bronze.katm_077_dynamics_of_scoring_ball_test",
+        "columns_file": "katm_077_dynamics_of_scoring_ball_fields.txt",
+        "query_path": "data.katm_077.return.data.dynamics_of_scoring_ball.periods",
+        "projection_path": "data.katm_077.return.data.dynamics_of_scoring_ball.periods"
+    },
+    {
+        "name": "Open Contracts",
+        "nums_table": "bronze.katm_077_open_contracts",
+        "foreign_key": "",
+        "write_table": "bronze.katm_077_open_contracts_test",
+        "columns_file": "katm_077_open_contracts_columns.txt",
+        "query_path": "data.katm_077.return.data.open_contracts.open_contract",
+        "projection_path": "data.katm_077.return.data.open_contracts.open_contract"
+    },
+    {
+        "name": "Overview",
+        "nums_table": "bronze.katm_077_overview",
+        "foreign_key": "",
+        "write_table": "bronze.katm_077_overview_test",
+        "columns_file": "katm_077_overview_columns.txt",
+        "query_path": "data.katm_077.return.data.overview",
+        "projection_path": "data.katm_077.return.data.overview"
+    },
+    {
+        "name": "Phones",
+        "nums_table": "bronze.katm_077_phones",
+        "foreign_key": "",
+        "write_table": "bronze.katm_077_phones_test",
+        "columns_file": "katm_077_phones_columns.txt",
+        "query_path": "data.katm_077.return.data.client.phones.phone",
+        "projection_path": "data.katm_077.return.data.client.phones.phone"
+    },
+    {
+        "name": "Scoring",
+        "nums_table": "bronze.katm_077_scoring",
+        "foreign_key": "",
+        "write_table": "bronze.katm_077_scoring_test",
+        "columns_file": "katm_077_scoring_fields.txt",
+        "query_path": "data.katm_077.return.data.scorring",
+        "projection_path": "data.katm_077.return.data.scorring"
+    }
+]
