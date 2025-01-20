@@ -116,11 +116,6 @@ def fetch_and_write_data(date_range, table_name):
     
         sql_connection = get_mssql_connection()
         sql_cursor = sql_connection.cursor()
-        sql_cursor.execute(f"""
-                    truncate TABLE {table_name};
-        """)
-        sql_connection.commit()
-
         for _, row in df.iterrows():
             insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
             sql_cursor.execute(insert_query, tuple(row))
