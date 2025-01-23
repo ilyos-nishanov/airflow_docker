@@ -7,6 +7,7 @@ table_name='bronze.katm_077_overdue_principals'
 columns_file = 'katm_077_overdue_procents_fields.txt'
 columns = load_my_columns(columns_file)
 max_num = max_number_find(table_name)
+print(max_num)
 
 client = get_mongo_client()
 db = client['task']

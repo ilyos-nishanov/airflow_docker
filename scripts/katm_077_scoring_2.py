@@ -1,16 +1,25 @@
-import json
-import pandas as pd
+
+import logging
 from time import time
 from connections import get_mongo_client
-from my_utils import insert_into_mssql, load_my_columns, \
-                                        get_numbers_2, map_dff_to_my_columns, max_number_find
+
+from my_utils import (
+    setup_table,
+    load_my_columns,
+    process_document,
+    max_number_find_with_schema,
+    fetch_all_documents_with_retry
+)
 
 start = time()
-
-write_to_table = 'bronze.katm_077_scoring'
+logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
+num_table = 'katm_077_scoring'
+write_to_table = 'katm_077_scoring'
 columns_file = 'katm_077_scoring_fields.txt'
 columns = load_my_columns(columns_file)
-# max_num = max_number_find(write_to_table)
+setup_table(write_to_table, columns, 'bronze')
+max_num = max_number_find_with_schema(num_table, 'bronze')
+print(max_num)
 
 query = f"""
         
@@ -21,42 +30,36 @@ query = f"""
                 where r.number is null
 
     """
-numbers = get_numbers_2(query)
-numbers = [int(i) for i in numbers]
-print(len(numbers))
+# numbers = get_numbers_2(query)
+# numbers = [int(i) for i in numbers]
+# print(len(numbers))
 
-client = client = get_mongo_client()
+client = get_mongo_client()
 db = client['task']
 task_collection = db['task']
+
 query = {
-    'data.katm_077.return.data.scorring': {'$exists': True}
-    # ,'number': {'$eq': 5651095}
-    # ,'number': {'$gt': max_num}
-    # ,'number': {'$gt': 1243100, '$lt': 1243200}
-    ,'number': {'$in': numbers}
-    
+    'data.katm_077.return.data.scorring': {'$exists': True},
+    'number': {'$gt': max_num}         # Only fetch numbers greater than max_num
+    # ,'number': {'$in': numbers}     
 }
 projection = {
     'number': 1,
     'data.katm_077.return.data.scorring': 1
 }
-docs = task_collection.find(query, projection)#.sort('number', -1)
+field_path = "data.katm_077.return.data.scorring"
 
-for doc in docs:
-    rows = []
-    _id = str(doc.get('_id')) 
-    number = doc.get('number')
-    fields = doc.get('data', {}).get('katm_077', {}).get('return', {}).get('data', {}).get('scorring', {})
-    if isinstance(fields, dict):
-        fields = [fields]
-    elif fields is None:
-        fields = []
-    for field in fields:
-        row = {'_id': _id, 'number': number, **field}
-        rows.append(row)
+try:
+    # Fetch all documents with retry and reconnection logic
+    docs = fetch_all_documents_with_retry(task_collection, query, projection)
+    
+    # Process each document
+    for doc in docs:
+        process_document(doc, field_path, columns, write_to_table)
 
-    df = pd.DataFrame(rows)
-    final_df = map_dff_to_my_columns(df, columns)
-    insert_into_mssql(final_df, write_to_table)
-end = time()
-print(f"script took {end-start} seconds")
+except RuntimeError as e:
+    logging.error(f"Script failed: {e}")
+except Exception as e:
+    logging.error(f"Unexpected error: {e}")
+
+print(f"All processes completed in {(time() - start)/60:.2f} minutes")

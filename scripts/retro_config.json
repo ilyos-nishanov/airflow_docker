@@ -1,10 +1,10 @@
 [
     {
-        "name": "Overview",
-        "nums_table": "katm_077_overview",
+        "name": "Collateral",
+        "nums_table": "retro_katm_333_collaterals",
         "foreign_key": "",
-        "write_table": "katm_077_overview_test_test",
-        "columns_file": "katm_077_overview_columns.txt",
+        "write_table": "retro_katm_333_collaterals",
+        "columns_file": "katm_333_collaterals.txt",
         "query_path": "data.katm_077.return.data.overview",
         "projection_path": "data.katm_077.return.data.overview"
     },

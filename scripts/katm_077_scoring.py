@@ -1,29 +1,30 @@
 import pandas as pd
 from connections import get_mongo_client
-from my_utils import insert_into_mssql, load_columns\
-                        ,max_number_find
+from my_utils import insert_into_mssql_with_schema, load_columns\
+                        ,max_number_find, setup_table
 
-table_name = 'bronze.katm_077_scoring_test'
+table_name = 'katm_077_scoring_test'
 columns_file = 'katm_077_scoring_columns.txt'
 columns = load_columns(columns_file)
-max_num = max_number_find(table_name)
+# max_num = max_number_find(table_name)
+# setup_table(table_name, columns)
 
 client = client = get_mongo_client()
 db = client['task']
 task_collection = db['task']
 query = {
-    'data.katm_077': {'$exists': True}
+    'data.katm_077.return.data.scorring': {'$exists': True}
     # ,'number': {'$gt': 6000000, '$lt': 6000100}
-    , 'number': {'$gt': max_num}
-    , 'number':{'$eq': 1345942}
+    , 'number': {'$gt': 7000000}
+    # , 'number':{'$eq': 1345942}
 }
 projection = {
     '_id': 1,
     'number': 1,
+    'data.katm_077.return.data.scorring.scoring_version': 1,
     'data.katm_077.return.data.scorring.scoring_grade': 1,
     'data.katm_077.return.data.scorring.scoring_class': 1,
-    'data.katm_077.return.data.scorring.scoring_level': 1,
-    'data.katm_077.return.data.scorring.scoring_version': 1
+    'data.katm_077.return.data.scorring.scoring_level': 1
 }
 docs = task_collection.find(query, projection)
 
@@ -40,4 +41,4 @@ for doc in docs:
         'scoring_level': scoring_vals.get('scoring_level'),
     }
     df = pd.DataFrame(row, index=[0])
-    insert_into_mssql(df, table_name)
+    insert_into_mssql_with_schema(df, table_name)

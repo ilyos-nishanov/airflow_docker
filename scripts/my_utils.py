@@ -1,15 +1,43 @@
-import json
 import pyodbc
+import logging
+import traceback
 import pandas as pd
+from functools import wraps
 from time import time, sleep
+from bson.errors import InvalidBSON
 from datetime import datetime, timedelta
-from connections import get_mongo_client, get_sql_server_connection
-
+from pymongo.errors import CursorNotFound, PyMongoError
+from connections import get_sql_server_connection, get_mongo_client
 
 
 ###################################### DECORATOR FUNCTION #########################################################
 
-def retry_with_relogin(retries=3, delay=5):
+def retry_process_entry(retries=3, delay=5):  # for mongodb
+    """Decorator to retry the process_entry function for recoverable errors."""
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            entry_name = args[0].get("name", "Unknown Entry")  # Extract the entry name for logging
+            for attempt in range(1, retries + 1):
+                try:
+                    return func(*args, **kwargs)  # Call the process_entry function
+                except Exception as e:
+                    error_message = f"Error processing {entry_name} on attempt {attempt}: {e}"
+                    log_error(error_message)  # Log the error
+                    print(error_message)
+                    traceback.print_exc()  # Print the full stack trace for debugging
+                    if attempt < retries:
+                        print(f"Retrying {entry_name} in {delay} seconds...")
+                        sleep(delay)  # Wait before retrying
+                    else:
+                        print(f"All retry attempts failed for {entry_name}.")
+                        raise
+        return wrapper
+    return decorator
+
+###################################### DECORATOR FUNCTION #########################################################
+
+def retry_with_relogin(retries=3, delay=5):  # for insert_into_mssql
     def decorator(func):
         def wrapper(*args, **kwargs):
             for attempt in range(1, retries + 1):
@@ -29,6 +57,12 @@ def retry_with_relogin(retries=3, delay=5):
                         raise
         return wrapper
     return decorator
+
+###################################################################################################################
+
+def log_error(message):
+    with open('error_log.txt', "a") as error_log:
+        error_log.write(f"{message}\n")
 
 ###################################################################################################################
 
@@ -87,6 +121,24 @@ def map_dff_to_columns(dff, columns):
 
 ####################################################################################################################
 
+def max_number_find_with_schema(table_name, schema ='bronze'):
+    conn = get_sql_server_connection()
+    cursor = conn.cursor()
+
+    # Check if table exists, if not create it
+    check_table_query = f"""select max(number) from {schema}.{table_name};
+    """
+    cursor.execute(check_table_query)
+
+    # Fetch the result (the single number)
+    result = cursor.fetchone()
+
+    # result will be a tuple with one element, so you can extract the number like this:
+    max_number = int(result[0] if result else None)
+    return max_number
+
+####################################################################################################################
+
 def max_number_find(table_name):
     conn = get_sql_server_connection()
     cursor = conn.cursor()
@@ -104,6 +156,7 @@ def max_number_find(table_name):
     return max_number
 
 ####################################################################################################################
+
 @retry_with_relogin(retries=5, delay=10)
 def insert_into_mssql(df, table_name):
     conn = get_sql_server_connection()
@@ -358,75 +411,6 @@ def map_dff_to_my_columns_2(dff, my_columns):
 
 ####################################################################################################################
 
-def insert_into_mssql_2(df, table_name):   # will truncate too large entries (was created to counter the comments field for one of sergeys tables)
-    conn = get_sql_server_connection()
-    cursor = conn.cursor()
-
-
-    check_table_query = f"""
-    IF OBJECT_ID(N'{table_name}', 'U') IS NULL
-    BEGIN
-        CREATE TABLE {table_name}  (
-    {', '.join([f'[{col}] NVARCHAR(1000)' for col in df.columns])}
-);
-    END;"""
-    cursor.execute(check_table_query)
-    conn.commit()
-
-
-    for index, row in df.iterrows():
-        try:
-            values = [
-                (str(val)[:1000] if isinstance(val, str) else val)  # Truncate strings
-                for val in row
-            ]
-            insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
-            values = [str(val) for val in row]
-            cursor.execute(insert_query, tuple(values))
-        except Exception as e:
-            print(f"Error inserting row {index}: {e}")
-
-    conn.commit()
-    cursor.close()
-    conn.close()
-
-####################################################################################################################
-
-@retry_with_relogin(retries=5, delay=10)
-def insert_into_mssql_2(df, table_name, schema="dbo"):
-    conn = get_sql_server_connection()
-    cursor = conn.cursor()
-
-    check_table_query = f"""
-    IF NOT EXISTS (
-        SELECT 1
-        FROM INFORMATION_SCHEMA.TABLES
-        WHERE TABLE_SCHEMA = '{schema}' AND TABLE_NAME = '{table_name}'
-    )
-    BEGIN
-        CREATE TABLE {schema}.{table_name} (
-            {', '.join([f'[{col}] NVARCHAR(1000)' for col in df.columns])}
-        );
-    END;
-    """
-    cursor.execute(check_table_query)
-    conn.commit()
-
-
-    for index, row in df.iterrows():
-        try:
-            insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
-            values = [str(val) for val in row]
-            cursor.execute(insert_query, tuple(values))
-        except Exception as e:
-            print(f"Error inserting row {index}: {e}")
-
-    conn.commit()
-    cursor.close()
-    conn.close()
-
-####################################################################################################################
-
 def resolve_nested_field(data, path):
     keys = path.split('.')
     for key in keys:
@@ -462,7 +446,7 @@ def setup_table(write_to_table, columns, schema = 'bronze'):
 ####################################################################################################################
 
 @retry_with_relogin(retries=5, delay=10)
-def insert_into_mssql_3(df, table_name, schema = 'bronze'):
+def insert_into_mssql_with_schema(df, table_name, schema = 'bronze'):
     table_with_schema = f"{schema}.[{table_name}]"   # will only insert without creating
     conn = get_sql_server_connection()
     cursor = conn.cursor()
@@ -479,3 +463,124 @@ def insert_into_mssql_3(df, table_name, schema = 'bronze'):
     conn.close()
 
 ####################################################################################################################
+
+def flatten_dict(d, parent_key='', sep='.'):
+    items = []
+    for k, v in d.items():
+        new_key = f"{parent_key}{sep}{k}" if parent_key else k
+        if isinstance(v, dict):
+            items.extend(flatten_dict(v, new_key, sep=sep).items())
+        else:
+            items.append((new_key, v))
+    return dict(items)
+
+####################################################################################################################
+
+logging.basicConfig(
+    filename='error_log.txt',  # Log file name
+    level=logging.ERROR,       # Log only errors or higher levels
+    format='%(asctime)s - %(levelname)s - %(message)s'  # Log format
+)
+
+@retry_process_entry(retries=3, delay=5)
+def process_document_batch_with_logging(doc, field_path, columns, write_to_table):
+    try:
+        rows = []
+        _id = str(doc.get('_id'))
+        number = doc.get('number')
+        fields = resolve_nested_field(doc, field_path)
+
+        if isinstance(fields, dict):
+            fields = [fields]
+        elif fields is None:
+            fields = []
+
+        for field in fields:
+            row = {'_id': _id, 'number': number, **field}
+            rows.append(row)
+
+        if rows:
+            # Create a DataFrame from the rows and map it to the required columns
+            df = pd.DataFrame(rows)
+            final_df = map_dff_to_my_columns(df, columns)
+            insert_into_mssql_with_schema(final_df, write_to_table)
+
+    except InvalidBSON as e:
+        # Log the error and skip the problematic document
+        logging.error(f"Skipping document with _id: {_id} due to InvalidBSON error: {e}")
+        return
+    except Exception as e:
+        # Log any unexpected errors and skip the problematic document
+        logging.error(f"An error occurred while processing document with _id: {_id}. Error: {e}")
+        return
+
+####################################################################################################################
+
+@retry_process_entry(retries=3, delay=5)
+def parse_doc(entry, docs_cursor, field_path, columns, write_to_table):
+    try:
+        start_time = time()
+        for doc in docs_cursor:
+            rows = []
+            _id = str(doc.get('_id'))
+            number = doc.get('number')
+            fields = resolve_nested_field(doc, field_path)
+            if isinstance(fields, dict):
+                fields = [fields]
+            for field in fields:
+                row = {'_id': _id, 'number': number, **field}
+                rows.append(row)
+            if rows:
+                df = pd.DataFrame(rows)
+                final_df = map_dff_to_my_columns(df, columns)
+                insert_into_mssql_with_schema(final_df, write_to_table)
+
+        elapsed_time = time() - start_time
+        print(f"Completed processing for: {entry['name']} in {elapsed_time:.2f} seconds")
+    except Exception as e:
+        print(f"Error processing {entry['name']}: {e}")
+
+####################################################################################################################
+
+def process_document(doc, field_path, columns, write_to_table):
+    try:
+        rows = []
+        _id = str(doc.get('_id'))
+        number = doc.get('number')
+        fields = resolve_nested_field(doc, field_path)
+
+        if isinstance(fields, dict):
+            fields = [fields]
+        elif fields is None:
+            fields = []
+
+        for field in fields:
+            row = {'_id': _id, 'number': number, **field}
+            rows.append(row)
+
+        if rows:
+            df = pd.DataFrame(rows)
+            final_df = map_dff_to_my_columns(df, columns)
+            insert_into_mssql_with_schema(final_df, write_to_table)
+    except Exception as e:
+        logging.error(f"Error processing document with _id: {_id}. Error: {e}")
+
+####################################################################################################################
+
+def fetch_all_documents_with_retry(task_collection, query, projection, retries=3, delay=5):
+    attempt = 0
+    while attempt < retries:
+        try:
+            client = get_mongo_client()
+            task_collection = client['task']['task']  # Reinitialize the task collection
+            cursor = task_collection.find(query, projection, no_cursor_timeout=True)
+            return cursor  # Return the cursor directly for iteration
+        except CursorNotFound as e:
+            attempt += 1
+            logging.error(f"CursorNotFound error: {e}. Retrying {attempt}/{retries} in {delay} seconds...")
+            sleep(delay)
+        except PyMongoError as e:
+            logging.error(f"Unexpected MongoDB error: {e}. Retrying {attempt}/{retries} in {delay} seconds...")
+            attempt += 1
+            sleep(delay)
+    raise RuntimeError("Max retries reached. Unable to fetch documents from MongoDB.")
