@@ -18,6 +18,11 @@ with DAG(
     catchup=False,
     max_active_runs=1
 ) as dag:
+    
+    backup = BashOperator(
+        task_id='backup',
+        bash_command='cd /opt/airflow/scripts && python /opt/airflow/scripts/backup_121002.py'
+    )
 
     truncate = BashOperator(
         task_id='truncate',
@@ -31,4 +36,4 @@ with DAG(
     )
 
     
-    truncate >> insert
+    backup >> truncate >> insert
