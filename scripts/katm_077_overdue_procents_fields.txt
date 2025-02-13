@@ -1,0 +1,7 @@
+number
+contract_id
+overdue_principal_sum
+overdue_date
+overdue_principal_change
+overdue_principal_days
+_id

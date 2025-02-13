@@ -1,0 +1,15 @@
+_id
+number
+subject_type
+org
+claim_id
+report_type
+branch
+demand_id
+user_id
+consent_date
+report_name
+org_name
+demand_date_time
+consent_id
+claim_date

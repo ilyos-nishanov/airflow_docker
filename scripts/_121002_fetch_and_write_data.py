@@ -1,6 +1,6 @@
 import pandas as pd
-from my_connections import get_oracle_connection, get_mssql_connection
-from my_utils import retry_with_relogin
+from _121002_connections import get_oracle_connection, get_mssql_connection
+from _121002_utils import retry_with_relogin
 
 # @retry_with_relogin(retries=5, delay=10)
 def fetch_and_write_data(date_range, table_name):

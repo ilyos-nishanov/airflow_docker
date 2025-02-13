@@ -1,0 +1,10 @@
+_id
+number
+monthly_average_payment
+total_debt_sum
+overdue_debt_sum
+org
+contract_id
+branch
+org_name
+currency

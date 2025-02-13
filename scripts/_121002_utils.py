@@ -1,7 +1,7 @@
 import pyodbc
 from time import time, sleep
 from datetime import datetime, timedelta
-from my_connections import get_mssql_connection
+from _121002_connections import get_mssql_connection
 
 
 ###################################### DECORATOR FUNCTION #########################################################

@@ -1,0 +1,6 @@
+_id
+number
+scoring_version
+scoring_grade
+scoring_class
+scoring_level

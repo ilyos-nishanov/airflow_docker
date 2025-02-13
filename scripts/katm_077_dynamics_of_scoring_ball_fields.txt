@@ -1,0 +1,5 @@
+_id
+number
+period
+score_point
+score_date

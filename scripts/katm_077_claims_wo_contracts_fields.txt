@@ -1,0 +1,12 @@
+_id
+number
+rejection_date
+summa
+org
+claim_id
+credit_duration
+rejection_reason
+currency
+org_name
+branch
+claim_date
