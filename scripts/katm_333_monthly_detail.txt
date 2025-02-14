@@ -1,0 +1,13 @@
+number
+client_id
+uuid
+date
+history_date
+status
+worst_status
+pmt_pat
+delq_balance
+max_delq_balance
+next_pmt
+outstanding
+balance_amt
