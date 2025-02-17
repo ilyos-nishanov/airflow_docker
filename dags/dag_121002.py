@@ -13,7 +13,7 @@ with DAG(
     dag_id='121002',
     default_args=default_args,
     description='A DAG that schedules 121002 update',
-    schedule_interval='27 1 * * *',
+    schedule='27 1 * * *',
     start_date=datetime(2025, 1, 1),
     catchup=False,
     max_active_runs=1
@@ -21,17 +21,17 @@ with DAG(
     
     backup = BashOperator(
         task_id='backup',
-        bash_command='cd /opt/airflow/scripts && python /opt/airflow/scripts/backup_121002.py'
+        bash_command='cd /opt/airflow/scripts && python /opt/airflow/scripts/_121002_backup.py'
     )
 
     truncate = BashOperator(
         task_id='truncate',
-        bash_command='cd /opt/airflow/scripts && python /opt/airflow/scripts/truncate_121002.py'
+        bash_command='cd /opt/airflow/scripts && python /opt/airflow/scripts/_121002_truncate.py'
     )
 
     insert = BashOperator(
         task_id='insert',
-        bash_command='cd /opt/airflow/scripts && python /opt/airflow/scripts/insert_121002.py',
+        bash_command='cd /opt/airflow/scripts && python /opt/airflow/scripts/_121002_insert.py',
         retries = 0
     )
 

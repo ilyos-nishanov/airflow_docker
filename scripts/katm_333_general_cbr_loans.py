@@ -29,11 +29,11 @@ query = f""" select distinct o.number, l.number
             on l.number = o.number
             where l.number is null
         """
-numbers = select(query)
-numbers = set(int(i) for i in numbers)
-numbers = list(numbers)
-numbers.sort()
-print(len(numbers))
+# numbers = select(query)
+# numbers = set(int(i) for i in numbers)
+# numbers = list(numbers)
+# numbers.sort()
+# print(len(numbers))
 
 client = get_mongo_client()
 db = client['task']
