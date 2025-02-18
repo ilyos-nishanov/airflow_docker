@@ -7,7 +7,7 @@ from katm_connections import get_mongo_client
 from katm_utils import (
     insert_into_mssql, 
     load_my_columns, 
-    select,
+    # select,
     max_number_find,
     map_dff_to_my_columns_2
     )
