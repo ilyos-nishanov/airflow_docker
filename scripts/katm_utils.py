@@ -641,3 +641,18 @@ def extract_fields(data, key=None, rows=None):
     return pd.DataFrame(rows) if rows else pd.DataFrame()
 
 ####################################################################################################################
+
+def select(query):
+    conn = get_sql_server_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute(query)
+        result = cursor.fetchall()
+        return [row[0] for row in result]
+    except Exception as e:
+        print(e)
+        return []
+    finally:
+        cursor.close()
+        
+####################################################################################################################

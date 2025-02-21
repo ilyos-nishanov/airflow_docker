@@ -7,7 +7,7 @@ from katm_connections import get_mongo_client
 from katm_utils import (
     insert_into_mssql, 
     load_my_columns, 
-    # select,
+    select,
     max_number_find,
     map_dff_to_my_columns_2
     )
@@ -15,25 +15,25 @@ from katm_utils import (
 start = time()
 print(datetime.now())
 
-nums_table = 'bronze.katm_333_general_cbr_loans'
+nums_table = 'bronze.katm_333_general_cbr_loans_with_errors'
 write_to_table = 'bronze.katm_333_general_cbr_loans'
 columns_file = 'katm_333_general_cbr_loans_fields.txt'
 columns = load_my_columns(columns_file)
 
 max_num = max_number_find(nums_table)
 
-# query = "SELECT number FROM bronze.katm_333_general_cbr_loans"
-query = f""" select distinct o.number, l.number
-            from bronze.katm_333_loans_overview o
-            left join {nums_table} l
-            on l.number = o.number
-            where l.number is null
-        """
-# numbers = select(query)
-# numbers = set(int(i) for i in numbers)
-# numbers = list(numbers)
-# numbers.sort()
-# print(len(numbers))
+query = f"""SELECT number FROM {nums_table}"""
+# query = f""" select distinct o.number, l.number
+#             from bronze.katm_333_loans_overview o
+#             left join {nums_table} l
+#             on l.number = o.number
+#             where l.number is null
+#         """
+numbers = select(query)
+numbers = set(int(i) for i in numbers)
+numbers = list(numbers)
+numbers.sort()
+print(len(numbers))
 
 client = get_mongo_client()
 db = client['task']
@@ -41,8 +41,8 @@ task_collection = db['task']
 
 query = {
     'data.katm_333.return.data.general_cbr.loans.loan': {'$exists': True},
-    'number':{'$gt':max_num}
-    # 'number':{'$in':numbers}
+    # 'number':{'$gt':max_num}
+    'number':{'$in':numbers}
     # 'number':{'$eq':6681374}
     # 'number': {'$nin': numbers} # to bring in newly updated old mongodb data. i.e. them old ones they brought in mongodb recentlyto
 }
