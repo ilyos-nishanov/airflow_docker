@@ -2,6 +2,7 @@ import pyodbc
 import logging
 import traceback
 import pandas as pd
+from tqdm import tqdm
 from functools import wraps
 from time import time, sleep
 from bson.errors import InvalidBSON
@@ -154,6 +155,54 @@ def max_number_find(table_name):
     # result will be a tuple with one element, so you can extract the number like this:
     max_number = int(result[0] if result else None)
     return max_number
+
+####################################################################################################################
+
+def max_number_find_with_cast(table_name):
+    conn = get_sql_server_connection()
+    cursor = conn.cursor()
+
+    # Check if table exists, if not create it
+    check_table_query = f"""select max(cast(number as int)) from {table_name};
+    """
+    cursor.execute(check_table_query)
+
+    # Fetch the result (the single number)
+    result = cursor.fetchone()
+
+    # result will be a tuple with one element, so you can extract the number like this:
+    max_number = int(result[0] if result else None)
+    return max_number
+####################################################################################################################
+
+@retry_with_relogin(retries=5, delay=10)
+def insert_into_mssql_tqdm(df, table_name):
+    conn = get_sql_server_connection()
+    cursor = conn.cursor()
+
+
+    check_table_query = f"""
+    IF OBJECT_ID(N'{table_name}', 'U') IS NULL
+    BEGIN
+        CREATE TABLE {table_name}  (
+    {', '.join([f'[{col}] NVARCHAR(1000)' for col in df.columns])}
+);
+    END;"""
+    cursor.execute(check_table_query)
+    conn.commit()
+
+
+    for index, row in tqdm(df.iterrows(), total=df.shape[0], desc="Inserting rows", unit="row"):
+        try:
+            insert_query = f"INSERT INTO {table_name} VALUES ({', '.join(['?' for _ in range(len(df.columns))])})"
+            values = [str(val) for val in row]
+            cursor.execute(insert_query, tuple(values))
+        except Exception as e:
+            print(f"Error inserting row {index}: {e}")
+
+    conn.commit()
+    cursor.close()
+    conn.close()
 
 ####################################################################################################################
 
