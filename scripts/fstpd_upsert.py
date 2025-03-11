@@ -17,10 +17,14 @@ dff = fetch_oracle_data(products, start_date, end_date)
 write_to_sql(dff, table_name)
 
 upsert_query = f"""
+        -- Backup just in case
+        INSERT INTO bronze.fstpd_backup
+        SELECT * FROM bronze.fstpd;
 
-        MERGE INTO bronze.FSTPD AS target
+        -- Main upsert query
+        MERGE INTO bronze.fstpd AS target
         USING (SELECT * FROM bronze.fstpd_upsert_it) AS source (date_vyd_d, glob_id, k_vid_cred, fpd, spd, tpd, date_modified)
-        ON target.glob_id = source.GLOB_ID
+        ON target.glob_id = source.glob_id
         WHEN MATCHED THEN
             UPDATE SET 
                 fpd = source.fpd, 
@@ -28,11 +32,10 @@ upsert_query = f"""
                 tpd = source.tpd, 
                 date_modified = source.date_modified
         WHEN NOT MATCHED THEN
-            INSERT
-            VALUES (source.date_vyd_d, source.GLOB_ID, source.k_vid_cred, source.fpd, source.spd, source.tpd, source.date_modified);
-
-
+            INSERT (date_vyd_d, glob_id, k_vid_cred, fpd, spd, tpd, date_modified)
+            VALUES (source.date_vyd_d, source.glob_id, source.k_vid_cred, source.fpd, source.spd, source.tpd, source.date_modified);
 """
+
 upsert(upsert_query)
 end_time = datetime.now()
 print(f"End time: {end_time}")

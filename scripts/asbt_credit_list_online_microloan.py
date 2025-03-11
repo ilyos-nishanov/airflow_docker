@@ -7,8 +7,8 @@ from katm_utils import insert_into_mssql_tqdm, load_my_columns, \
 
 
 start = time()
-write_to_table = 'bronze.asbt_list_online_microloan'
-columns_file = 'asbt_credit_list_online_microloan.txt'
+write_to_table = 'bronze.asbt_credit_list_online_microloan'
+columns_file = 'asbt_credit_list_online_microloan_fields.txt'
 columns = load_my_columns(columns_file)
 max_num = max_number_find_with_cast(write_to_table)
 

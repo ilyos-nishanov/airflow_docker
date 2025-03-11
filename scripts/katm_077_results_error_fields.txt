@@ -1,0 +1,10 @@
+number
+clientId
+is_ok
+bureau_segment
+score_cutoff
+current_dlq_bureau
+current_dlq_total
+errmsg
+message
+hint

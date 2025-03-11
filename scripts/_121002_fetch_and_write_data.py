@@ -13,6 +13,7 @@ def fetch_and_write_data(date_range, table_name):
         cursor = connection.cursor()
         query = f"""
         SELECT
+            NVL(l.numdog, 0) AS dog_num,
             NVL(l.id_mfo, 0) AS id_mfo,
             NVL(l.kod_vals, 0) AS kod_val,
             NVL(l.client, '0') AS client,
