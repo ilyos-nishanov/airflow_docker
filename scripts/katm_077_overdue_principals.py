@@ -30,10 +30,10 @@ docs = task_collection.find(query,projection)
 for doc in docs:
     rows = []
     number = doc.get('number')
-    contracts_list = doc.get('data', {}).get('katm_077', {}).get('return', {}).get('data', {}).get('contracts', {}).get('contract', [])
-    if isinstance(contracts_list, dict):
-        contracts_list = [contracts_list]
-    for contract in contracts_list:
+    fields = doc.get('data', {}).get('katm_077', {}).get('return', {}).get('data', {}).get('contracts', {}).get('contract', [])
+    if isinstance(fields, dict):
+        fields = [fields]
+    for contract in fields:
         contract_id = contract.get('contract_id')
         overdue_principals = contract.get('overdue_principals')
         if isinstance(overdue_principals, dict):
