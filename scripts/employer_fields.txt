@@ -1,0 +1,6 @@
+_id
+number
+inn
+title
+type
+regionID
